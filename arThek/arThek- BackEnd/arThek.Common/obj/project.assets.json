@@ -6468,33 +6468,25 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\Livin\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
-=======
-    "C:\\Users\\Livin\\.nuget\\packages\\": {}
->>>>>>> parent of edd581c... added react FE
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Common\\arThek.Common.csproj",
+      "projectUniqueName": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Common\\arThek.Common.csproj",
       "projectName": "arThek.Common",
-      "projectPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Common\\arThek.Common.csproj",
+      "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Common\\arThek.Common.csproj",
       "packagesPath": "C:\\Users\\Livin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Common\\obj\\",
+      "outputPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\Livin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-<<<<<<< HEAD
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-=======
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> parent of edd581c... added react FE
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6506,17 +6498,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj": {
-              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj"
+            "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj": {
+              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj"
             },
-            "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\arThek.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\arThek.Infrastructure.csproj"
+            "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\arThek.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\arThek.Infrastructure.csproj"
             },
-            "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.ServiceAbstraction\\arThek.ServiceAbstraction.csproj": {
-              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.ServiceAbstraction\\arThek.ServiceAbstraction.csproj"
+            "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.ServiceAbstraction\\arThek.ServiceAbstraction.csproj": {
+              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.ServiceAbstraction\\arThek.ServiceAbstraction.csproj"
             },
-            "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Services\\arThek.Services.csproj": {
-              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Services\\arThek.Services.csproj"
+            "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Services\\arThek.Services.csproj": {
+              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Services\\arThek.Services.csproj"
             }
           }
         }

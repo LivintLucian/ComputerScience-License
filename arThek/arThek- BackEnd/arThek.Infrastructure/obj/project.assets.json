@@ -6426,11 +6426,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\arThek.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\arThek.Infrastructure.csproj",
       "projectName": "arThek.Infrastructure",
-      "projectPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\arThek.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\arThek.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Livin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6450,8 +6450,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj": {
-              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj"
+            "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj": {
+              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj"
             }
           }
         }
