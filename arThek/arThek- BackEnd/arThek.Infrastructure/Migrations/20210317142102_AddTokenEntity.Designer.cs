@@ -10,8 +10,8 @@ using arThek.Infrastructure.Persistence;
 namespace arThek.Infrastructure.Migrations
 {
     [DbContext(typeof(arThekContext))]
-    [Migration("20210222201653_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210317142102_AddTokenEntity")]
+    partial class AddTokenEntity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -167,6 +167,9 @@ namespace arThek.Infrastructure.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsVolunteer")
                         .HasColumnType("bit");
 
@@ -214,6 +217,7 @@ namespace arThek.Infrastructure.Migrations
                             Email = "livintlucian@gmail.com",
                             Experience = "I've on the market since 2007",
                             FirstName = "Lucian",
+                            IsDeleted = false,
                             IsVolunteer = false,
                             LastName = "Livint",
                             Password = "q123w321",
@@ -263,6 +267,40 @@ namespace arThek.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MentorshipPackages");
+                });
+
+            modelBuilder.Entity("arThek.Entities.Entities.Token", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TokenValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tokens");
+                });
+
+            modelBuilder.Entity("arThek.Entities.Entities.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("EmailAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BaseUsers");
                 });
 
             modelBuilder.Entity("arThek.Entities.Entities.Mentor", b =>

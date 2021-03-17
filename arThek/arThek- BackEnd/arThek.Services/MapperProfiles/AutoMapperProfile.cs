@@ -9,8 +9,6 @@ namespace arThek.Services.MapperProfiles
     {
         public AutoMapperProfile()
         {
-            CreateMap<Mentor, ViewMentorDto>();
-            CreateMap<ViewMentorDto, Mentor>();
 
             CreateMap<Mentor, MentorDto>()
                 .ForMember(b => b.BasicMentorShipId, bb => bb.MapFrom(bb => bb.Basic.Id))
@@ -22,6 +20,16 @@ namespace arThek.Services.MapperProfiles
             CreateMap<MentorDto, Mentor>()
                 .ForMember(r => r.Resume,
                     rr => rr.Ignore());
+
+            CreateMap<User, BaseUserDto>();
+            CreateMap<Mentor, BaseUserDto>();
+            CreateMap<Mentee, BaseUserDto>();
+            CreateMap<BaseUserDto, User>();
+            CreateMap<BaseUserDto, Mentor>();
+            CreateMap<BaseUserDto, Mentee>();
+
+            CreateMap<Mentor, ViewMentorDto>();
+            CreateMap<ViewMentorDto, Mentor>();
         }
     }
 }
