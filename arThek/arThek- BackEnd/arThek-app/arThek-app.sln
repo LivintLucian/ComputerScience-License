@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arThek.API", "..\arThek.API\arThek.API.csproj", "{992EE79E-7B32-4A13-912B-6C292A06FFAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9134AC6B-BE0D-4D92-A030-60A083779090}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arThek.Services.Tests", "..\arThek.Services.Tests\arThek.Services.Tests.csproj", "{4255F528-5184-4D81-8D64-B75B12F6D8A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arThek.Common", "..\arThek.Common\arThek.Common.csproj", "{2113B10F-8973-4945-8520-C7826D5909F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arThek.Entities", "..\arThek.Entities\arThek.Entities.csproj", "{435314B2-F27B-4C90-ACA2-76E7EA65D6B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arThek.Infrastructure", "..\arThek.Infrastructure\arThek.Infrastructure.csproj", "{7D176718-5102-45E5-AE99-27BA283B6B63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arThek.ServiceAbstraction", "..\arThek.ServiceAbstraction\arThek.ServiceAbstraction.csproj", "{6BCD04A7-2E31-4D0C-8AD1-F21226C3E43D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "arThek.Services", "..\arThek.Services\arThek.Services.csproj", "{EB7093DB-7A5B-41E5-8E26-4791A1BB6C4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{992EE79E-7B32-4A13-912B-6C292A06FFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992EE79E-7B32-4A13-912B-6C292A06FFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992EE79E-7B32-4A13-912B-6C292A06FFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992EE79E-7B32-4A13-912B-6C292A06FFAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4255F528-5184-4D81-8D64-B75B12F6D8A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4255F528-5184-4D81-8D64-B75B12F6D8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4255F528-5184-4D81-8D64-B75B12F6D8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4255F528-5184-4D81-8D64-B75B12F6D8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2113B10F-8973-4945-8520-C7826D5909F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2113B10F-8973-4945-8520-C7826D5909F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2113B10F-8973-4945-8520-C7826D5909F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2113B10F-8973-4945-8520-C7826D5909F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{435314B2-F27B-4C90-ACA2-76E7EA65D6B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435314B2-F27B-4C90-ACA2-76E7EA65D6B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435314B2-F27B-4C90-ACA2-76E7EA65D6B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435314B2-F27B-4C90-ACA2-76E7EA65D6B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D176718-5102-45E5-AE99-27BA283B6B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D176718-5102-45E5-AE99-27BA283B6B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D176718-5102-45E5-AE99-27BA283B6B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D176718-5102-45E5-AE99-27BA283B6B63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BCD04A7-2E31-4D0C-8AD1-F21226C3E43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BCD04A7-2E31-4D0C-8AD1-F21226C3E43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BCD04A7-2E31-4D0C-8AD1-F21226C3E43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BCD04A7-2E31-4D0C-8AD1-F21226C3E43D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB7093DB-7A5B-41E5-8E26-4791A1BB6C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB7093DB-7A5B-41E5-8E26-4791A1BB6C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB7093DB-7A5B-41E5-8E26-4791A1BB6C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB7093DB-7A5B-41E5-8E26-4791A1BB6C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4255F528-5184-4D81-8D64-B75B12F6D8A5} = {9134AC6B-BE0D-4D92-A030-60A083779090}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09328CA0-EE30-4845-95AE-6EC3D5273DA2}
+	EndGlobalSection
+EndGlobal

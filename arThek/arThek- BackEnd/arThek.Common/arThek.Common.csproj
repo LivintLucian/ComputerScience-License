@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\arThek.Entities\arThek.Entities.csproj" />
+    <ProjectReference Include="..\arThek.Infrastructure\arThek.Infrastructure.csproj" />
+    <ProjectReference Include="..\arThek.ServiceAbstraction\arThek.ServiceAbstraction.csproj" />
+    <ProjectReference Include="..\arThek.Services\arThek.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+</Project>
