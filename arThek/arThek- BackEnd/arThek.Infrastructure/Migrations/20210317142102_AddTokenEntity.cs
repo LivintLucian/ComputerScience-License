@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace arThek.Infrastructure.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class AddTokenEntity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,6 +40,19 @@ namespace arThek.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Articles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BaseUsers",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BaseUsers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -92,6 +105,19 @@ namespace arThek.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Tokens",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TokenValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ExpirationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Tokens", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Mentors",
                 columns: table => new
                 {
@@ -100,6 +126,7 @@ namespace arThek.Infrastructure.Migrations
                     Experience = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Resume = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
                     IsVolunteer = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     BasicId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     StandardId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     PremiumId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
@@ -163,8 +190,8 @@ namespace arThek.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Mentors",
-                columns: new[] { "Id", "AboutMe", "BasicId", "Category", "ChatMessageId", "Email", "Experience", "FirstName", "IsVolunteer", "LastName", "Password", "PhoneNumber", "PremiumId", "ProfileImage", "Resume", "StandardId", "UserRole" },
-                values: new object[] { new Guid("f070b2a0-2b90-40c1-80ea-722294ceccf3"), "Logo Designer", null, "Designer", new Guid("c070b2a0-2b90-40c1-80ea-722294ceccf3"), "livintlucian@gmail.com", "I've on the market since 2007", "Lucian", false, "Livint", "q123w321", "+40 748 032 932", null, new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null, 1 });
+                columns: new[] { "Id", "AboutMe", "BasicId", "Category", "ChatMessageId", "Email", "Experience", "FirstName", "IsDeleted", "IsVolunteer", "LastName", "Password", "PhoneNumber", "PremiumId", "ProfileImage", "Resume", "StandardId", "UserRole" },
+                values: new object[] { new Guid("f070b2a0-2b90-40c1-80ea-722294ceccf3"), "Logo Designer", null, "Designer", new Guid("c070b2a0-2b90-40c1-80ea-722294ceccf3"), "livintlucian@gmail.com", "I've on the market since 2007", "Lucian", false, false, "Livint", "q123w321", "+40 748 032 932", null, new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, null, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_MentorArticles_MentorId",
@@ -193,6 +220,9 @@ namespace arThek.Infrastructure.Migrations
                 name: "Admins");
 
             migrationBuilder.DropTable(
+                name: "BaseUsers");
+
+            migrationBuilder.DropTable(
                 name: "ChatMessages");
 
             migrationBuilder.DropTable(
@@ -200,6 +230,9 @@ namespace arThek.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "MentorArticles");
+
+            migrationBuilder.DropTable(
+                name: "Tokens");
 
             migrationBuilder.DropTable(
                 name: "Articles");
