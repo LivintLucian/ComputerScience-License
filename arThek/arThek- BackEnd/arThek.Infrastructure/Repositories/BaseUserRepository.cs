@@ -15,9 +15,27 @@ namespace arThek.Infrastructure.Repositories
         {
             _arThekContext = arThekContext;
         }
-        public async Task<Mentor> GetByEmailAddressAsync(string emailAddress)
+        public async Task<GuestUser> GetValidUserIfExists(string emailAddress, string password)
         {
-            return await _arThekContext.Mentors.SingleOrDefaultAsync(e => e.Email == emailAddress);
+            var mentorObject = await _arThekContext.Mentors
+               .SingleOrDefaultAsync(e => e.Email == emailAddress && e.Password == password);
+
+            var menteeObject = await _arThekContext.Mentees
+               .SingleOrDefaultAsync(e => e.Email == emailAddress && e.Password == password);
+
+            if (mentorObject != null || menteeObject != null)
+            {
+                return new GuestUser
+                {
+                    Id = mentorObject == null ? menteeObject.Id : mentorObject.Id,
+                    Email = mentorObject == null ? menteeObject.Email : mentorObject.Email,
+                    Password = mentorObject == null ? menteeObject.Password : mentorObject.Password
+                };
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

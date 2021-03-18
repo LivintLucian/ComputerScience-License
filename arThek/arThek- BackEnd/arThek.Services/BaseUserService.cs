@@ -29,9 +29,9 @@ namespace arThek.Services
             _configuration = configuration;
             _baseUserRepository = baseUserRepository;
         }
-        public async Task<BaseUserDto> LoginAsync(string emailAddress)
+        public async Task<BaseUserDto> LoginAsync(string emailAddress, string password)
         {
-            var baseUser = await _baseUserRepository.GetByEmailAddressAsync(emailAddress);
+            var baseUser = await _baseUserRepository.GetValidUserIfExists(emailAddress, password);
 
             if(baseUser == null)
             {
@@ -45,7 +45,7 @@ namespace arThek.Services
             return baseUserDto;
         }
 
-        private string CreateToken(Mentor baseUser)
+        private string CreateToken(GuestUser baseUser)
         {
             var claims = new[]
             {
