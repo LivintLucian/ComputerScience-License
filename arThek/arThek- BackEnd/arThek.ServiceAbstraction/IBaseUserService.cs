@@ -5,6 +5,6 @@ namespace arThek.ServiceAbstraction
 {
     public interface IBaseUserService
     {
-        Task<BaseUserDto> LoginAsync(string emailAddress);
+        Task<BaseUserDto> LoginAsync(string emailAddress, string password);
     }
 }

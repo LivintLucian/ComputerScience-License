@@ -5,6 +5,6 @@ namespace arThek.Entities.RepositoryInterfaces
 {
     public interface IBaseUserRepository
     {
-        Task<Mentor> GetByEmailAddressAsync(string emailAddress);
+        Task<GuestUser> GetValidUserIfExists(string emailAddress, string password);
     }
 }

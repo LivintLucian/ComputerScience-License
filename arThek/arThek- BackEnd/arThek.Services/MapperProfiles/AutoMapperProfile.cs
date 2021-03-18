@@ -21,10 +21,12 @@ namespace arThek.Services.MapperProfiles
                 .ForMember(r => r.Resume,
                     rr => rr.Ignore());
 
-            CreateMap<User, BaseUserDto>();
+            CreateMap<GuestUser, BaseUserDto>()
+                .ForMember(b => b.EmailAddress, gg => gg.MapFrom(gg => gg.Email));
+
             CreateMap<Mentor, BaseUserDto>();
             CreateMap<Mentee, BaseUserDto>();
-            CreateMap<BaseUserDto, User>();
+            CreateMap<BaseUserDto, GuestUser>();
             CreateMap<BaseUserDto, Mentor>();
             CreateMap<BaseUserDto, Mentee>();
 

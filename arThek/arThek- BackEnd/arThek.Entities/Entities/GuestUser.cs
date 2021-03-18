@@ -5,9 +5,11 @@ using System.Text;
 
 namespace arThek.Entities.Entities
 {
-    public class User : BaseEntity
+    public class GuestUser : BaseEntity
     {
-        public string EmailAddress { get; set; }
+        public Mentor Mentor { get; set; }
+        public Mentee Mentee { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
     }
 }

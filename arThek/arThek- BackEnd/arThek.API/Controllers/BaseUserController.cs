@@ -2,9 +2,6 @@
 using arThek.ServiceAbstraction.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace arThek.API.Controllers
@@ -25,7 +22,7 @@ namespace arThek.API.Controllers
 
         public async Task<IActionResult> AuthenticateAsync(LoginBaseUserDto loginBaseUserDto)
         {
-            return Ok(await _baseUserService.LoginAsync(loginBaseUserDto.EmailAddress));
+            return Ok(await _baseUserService.LoginAsync(loginBaseUserDto.EmailAddress, loginBaseUserDto.Password));
         }
     }
 }

@@ -17,7 +17,7 @@ namespace arThek.Infrastructure.Persistence
         public DbSet<Mentee> Mentees { get; set; }
         public DbSet<Mentor> Mentors { get; set; }
         public DbSet<Token> Tokens { get; set; }
-        public DbSet<User> BaseUsers { get; set; }
+        public DbSet<GuestUser> BaseUsers { get; set; }
         public DbSet<MentorshipPackage> MentorshipPackages { get; set; }
         public DbSet<MentorArticle> MentorArticles { get; set; }
 
