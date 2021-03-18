@@ -1,8 +1,5 @@
 To Do
 -----
-arThek/home
-arThek/home/login => GET ( verificare date corecte aduse din BD )
-
 arThek/register/userType => Post ( creare 'user', in functie de tipul ales, normal sau mentor cu datele null si doar type-ul schimbat)
 arThek/register/user => Update ( se face update la obiectul creat anterior cu informatiile completate de utilizator )
 arThek/register/mentor => same as above, la user.
@@ -15,6 +12,9 @@ arThek/live => coming soon.
 
 Done
 ----
+arThek/home
+arThek/home/login => GET ( verificare date corecte aduse din BD )
+
 arThek/mentor => GET ( profilurile mentorilor )
 arThek/mentor/filter => GET ( in functie de criteriile selectate, se vor aduce doar anumite profiluri de mentori )
 arThek/mentor/profile?Id => GET ( va fi profilul mentorului, cu id respectiv )
