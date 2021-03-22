@@ -1,4 +1,5 @@
 ﻿using arThek.Entities.BaseEntities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 
@@ -8,7 +9,7 @@ namespace arThek.ServiceAbstraction.DTOs
     {
         public string AboutMe { get; set; }
         public string Experience { get; set; }
-        public byte[] Resume { get; set; }
+        public IFormFile Resume { get; set; }
         public bool IsVolunteer { get; set; }
         public Guid BasicMentorShipId { get; set; }
         public Guid StandardMentorShipId { get; set; }

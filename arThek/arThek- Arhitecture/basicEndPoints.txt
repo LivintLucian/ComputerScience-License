@@ -1,17 +1,17 @@
 To Do
 -----
-arThek/register/userType => Post ( creare 'user', in functie de tipul ales, normal sau mentor cu datele null si doar type-ul schimbat)
-arThek/register/user => Update ( se face update la obiectul creat anterior cu informatiile completate de utilizator )
-arThek/register/mentor => same as above, la user.
-arThek/register/mentor/mentorType => Update ( se va face update la tipul mentorului, voluntar | nevoluntar )
-arThek/register/mentor/resume => Update ( momentul in care mentorul, isi va putea incarca CV-ul si alte prioritati )
-
 arThek/news => GET ( filtrare pe tipul categoriei utilizatorului, daca e logo design, va vedea doar stiri cu aceasta categorie ) + diferite filtrari.
 						
 arThek/live => coming soon.
 
 Done
 ----
+arThek/register/userType => Post ( creare 'user', in functie de tipul ales, normal sau mentor cu datele null si doar type-ul schimbat)
+arThek/register/mentee => Update ( se face update la obiectul creat anterior cu informatiile completate de utilizator )
+arThek/register/mentor => same as above, la user.
+arThek/register/mentor/mentorType => Update ( se va face update la tipul mentorului, voluntar | nevoluntar )
+arThek/register/mentor/resume => Update ( momentul in care mentorul, isi va putea incarca CV-ul si alte prioritati )
+
 arThek/home
 arThek/home/login => GET ( verificare date corecte aduse din BD )
 

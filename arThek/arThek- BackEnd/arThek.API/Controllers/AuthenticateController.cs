@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace arThek.API.Controllers
 {
-    [Route("arThek/home")]
+    [Route("arThek")]
     [ApiController]
-    public class BaseUserController : ControllerBase
+    public class AuthenticateController : ControllerBase
     {
         private readonly IBaseUserService _baseUserService;
 
-        public BaseUserController(IBaseUserService baseUserService)
+        public AuthenticateController(IBaseUserService baseUserService)
         {
             _baseUserService = baseUserService;
         }
 
-        [HttpPost("login")]
+        [HttpPost("home/login")]
         [AllowAnonymous]
 
         public async Task<IActionResult> AuthenticateAsync(LoginBaseUserDto loginBaseUserDto)
