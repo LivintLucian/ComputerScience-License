@@ -183,3 +183,5 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debu
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.csproj.CoreCompileInputs.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll

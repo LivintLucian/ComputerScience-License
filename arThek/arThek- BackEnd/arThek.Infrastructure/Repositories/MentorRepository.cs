@@ -13,12 +13,6 @@ namespace arThek.Infrastructure.Repositories
     {
         public MentorRepository(arThekContext context) : base(context) { }
 
-        #region CRUD
-
-        public override Task<Mentor> CreateAsync(Mentor entity)
-        {
-            return base.CreateAsync(entity);
-        }
         public override async Task<IEnumerable<Mentor>> GetAll()
         {
             return await _dbSet
@@ -35,7 +29,5 @@ namespace arThek.Infrastructure.Repositories
                     .ThenInclude(a => a.Article)
                 .SingleOrDefaultAsync(x => x.Id == id);
         }
-
-        #endregion
     }
 }

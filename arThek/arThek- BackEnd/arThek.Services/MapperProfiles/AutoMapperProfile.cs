@@ -21,6 +21,14 @@ namespace arThek.Services.MapperProfiles
                 .ForMember(r => r.Resume,
                     rr => rr.Ignore());
 
+            CreateMap<CreateUpdateMentorDto, Mentor>();
+            CreateMap<Mentor, CreateUpdateMentorDto>();
+
+            CreateMap<Mentee, MenteeDto>();
+            CreateMap<MenteeDto, Mentee>()
+                .ForMember(i => i.ProfileImage,
+                    ii => ii.Ignore());
+
             CreateMap<GuestUser, BaseUserDto>()
                 .ForMember(b => b.EmailAddress, gg => gg.MapFrom(gg => gg.Email));
 

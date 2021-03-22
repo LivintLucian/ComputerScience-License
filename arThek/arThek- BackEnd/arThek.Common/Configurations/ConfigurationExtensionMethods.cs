@@ -23,6 +23,7 @@ namespace arThek.Common.Configurations
         public static void AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IMentorRepository, MentorRepository>();
+            services.AddScoped<IMenteeRepository, MenteeRepository>();
             services.AddScoped<ITokenRepository, TokenRepository>();
             services.AddScoped<IBaseUserRepository, BaseUserRepository>();
         }
@@ -30,6 +31,7 @@ namespace arThek.Common.Configurations
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<IMentorService, MentorService>();
+            services.AddScoped<IMenteeService, MenteeService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IBaseUserService, BaseUserService>();
         }
