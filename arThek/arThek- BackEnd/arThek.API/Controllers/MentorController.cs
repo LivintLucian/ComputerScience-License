@@ -71,9 +71,9 @@ namespace arThek.API.Controllers
 
         [HttpPost("filter")]
         public async Task<ActionResult<ViewMentorDto>> Get(
-            [FromBody] MentorParametersDto trainingParameters)
+            [FromBody] MentorParametersDto mentorParameters)
         {
-            var allMentorsInPage = await _mentorService.GetFilteredTrainings(trainingParameters);
+            var allMentorsInPage = await _mentorService.GetFilteredTrainings(mentorParameters);
 
             return Ok(allMentorsInPage);
         }

@@ -17,4 +17,23 @@
     <ProjectReference Include="..\arThek.Entities\arThek.Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="IArticleService.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IArticleService.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="IArticleService.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IArticleService.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

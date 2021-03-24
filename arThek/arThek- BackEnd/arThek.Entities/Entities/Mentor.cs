@@ -14,6 +14,6 @@ namespace arThek.Entities.Entities
         public MentorshipPackage Basic { get; set; }
         public MentorshipPackage Standard { get; set; }
         public MentorshipPackage Premium { get; set; }
-        public virtual ICollection<MentorArticle> MentorArticles { get; set; }
+        public virtual ICollection<Article> Articles { get; set; }
     }
 }

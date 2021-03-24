@@ -26,6 +26,7 @@ namespace arThek.Common.Configurations
             services.AddScoped<IMenteeRepository, MenteeRepository>();
             services.AddScoped<ITokenRepository, TokenRepository>();
             services.AddScoped<IBaseUserRepository, BaseUserRepository>();
+            services.AddScoped<IArticleRepository, ArticleRepository>();
         }
 
         public static void AddServices(this IServiceCollection services)
@@ -34,14 +35,20 @@ namespace arThek.Common.Configurations
             services.AddScoped<IMenteeService, MenteeService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IBaseUserService, BaseUserService>();
+            services.AddScoped<IArticleService, ArticleService>();
         }
 
-        public static void AddTrainingFilters(this IServiceCollection services)
+        public static void AddMentorFilters(this IServiceCollection services)
         {
             services.AddScoped<IMentorConditions, MentorNameCondition>();
             services.AddScoped<IMentorConditions, MentorCategoryCondition>();
             services.AddScoped<IMentorConditions, IsVolunteerCondition>();
             services.AddScoped<IMentorFilterService, MentorFilterService>();
+        }
+        public static void AddArticleFilters(this IServiceCollection services)
+        {
+            services.AddScoped<IArticleConditions, ArticleCategoryCondition>();
+            services.AddScoped<IArticleFilterService, ArticleFilterService>();
         }
     }
 }
