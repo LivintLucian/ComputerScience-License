@@ -25,8 +25,6 @@ namespace arThek.Infrastructure.Repositories
                 .Include(b => b.Basic)
                 .Include(s => s.Standard)
                 .Include(p => p.Premium)
-                .Include(ma => ma.MentorArticles)
-                    .ThenInclude(a => a.Article)
                 .SingleOrDefaultAsync(x => x.Id == id);
         }
     }

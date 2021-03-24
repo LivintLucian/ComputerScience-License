@@ -12,7 +12,7 @@ namespace arThek.ServiceAbstraction
         Task<IEnumerable<MentorDto>> GetAllMentors();
         Task<MentorDto> UpdateAsync(MentorDto mentorDto, Guid id);
         Task<MentorDto> DeleteAsync(Guid id);
-        Task<List<ViewMentorDto>> GetFilteredTrainings(MentorParametersDto trainingParametersDto);
+        Task<List<ViewMentorDto>> GetFilteredTrainings(MentorParametersDto mentorParametersDto);
         Task<MentorDto> UpdateMentorResume(MentorDto mentorDto, Guid id);
     }
 }

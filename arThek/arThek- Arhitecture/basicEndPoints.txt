@@ -1,7 +1,8 @@
 To Do
 -----
-arThek/news => GET ( filtrare pe tipul categoriei utilizatorului, daca e logo design, va vedea doar stiri cu aceasta categorie ) + diferite filtrari.
-						
+arThek/news/mentorPost
+
+arthek/messenger => coming soon.			
 arThek/live => coming soon.
 
 Done
@@ -18,4 +19,7 @@ arThek/home/login => GET ( verificare date corecte aduse din BD )
 arThek/mentor => GET ( profilurile mentorilor )
 arThek/mentor/filter => GET ( in functie de criteriile selectate, se vor aduce doar anumite profiluri de mentori )
 arThek/mentor/profile?Id => GET ( va fi profilul mentorului, cu id respectiv )
-							 Update ( update-ul profilului, in cazul in care se acceseaza din partea detinatorului de profil )
+							Update ( update-ul profilului, in cazul in care se acceseaza din partea detinatorului de profil )
+						
+arThek/news => GET all.
+arThek/news/category?CategoryId => GET ( filtrare pe tipul categoriei utilizatorului, daca e logo design, va vedea doar stiri cu aceasta categorie ) + diferite filtrari.)

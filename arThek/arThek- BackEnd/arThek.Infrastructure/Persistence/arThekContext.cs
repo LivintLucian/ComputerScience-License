@@ -19,13 +19,12 @@ namespace arThek.Infrastructure.Persistence
         public DbSet<Token> Tokens { get; set; }
         public DbSet<GuestUser> BaseUsers { get; set; }
         public DbSet<MentorshipPackage> MentorshipPackages { get; set; }
-        public DbSet<MentorArticle> MentorArticles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration(new MentorArticleConfiguration());
+            modelBuilder.ApplyConfiguration(new ArticleConfiguration());
             modelBuilder.ApplyConfiguration(new MentorConfiguration());
         }
     }

@@ -1,17 +1,18 @@
 ﻿using arThek.Entities.BaseEntities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace arThek.Entities.Entities
+namespace arThek.ServiceAbstraction.DTOs
 {
-    public class Article : BaseEntity
+    public class ArticleDto : BaseEntity
     {
-        public byte[] Image { get; set; }
+        public IFormFile Image { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public string Category { get; set; }
         public DateTime PublishDate { get; set; }
-        public Mentor Author { get; set; }
         public Guid AuthorId { get; set; }
     }
 }

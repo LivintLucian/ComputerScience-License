@@ -47,7 +47,8 @@ namespace arThek.API
             services.AddRepositories();
             services.ConfigureDatabaseContext(Configuration);
             services.AddServices();
-            services.AddTrainingFilters();
+            services.AddMentorFilters();
+            services.AddArticleFilters();
             services.AddAutoMapper(cfg => cfg.AddProfile(new AutoMapperProfile()));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }

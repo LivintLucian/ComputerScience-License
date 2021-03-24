@@ -27,7 +27,7 @@ namespace arThek.Infrastructure.Configurations
                     Experience = "I've on the market since 2007",
                     Email = "livintlucian@gmail.com",
                     IsVolunteer = false,
-                    MentorArticles = new List<MentorArticle>(),
+                    Articles = new List<Article>(),
                     ProfileImage = new byte[15],
                     Resume = new byte[15],
                     UserRole = UserRole.Mentor,
