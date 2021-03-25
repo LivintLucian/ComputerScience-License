@@ -48,7 +48,7 @@ namespace arThek.Services
 
             if (article is null)
             {
-                throw new NotFoundException("This mentor doesn't exist!");
+                throw new NotFoundException("This article doesn't exist!");
             }
 
             return _mapper.Map<ArticleDto>(article);
