@@ -19,7 +19,6 @@ namespace arThek.Common.Configurations
                => op.UseSqlServer(configuration.GetConnectionString("arThekContext"),
                    b => b.MigrationsAssembly("arThek.Infrastructure")));
         }
-
         public static void AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IMentorRepository, MentorRepository>();
@@ -27,8 +26,8 @@ namespace arThek.Common.Configurations
             services.AddScoped<ITokenRepository, TokenRepository>();
             services.AddScoped<IBaseUserRepository, BaseUserRepository>();
             services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
         }
-
         public static void AddServices(this IServiceCollection services)
         {
             services.AddScoped<IMentorService, MentorService>();
@@ -36,8 +35,8 @@ namespace arThek.Common.Configurations
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IBaseUserService, BaseUserService>();
             services.AddScoped<IArticleService, ArticleService>();
+            services.AddScoped<IChatMessageService, ChatMessageService>();
         }
-
         public static void AddMentorFilters(this IServiceCollection services)
         {
             services.AddScoped<IMentorConditions, MentorNameCondition>();

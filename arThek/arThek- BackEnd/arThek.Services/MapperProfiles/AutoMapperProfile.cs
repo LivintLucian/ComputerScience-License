@@ -8,9 +8,7 @@ namespace arThek.Services.MapperProfiles
     {
         public AutoMapperProfile()
         {
-            /*
-             * Mentor
-             */
+            #region Mentor Configuration
             CreateMap<Mentor, MentorDto>()
                 .ForMember(b => b.BasicMentorShipId, bb => bb.MapFrom(bb => bb.Basic.Id))
                 .ForMember(s => s.StandardMentorShipId, ss => ss.MapFrom(ss => ss.Standard.Id))
@@ -30,10 +28,9 @@ namespace arThek.Services.MapperProfiles
 
             CreateMap<Mentor, ViewMentorDto>();
             CreateMap<ViewMentorDto, Mentor>();
+            #endregion
 
-            /*
-             * Mentee
-             */
+            #region Mentee Configuration
             CreateMap<Mentee, MenteeDto>();
             CreateMap<MenteeDto, Mentee>()
                 .ForMember(i => i.ProfileImage,
@@ -41,10 +38,9 @@ namespace arThek.Services.MapperProfiles
 
             CreateMap<Mentee, BaseUserDto>();
             CreateMap<BaseUserDto, Mentee>();
+            #endregion
 
-            /*
-             * Article
-             */
+            #region Article Configuration
             CreateMap<ArticleDto, Article>();
             CreateMap<Article, ArticleDto>()
                 .ForMember(a => a.AuthorId, aa => aa.MapFrom(aa => aa.AuthorId))
@@ -53,13 +49,18 @@ namespace arThek.Services.MapperProfiles
 
             CreateMap<Article, ViewArticleDto>();
             CreateMap<ViewArticleDto, Article>();
+            #endregion
 
-            /*
-             * GuestUser
-             */
+            #region GuestUser Configuration
             CreateMap<BaseUserDto, GuestUser>();
             CreateMap<GuestUser, BaseUserDto>()
                 .ForMember(b => b.EmailAddress, gg => gg.MapFrom(gg => gg.Email));
+            #endregion
+
+            #region ChatMessage Configuration
+            CreateMap<ChatMessage, ChatMessageDto>();
+            CreateMap<ChatMessageDto, ChatMessage>();
+            #endregion
         }
     }
 }
