@@ -1,0 +1,19 @@
+<div class="login-container">
+
+    <div class="login-container--header">
+        <img class="arThek-logo" src="">
+        <h1 class="title">Welcome back!</h1>
+    </div>
+
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label> Login </mat-label>
+            <input matInput class="email-input" type="email" [formControl]="email" placeholder="user@email.com">
+
+            <mat-error *ngIf="email.hasError('email')">Email typo is not valid.</mat-error>
+        </mat-form-field>
+
+        <button type="submit" class="submit-button" [disabled]="!loginForm.valid"><span class="text-button-login">Login</span></button>
+    </form>
+
+</div>
