@@ -18,10 +18,10 @@ export class AuthenticationService {
     }
   }
 
-  login(emailAddress: string): Observable<User> {
+  login(emailAddress: string, password: string): Observable<User> {
     const authenticateEnpoint = `${environment.baseAPI}/home/login`;
     return this.http
-      .post<User>(authenticateEnpoint, { emailAddress })
+      .post<User>(authenticateEnpoint, { emailAddress, password })
       .pipe(
         tap(user => {
           this.localStorageService.set('user', user);

@@ -15,9 +15,13 @@ export class LoginComponent{
     Validators.required,
     Validators.email
   ]);
+  password = new FormControl('',[
+    Validators.required,
+  ]);
 
   loginForm = new FormGroup({
-    email: this.email
+    email: this.email,
+    password: this.password
   })
 
   constructor(
@@ -27,7 +31,7 @@ export class LoginComponent{
   ) {}
 
   onSubmit() {
-    this.authService.login(this.email.value).subscribe(
+    this.authService.login(this.email.value, this.password.value).subscribe(
       (u) => {
         this.router.navigate(['home']);
         console.log("a mers");
