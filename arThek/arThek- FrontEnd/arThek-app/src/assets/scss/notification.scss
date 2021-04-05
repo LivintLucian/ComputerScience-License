@@ -1,0 +1,23 @@
+@import './colors.scss';
+
+.toast-container .ngx-toastr {
+    &.toast-success {
+        background-color: $notification-success;
+        box-shadow: 0 0 12px $notification-success;
+    }
+    
+    &.toast-error {
+        background-color: $notification-error;
+        box-shadow: 0 0 12px $notification-error;
+    }
+    
+    &.toast-warning {
+        background-color: $notification-warning;
+        box-shadow: 0 0 12px $notification-warning;
+    }
+    
+    &.toast-info {
+        background-color: $notification-info;
+        box-shadow: 0 0 12px $notification-info
+    }
+}

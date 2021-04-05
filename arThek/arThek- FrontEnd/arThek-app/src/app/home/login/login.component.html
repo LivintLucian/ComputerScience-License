@@ -1,19 +1,41 @@
 <div class="login-container">
+  <div class="login-container--header">
+    <img class="arThek-logo" src="../../../assets/images/arThek-logo.png" />
+    <h1 class="title">Welcome back</h1>
+  </div>
 
-    <div class="login-container--header">
-        <img class="arThek-logo" src="">
-        <h1 class="title">Welcome back!</h1>
-    </div>
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input
+        matInput
+        class="email-input"
+        type="email"
+        [formControl]="email"
+        placeholder="user@email.com"
+      />
+      <input
+        matInput
+        class="password-input"
+        type="password"
+        [formControl]="password"
+      />
 
-    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <mat-form-field>
-            <mat-label> Login </mat-label>
-            <input matInput class="email-input" type="email" [formControl]="email" placeholder="user@email.com">
+      <mat-error *ngIf="email.hasError('email')"
+        >Email typo is not valid.</mat-error
+      >
+    </mat-form-field>
 
-            <mat-error *ngIf="email.hasError('email')">Email typo is not valid.</mat-error>
-        </mat-form-field>
+    <button type="submit" class="submit-button" [disabled]="!loginForm.valid">
+      <span class="text-button-login">Sign In</span>
+    </button>
+  </form>
 
-        <button type="submit" class="submit-button" [disabled]="!loginForm.valid"><span class="text-button-login">Login</span></button>
-    </form>
+  <div class="login-container--separator"></div>
 
+  <div class="login-container--footer">
+    <span
+      >Not a member yet?
+      <a href="#" style="color: #8eb6f2; text-decoration: none">Sign Up</a>
+    </span>
+  </div>
 </div>
