@@ -1,2 +1,22 @@
-<button (click)="toggleLoginFormVisibility()">Sign In</button>
+<div class="home--header">
+  <img class="arThek-logo" src="../../assets/images/arThek-logo.png" alt="" />
+  <button class="home--btn-signIn" (click)="toggleLoginFormVisibility()">Sign In</button>
+</div>
+<div class="home--title">
+  <span id="home--title-subtitle">Mentorship in <span id="design">design</span></span>
+  <div class="home--title-subtitle">
+    <div class="delimitator"></div>
+    <div class="subtitle">
+      <span id="contactMentor">Contact a Mentor</span>
+      <span id="resources">All Resources in one place</span>
+      <span id="betterThan">Become better than yesterday.</span>
+    </div>
+  </div>
+</div>
+<div class="home--content">
+    <img class="mentorship-image" src="../../assets/images/homePage-mentorship.png" alt="" />
+    <div class="background--shape"></div>
+    <div class="background--shape-shadow"></div>
+</div>
+<button id="home--btn-learnMore">Learn More</button>
 <app-login *ngIf="isLoginFormVisible" class="fake-background"></app-login>

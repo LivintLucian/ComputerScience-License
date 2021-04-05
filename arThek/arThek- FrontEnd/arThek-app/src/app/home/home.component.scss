@@ -1,3 +1,148 @@
+@import url("https://fonts.google.com/specimen/Reenie+Beanie");
+
+.home--header {
+    .arThek-logo {
+        position: absolute;
+        width: 118px;
+        height: 118px;
+        left: 114px;
+        top: -7px;
+    }
+    .home--btn-signIn {
+        position: absolute;
+        width: 103px;
+        height: 29px;
+        left: 1215px;
+        top: 33px;
+
+        background: #699eee;
+        border-radius: 25px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+
+        border: none;
+        text-decoration: none;
+
+        color: #ffffff;
+        cursor: pointer;
+        .home--btn-signIn:focus {
+            border: 0;
+            text-decoration: none;
+        }
+    }
+}
+.home--title {
+    #home--title-subtitle {
+        position: absolute;
+        width: 896px;
+        height: 111px;
+        left: 114px;
+        top: 149px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 95px;
+        line-height: 111px;
+
+        z-index: -1;
+        color: #35488c;
+        #design {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: lighter;
+        }
+    }
+    .home--title-subtitle {
+        .delimitator {
+            position: absolute;
+            width: 98.8px;
+            left: 70px;
+            top: 304.01px;
+
+            border: 1px solid #699eee;
+            background-color: #699eee;
+            transform: rotate(90.94deg);
+        }
+        .subtitle span {
+            position: absolute;
+            width: 193px;
+            height: 29px;
+            left: 136px;
+            top: 255px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 25px;
+            line-height: 29px;
+
+            white-space: nowrap;
+            color: #c7c7c7;
+        }
+        #resources {
+            top: 290px;
+        }
+        #betterThan {
+            top: 325px;
+        }
+    }
+}
+.home--content {
+    .mentorship-image {
+        position: absolute;
+        width: 1186.86px;
+        height: 678px;
+        left: 260px;
+        top: 149px;
+    }
+    .background--shape {
+        width: 200%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform-origin: top right;
+        transform: rotate(-22deg);
+        z-index: -1;
+        background: #d1deff;
+    }
+    .background--shape-shadow {
+        width: 200%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform-origin: top right;
+        transform: rotate(-35deg);
+        z-index: -1;
+
+        background: #b4c9ff;
+    }
+}
+#home--btn-learnMore {
+    position: absolute;
+    width: 252px;
+    height: 60px;
+    left: 116px;
+    top: 426px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+
+    border: none;
+    text-decoration: none;
+
+    color: #ffffff;
+    background: #699eee;
+}
 .fake-background {
     position: absolute;
     width: 100%;

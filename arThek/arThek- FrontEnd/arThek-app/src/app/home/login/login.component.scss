@@ -7,7 +7,7 @@ div.login-container {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    height: 700px;
+    height: 650px;
     font-family: Roboto, Helvetica, sans-serif;
     border-radius: 9px;
     box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
@@ -44,6 +44,7 @@ div.login-container {
             border: 1px solid #929292;
             box-sizing: border-box;
         }
+
         input.password-input {
             position: absolute;
             height: 50.74px;
@@ -82,6 +83,10 @@ div.login-container {
         .submit-button:focus {
             border: none;
             text-decoration: none;
+        }
+        button.submit-button[disabled] {
+            cursor: no-drop;
+            opacity: 0.5;
         }
     }
     .login-container--separator {

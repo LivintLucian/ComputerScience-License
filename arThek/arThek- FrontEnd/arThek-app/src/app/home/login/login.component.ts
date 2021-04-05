@@ -7,41 +7,41 @@ import { NotificationService } from 'src/app/core/services/notification.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-
-export class LoginComponent{
-  email = new FormControl('', [
-    Validators.required,
-    Validators.email
-  ]);
-  password = new FormControl('',[
-    Validators.required,
-  ]);
+export class LoginComponent {
+  email = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [Validators.required]);
 
   loginForm = new FormGroup({
     email: this.email,
-    password: this.password
-  })
+    password: this.password,
+  });
 
   constructor(
-    private router : Router,
-    private notifications : NotificationService,
-    private authService : AuthenticationService,
+    private router: Router,
+    private notifications: NotificationService,
+    private authService: AuthenticationService
   ) {}
 
   onSubmit() {
     this.authService.login(this.email.value, this.password.value).subscribe(
       (u) => {
         this.router.navigate(['home']);
-        console.log("a mers");
       },
       (e) => {
         if (e.status === 404) {
-          this.notifications.showError('This user does not exist!' , 'Login Error' , 5000);
-        }
-        else{
-          this.notifications.showError('Something bad happened. Please contact the administrator!' , 'Login Error' , 5000);
+          this.notifications.showError(
+            'This user does not exist!',
+            'Login Error',
+            5000
+          );
+        } else {
+          this.notifications.showError(
+            'This user does not exist!',
+            'Login Error',
+            5000
+          );
         }
       }
     );
