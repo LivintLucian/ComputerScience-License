@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RegisterJoinAsMentorComponent } from './register/register-join-as-mentor/register-join-as-mentor.component';
+import { RegisterJoinAsUserComponent } from './register/register-join-as-user/register-join-as-user.component';
 import { RegisterUserTypeComponent } from './register/register-user-type/register-user-type.component';
 
 const routes: Routes = [
@@ -9,7 +11,15 @@ const routes: Routes = [
   },
   {
     path: 'register/user-type',
-    component: RegisterUserTypeComponent
+    component: RegisterUserTypeComponent,
+  },
+  {
+    path: 'register/join-as-user',
+    component: RegisterJoinAsUserComponent,
+  },
+  {
+    path: 'register/join-as-mentor',
+    component: RegisterJoinAsMentorComponent,
   },
 ];
 

@@ -24,7 +24,7 @@ export class LoginComponent {
     private authService: AuthenticationService
   ) {}
   signUp(){
-    this.router.navigate(['register-user-type']);
+    this.router.navigate(['register/user-type']);
   }
   onSubmit() {
     this.authService.login(this.email.value, this.password.value).subscribe(

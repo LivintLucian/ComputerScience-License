@@ -3,16 +3,30 @@ import { CommonModule } from '@angular/common';
 
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterUserTypeComponent } from './register-user-type/register-user-type.component';
-
+import { RegisterJoinAsUserComponent } from './register-join-as-user/register-join-as-user.component';
+import { RegisterJoinAsMentorComponent } from './register-join-as-mentor/register-join-as-mentor.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [RegisterUserTypeComponent],
+  declarations: [
+    RegisterUserTypeComponent,
+    RegisterJoinAsUserComponent,
+    RegisterJoinAsMentorComponent,
+  ],
   imports: [
     CommonModule,
-    RegisterRoutingModule
+    RegisterRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
-  exports:[
-    RegisterUserTypeComponent
-  ]
+  exports: [
+    RegisterUserTypeComponent,
+    RegisterJoinAsUserComponent,
+    RegisterJoinAsMentorComponent,
+  ],
 })
-export class RegisterModule { }
+export class RegisterModule {}
