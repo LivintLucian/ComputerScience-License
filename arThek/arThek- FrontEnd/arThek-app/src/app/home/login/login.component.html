@@ -35,7 +35,13 @@
   <div class="login-container--footer">
     <span
       >Not a member yet?
-      <a href="#" style="color: #8eb6f2; text-decoration: none">Sign Up</a>
+      <a
+        (click)="signUp()"
+        routerLink="/register-user-type"
+        routerLinkActive="active"
+        style="color: #8eb6f2; text-decoration: none"
+        >Sign Up</a
+      >
     </span>
   </div>
 </div>

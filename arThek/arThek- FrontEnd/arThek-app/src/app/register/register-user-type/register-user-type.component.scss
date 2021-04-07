@@ -1,0 +1,142 @@
+.join-as-user {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    left: 200px;
+    top: 79px;
+
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    box-shadow: 8px 4px 25px rgba(0, 0, 0, 0.25);
+    .user-head {
+        position: absolute;
+        width: 4096px;
+        height: 2340px;
+        left: -2240px;
+        top: -610px;
+    }
+
+    &.img-background {
+    }
+
+    & button {
+        left: 100px;
+        top: 500px;
+        cursor: pointer;
+    }
+}
+.join-as-mentor {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    left: 850px;
+    top: 79px;
+
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    box-shadow: 8px 4px 25px rgba(0, 0, 0, 0.25);
+    .mentor-head {
+        position: absolute;
+        width: 4096px;
+        height: 2340px;
+        left: -2470px;
+        top: -685px;
+    }
+
+    &.img-background {
+    }
+
+    & button {
+        left: 100px;
+        top: 500px;
+    }
+}
+
+.img-background {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #f1a350;
+}
+
+.hashtags {
+    position: absolute;
+    width: 153px;
+    height: 24px;
+    left: 100px;
+    top: 370px;
+
+    font-family: Andika;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+
+    color: #929292;
+}
+
+.span-first-line,
+.span-second-line,
+.span-third-line,
+.span-fourth-line {
+    white-space: nowrap;
+    display: block;
+}
+
+button {
+    position: absolute;
+    width: 193px;
+    height: 51px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 29px;
+
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+
+    background: #699eee;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+#btn-user-join {
+    z-index: 1;
+}
+
+.background-shape {
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: rotate(22deg);
+    z-index: -1;
+    background: #ececec;
+}
+.background-shape--shadow {
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform-origin: top left;
+    transform: rotate(35deg);
+    z-index: -1;
+
+    background: #35488c;
+    opacity: 0.85;
+}

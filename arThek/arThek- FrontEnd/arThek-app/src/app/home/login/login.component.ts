@@ -23,7 +23,9 @@ export class LoginComponent {
     private notifications: NotificationService,
     private authService: AuthenticationService
   ) {}
-
+  signUp(){
+    this.router.navigate(['register-user-type']);
+  }
   onSubmit() {
     this.authService.login(this.email.value, this.password.value).subscribe(
       (u) => {
