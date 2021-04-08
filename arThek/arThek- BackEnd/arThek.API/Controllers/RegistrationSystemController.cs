@@ -23,28 +23,34 @@ namespace arThek.API.Controllers
             _menteeService = menteeService;
         }
 
-        [HttpPost("UserType")]
-        [AllowAnonymous]
-        public async Task<IActionResult> DefineTypeOfUser(bool isMentee)
-        {
-            if (isMentee)
-            {
-                return Ok(await _menteeService.CreateAsync(new MenteeDto() { UserRole = UserRole.Mentee }));
-            }
-            else
-            {
-                return Ok(await _mentorService.CreateAsync(new MentorDto() { UserRole = UserRole.Mentor }));
-            }
-        }
-
-        [HttpPut("Mentee/{id}")]
-        public async Task<IActionResult> UpdateCreatedMentee(MenteeDto menteeDto, Guid id)
+        [HttpPost("Mentee")]
+        public async Task<IActionResult> Create([FromForm] CreateMenteeDto createMenteeDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
+            var menteeCreated = await _menteeService.CreateAsync(createMenteeDto);
+
+            return CreatedAtAction(nameof(GetById), new { id = menteeCreated.Id }, menteeCreated);
+        }
+
+        [HttpGet("Mentee/{id}")]
+        public async Task<ActionResult<MenteeDto>> GetById(Guid id)
+        {
+            return await _menteeService.GetByIdAsync(id);
+        }
+
+        [HttpPut("Mentee")]
+        public async Task<IActionResult> UpdateCreatedMentee([FromForm] MenteeDto menteeDto, Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            //var lastCreatedMentee = _menteeService.GetLastMenteeCreated();
             await _menteeService.UpdateAsync(menteeDto, id);
 
             return Ok();
@@ -71,7 +77,7 @@ namespace arThek.API.Controllers
                 return BadRequest();
             }
 
-            mentorDto.IsVolunteer = 
+            mentorDto.IsVolunteer =
                 isVolunteer ? mentorDto.IsVolunteer = true : mentorDto.IsVolunteer = false;
 
             await _mentorService.UpdateAsync(mentorDto, id);

@@ -13,7 +13,7 @@ namespace arThek.Services.Filtering.Conditions
 
         public bool IsSatisfied(Mentor mentor)
         {
-            return _mentorName == mentor.FirstName;
+            return _mentorName == mentor.UserName;
         }
     }
 }

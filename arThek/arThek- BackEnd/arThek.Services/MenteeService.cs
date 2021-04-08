@@ -19,9 +19,9 @@ namespace arThek.Services
             _menteeRepository = menteeRepository;
         }
 
-        public async Task<MenteeDto> CreateAsync(MenteeDto menteeDto)
+        public async Task<MenteeDto> CreateAsync(CreateMenteeDto createMenteeDto)
         {
-            var menteeDTO = _mapper.Map<Mentee>(menteeDto);
+            var menteeDTO = _mapper.Map<Mentee>(createMenteeDto);
             var menteeAddedToDB = await _menteeRepository.CreateAsync(menteeDTO);
 
             return _mapper.Map<MenteeDto>(menteeAddedToDB);
@@ -29,14 +29,30 @@ namespace arThek.Services
 
         public async Task<MenteeDto> UpdateAsync(MenteeDto menteeDto, Guid id)
         {
-            var mentorEntity = await _menteeRepository.GetByIdAsync(id);
-            if (mentorEntity is null)
+            var menteeEntity = await _menteeRepository.GetByIdAsync(id);
+            if (menteeEntity is null)
                 throw new NotFoundException("The mentee wasn't found!");
 
-            _mapper.Map(menteeDto, mentorEntity);
-            var menteeUpdated = await _menteeRepository.UpdateAsync(mentorEntity);
+            _mapper.Map(menteeDto, menteeEntity);
+            var menteeUpdated = await _menteeRepository.UpdateAsync(menteeEntity);
 
             return _mapper.Map<MenteeDto>(menteeUpdated);
+        }
+        public async Task<MenteeDto> GetByIdAsync(Guid id)
+        {
+            var mentee = await _menteeRepository.GetByIdAsync(id);
+
+            if (mentee is null)
+            {
+                throw new NotFoundException("This mentee doesn't exist!");
+            }
+
+            return _mapper.Map<MenteeDto>(mentee);
+        }
+
+        public MenteeDto GetLastMenteeCreated()
+        {
+            return _mapper.Map<MenteeDto>(_menteeRepository.GetLastMenteeCreated());
         }
     }
 }
