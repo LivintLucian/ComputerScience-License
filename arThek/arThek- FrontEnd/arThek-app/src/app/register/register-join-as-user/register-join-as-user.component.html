@@ -1,24 +1,30 @@
 <div class="joinAsUser-container">
   <h1>Create your Pressly Account</h1>
   <div class="joinAsUser-form">
-    <div class="profile-image">
-      <img src="../../../assets/images/profile-image-default.png" alt="" />
-      <span>Change Image</span>
-    </div>
     <form
       class="form-container"
       [formGroup]="joinAsUserForm"
       (ngSubmit)="joinAsUserSubmit()"
     >
-      <mat-form-field class="form-container--inputs">
-
-        <label>Email</label>
-        <input
-        class="form-input"
-        type="email"
-        [formControl]="email"
-        matInput
+      <div class="profile-image">
+        <label for="profile-image-input">
+          <img
+            [src]="
+              url ? url : '../../../assets/images/profile-image-default.png'
+            "
+            />
+            <span>Change Image</span>
+          </label>
+          <input
+          id="profile-image-input"
+          type="file"
+          (change)="onSelectImage($event)"
+          [formControl] = "profileImagePath"
         />
+      </div>
+      <mat-form-field class="form-container--inputs">
+        <label>Email</label>
+        <input class="form-input" type="email" [formControl]="email" matInput />
 
         <label>Password</label>
         <input
@@ -37,12 +43,7 @@
         />
 
         <label>Domain</label>
-        <input
-          matInput
-          class="form-input"
-          type="text"
-          [formControl]="domain"
-        />
+        <input matInput class="form-input" type="text" [formControl]="domain" />
 
         <mat-error *ngIf="email.hasError('email')"
           >Email typo is not valid.</mat-error

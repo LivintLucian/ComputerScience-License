@@ -16,14 +16,10 @@ export class RegisterUserTypeComponent implements OnInit {
   ngOnInit(): void {}
 
   joinAsUser() {
-    this.registrationService.isMentee(true).subscribe((u) => {
-      this.router.navigate(['register/join-as-user']);
-    });
+    this.router.navigate(['register/join-as-user']);
   }
 
   joinAsMentor() {
-    this.registrationService.isMentee(false).subscribe((u) => {
-      this.router.navigate(['register/join-as-mentor']);
-    });
+    this.router.navigate(['register/join-as-mentor']);
   }
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using arThek.Infrastructure.Persistence;
 
 namespace arThek.Infrastructure.Migrations
 {
     [DbContext(typeof(arThekContext))]
-    partial class arThekContextModelSnapshot : ModelSnapshot
+    [Migration("20210408074923_ModifyBaseUserEntity")]
+    partial class ModifyBaseUserEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,8 +42,8 @@ namespace arThek.Infrastructure.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProfileImagePath")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("ProfileImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("UserCreationDate")
                         .HasColumnType("datetime2");
@@ -156,8 +158,8 @@ namespace arThek.Infrastructure.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProfileImagePath")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("ProfileImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<DateTime>("UserCreationDate")
                         .HasColumnType("datetime2");
@@ -212,8 +214,8 @@ namespace arThek.Infrastructure.Migrations
                     b.Property<Guid?>("PremiumId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("ProfileImagePath")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("ProfileImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<byte[]>("Resume")
                         .HasColumnType("varbinary(max)");
@@ -252,7 +254,7 @@ namespace arThek.Infrastructure.Migrations
                             IsDeleted = false,
                             IsVolunteer = false,
                             Password = "q123w321",
-                            ProfileImagePath = "",
+                            ProfileImage = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             Resume = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                             UserCreationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserName = "livintlucian",

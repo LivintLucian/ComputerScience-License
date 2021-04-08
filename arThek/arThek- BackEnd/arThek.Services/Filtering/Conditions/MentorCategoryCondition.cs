@@ -16,7 +16,7 @@ namespace arThek.Services.Filtering.Conditions
 
         public bool IsSatisfied(Mentor mentor)
         {
-            return _mentorCategory == mentor.Category;
+            return _mentorCategory == mentor.Domain;
         }
     }
 }

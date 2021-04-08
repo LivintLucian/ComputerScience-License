@@ -6,7 +6,9 @@ namespace arThek.ServiceAbstraction
 {
     public interface IMenteeService
     {
-        Task<MenteeDto> CreateAsync(MenteeDto menteeDto);
+        Task<MenteeDto> CreateAsync(CreateMenteeDto createMenteeDto);
+        Task<MenteeDto> GetByIdAsync(Guid id);
         Task<MenteeDto> UpdateAsync(MenteeDto mentorDto, Guid id);
+        MenteeDto GetLastMenteeCreated();
     }
 }

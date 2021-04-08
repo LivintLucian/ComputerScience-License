@@ -32,12 +32,16 @@ namespace arThek.Services.MapperProfiles
 
             #region Mentee Configuration
             CreateMap<Mentee, MenteeDto>();
-            CreateMap<MenteeDto, Mentee>()
-                .ForMember(i => i.ProfileImage,
-                    ii => ii.Ignore());
+            CreateMap<MenteeDto, Mentee>();
 
             CreateMap<Mentee, BaseUserDto>();
             CreateMap<BaseUserDto, Mentee>();
+            #endregion
+
+            #region CreateMenteeDto
+
+            CreateMap<CreateMenteeDto, Mentee>();
+
             #endregion
 
             #region Article Configuration
