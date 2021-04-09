@@ -7,6 +7,9 @@ import { ICreateMentee, IMentee } from '../models/createMentee';
 import * as moment from 'moment';
 import { NotificationService } from 'src/app/core/services/notification.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { MyErrorStateMatcher } from 'src/app/core/error-state-matcher/error-state-matcher';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register-join-as-user',
@@ -17,6 +20,9 @@ export class RegisterJoinAsUserComponent implements OnInit {
   id: string;
   joinAsUserFormState: IMentee;
   joinAsUserForm: FormGroup;
+  matcher = new MyErrorStateMatcher();
+  options: string[] = ['Logo Designer', 'Graphic Designer', 'Ui/Ux','Web Designer','Animation Designer'];
+  filteredOptions: Observable<string[]>;
 
   constructor(
     private router: Router,
@@ -44,7 +50,7 @@ export class RegisterJoinAsUserComponent implements OnInit {
             domain: data.domain,
             chatMessageId: data.chatMessageId,
             userCreationDate: moment(data.userCreationDate),
-            profileImagePath: data.profileImagePath
+            profileImagePath: data.profileImagePath,
           });
         },
         (err) => {
@@ -55,30 +61,42 @@ export class RegisterJoinAsUserComponent implements OnInit {
     }
     this.joinAsUserFormState = this.initForm();
 
-    this.joinAsUserForm = new FormGroup({
-      userRole: new FormControl(this.joinAsUserFormState.userRole,[]),
-      userName: new FormControl(this.joinAsUserFormState.userName,[]),
-      email: new FormControl(this.joinAsUserFormState.email,
-        [
+    this.joinAsUserForm = new FormGroup(
+      {
+        userRole: new FormControl(this.joinAsUserFormState.userRole, []),
+        userName: new FormControl(this.joinAsUserFormState.userName, []),
+        email: new FormControl(this.joinAsUserFormState.email, [
           Validators.required,
-          Validators.email
+          Validators.email,
         ]),
-      password: new FormControl(this.joinAsUserFormState.password,
-        [
-          Validators.required
-        ]),
-      confirmPassword: new FormControl(this.joinAsUserFormState.confirmPassword,
-        [
+        password: new FormControl(this.joinAsUserFormState.password, [
           Validators.required,
         ]),
-      domain: new FormControl(this.joinAsUserFormState.domain,
-        [
+        confirmPassword: new FormControl(
+          this.joinAsUserFormState.confirmPassword,
+          [Validators.required]
+        ),
+        domain: new FormControl(this.joinAsUserFormState.domain, [
           Validators.required,
         ]),
-      chatMessageId: new FormControl(this.joinAsUserFormState.chatMessageId,[]),
-      userCreationDate: new FormControl(this.joinAsUserFormState.userCreationDate,[]),
-      profileImagePath: new FormControl(this.joinAsUserFormState.profileImagePath)
-    })
+        chatMessageId: new FormControl(
+          this.joinAsUserFormState.chatMessageId,
+          []
+        ),
+        userCreationDate: new FormControl(
+          this.joinAsUserFormState.userCreationDate,
+          []
+        ),
+        profileImagePath: new FormControl(
+          this.joinAsUserFormState.profileImagePath
+        ),
+      },
+      { validators: this.checkPasswords }
+    );
+    this.filteredOptions = this.domain.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value))
+    );
   }
 
   joinAsUserSubmit() {
@@ -95,7 +113,7 @@ export class RegisterJoinAsUserComponent implements OnInit {
           this.notificationService.showError(error.message, 'Error');
         }
       );
-    } 
+    }
   }
 
   createFormData(mentee: ICreateMentee): FormData {
@@ -161,12 +179,27 @@ export class RegisterJoinAsUserComponent implements OnInit {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
+      reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (event) => { // called once readAsDataURL is completed
+      reader.onload = (event) => {
         this.url = event.target.result as string;
-      }
+      };
       this.joinAsUserFormState.profileImagePath = this.url;
     }
+  }
+
+  checkPasswords(group: FormGroup) {
+    const password = group.get('password').value;
+    const confirmPassword = group.get('confirmPassword').value;
+
+    return password === confirmPassword ? null : { notSame: true };
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter((option) =>
+      option.toLowerCase().includes(filterValue)
+    );
   }
 }

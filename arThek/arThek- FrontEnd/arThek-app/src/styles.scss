@@ -5,3 +5,15 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
+.cdk-overlay-container{
+    background: #D1DEFF;
+    color: white;
+    font-family: Roboto;
+    z-index: 1000;
+    opacity: 1;
+    position: relative;
+    left: 44%;
+    top: 25px;
+    width: 295px;
+}

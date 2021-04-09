@@ -12,20 +12,25 @@
             [src]="
               url ? url : '../../../assets/images/profile-image-default.png'
             "
-            />
-            <span>Change Image</span>
-          </label>
-          <input
+          />
+          <span>Change Image</span>
+        </label>
+        <input
           id="profile-image-input"
           type="file"
           (change)="onSelectImage($event)"
-          [formControl] = "profileImagePath"
+          [formControl]="profileImagePath"
         />
       </div>
       <mat-form-field class="form-container--inputs">
         <label>Email</label>
         <input class="form-input" type="email" [formControl]="email" matInput />
+      </mat-form-field>
+      <mat-error *ngIf="email.hasError('email')"
+        >Email typo is not valid.</mat-error
+      >
 
+      <mat-form-field class="form-container--inputs">
         <label>Password</label>
         <input
           matInput
@@ -33,21 +38,41 @@
           type="password"
           [formControl]="password"
         />
+      </mat-form-field>
 
+      <mat-form-field class="form-container--inputs">
         <label>Confirm Password</label>
         <input
           matInput
           class="form-input"
           type="password"
           [formControl]="confirmPassword"
+          [errorStateMatcher]="matcher"
         />
+      </mat-form-field>
+      <mat-error *ngIf="joinAsUserForm.hasError('notSame')">
+        Passwords do not match
+      </mat-error>
 
-        <label>Domain</label>
-        <input matInput class="form-input" type="text" [formControl]="domain" />
-
-        <mat-error *ngIf="email.hasError('email')"
-          >Email typo is not valid.</mat-error
-        >
+      <mat-form-field class="form-container--inputs">
+        <section class="domain-auto-complete">
+          <label>Domain</label>
+          <input
+            matInput
+            class="form-input"
+            type="text"
+            [formControl]="domain"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option
+              *ngFor="let option of filteredOptions | async"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </section>
       </mat-form-field>
 
       <button
