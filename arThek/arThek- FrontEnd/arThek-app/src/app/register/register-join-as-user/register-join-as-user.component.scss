@@ -48,7 +48,6 @@
         @include flex-align-center;
         .form-container--inputs {
             @include flex-align-center;
-            padding: 20%;
             .form-input {
                 padding: 10px 100px 10px 10px;
                 margin-bottom: 20px;
@@ -88,6 +87,9 @@
         }
         .mat-error {
             color: #ff0000;
+            position: relative;
+            right: 8%;
+            top: -20px;
         }
         button.submit-button[disabled] {
             cursor: no-drop;

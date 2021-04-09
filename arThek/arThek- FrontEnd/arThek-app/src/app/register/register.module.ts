@@ -6,6 +6,7 @@ import { RegisterUserTypeComponent } from './register-user-type/register-user-ty
 import { RegisterJoinAsUserComponent } from './register-join-as-user/register-join-as-user.component';
 import { RegisterJoinAsMentorComponent } from './register-join-as-mentor/register-join-as-mentor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
@@ -20,6 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     RegisterRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,
   ],
