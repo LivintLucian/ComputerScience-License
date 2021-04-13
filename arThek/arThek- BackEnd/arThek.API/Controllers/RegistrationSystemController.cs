@@ -5,6 +5,7 @@ using arThek.Entities.BaseEntities;
 using arThek.ServiceAbstraction;
 using arThek.ServiceAbstraction.DTOs;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -69,18 +70,15 @@ namespace arThek.API.Controllers
             return Ok();
         }
 
-        [HttpPut("Mentor/MentorType/{id}")]
-        public async Task<IActionResult> DefineTypeOfMentor(MentorDto mentorDto, Guid id, bool isVolunteer)
+        [HttpPut("Mentor/MentorType")]
+        public async Task<IActionResult> DefineTypeOfMentor(bool isVolunteer)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            mentorDto.IsVolunteer =
-                isVolunteer ? mentorDto.IsVolunteer = true : mentorDto.IsVolunteer = false;
-
-            await _mentorService.UpdateAsync(mentorDto, id);
+            await _mentorService.UpdateLastMentorAdded(isVolunteer);
 
             return Ok();
         }

@@ -1,0 +1,145 @@
+@import "../../../assets/scss/flex.scss";
+@import "../../../assets/scss/div-positions.scss";
+
+.joinAsMentor-container {
+    .steps {
+        position: relative;
+        background-color: #adadad;
+        border-radius: 5px;
+        font-size: 0;
+        margin-left: 20px;
+        padding: 5px;
+        top: 40px;
+    }
+
+    .steps:before {
+        position: absolute;
+        left: -20px;
+        top: 0;
+        content: "";
+
+        background-color: black;
+        border-radius: 5px;
+        font-size: 0;
+        padding: 5px;
+        margin-left: -60px;
+    }
+
+    .steps:after {
+        position: absolute;
+        left: 20px;
+        top: 0;
+        content: "";
+        background-color: #adadad;
+        border-radius: 5px;
+        font-size: 0;
+        padding: 5px;
+        margin-left: 60px;
+    }
+    h1 {
+        position: relative;
+        top: 100px;
+
+        font-family: Roboto;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 41px;
+    }
+    @include div-center-screen;
+    @include flex-align-center;
+    .joinAsMentor-form {
+        .profile-image {
+            z-index: -1;
+            position: relative;
+            right: 70%;
+            top: 150px;
+
+            display: flex;
+            flex-direction: column;
+            label {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                right: 30%;
+                span {
+                    color: #699eee;
+                }
+                span:hover {
+                    cursor: pointer;
+                }
+            }
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+            }
+            #profile-image-input {
+                display: none;
+            }
+        }
+    }
+    .form-container {
+        @include flex-align-center;
+        .form-container--inputs {
+            @include flex-align-center;
+            .form-input {
+                padding: 10px 100px 10px 10px;
+                margin-bottom: 20px;
+                border: 1px solid #929292;
+                &::placeholder,
+                &:focus {
+                    font-family: Andika;
+                    font-size: 15px;
+                    line-height: 25px;
+
+                    color: #929292;
+                    white-space: nowrap;
+                }
+            }
+        }
+        .submit-button {
+            position: relative;
+            align-self: flex-start;
+            width: 173px;
+            height: 41px;
+
+            font-family: Roboto;
+            font-size: 25px;
+            line-height: 29px;
+
+            color: #ffffff;
+            border: none;
+            text-decoration: none;
+
+            background: #699eee;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+
+            z-index: 1;
+
+            cursor: pointer;
+        }
+        .mat-error {
+            color: #ff0000;
+            position: relative;
+            right: 8%;
+            top: -20px;
+        }
+        button.submit-button[disabled] {
+            cursor: no-drop;
+            opacity: 0.5;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        top: 0 !important;
+    }
+    .joinAsMentor-form {
+        .profile-image {
+            right: 0 !important;
+            top: 0 !important;
+        }
+    }
+}

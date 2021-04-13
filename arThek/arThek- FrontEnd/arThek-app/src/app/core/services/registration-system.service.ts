@@ -22,4 +22,16 @@ export class RegistrationSystemService {
     return this.http.get<IMentee>(`${environment.baseAPI}/register/mentee/${id}`);
   }
 
+  createMentor(mentee: FormData) {
+    return this.http.post(`${environment.baseAPI}/mentor`, mentee);
+  }
+
+  getMentorById(id: string): Observable<IMentee> {
+    return this.http.get<IMentee>(`${environment.baseAPI}/mentor/profile/${id}`);
+  }
+
+  isMentorVolunteer(isVolunteer: boolean){
+    return this.http.put(`${environment.baseAPI}/register/mentor/mentorType?isVolunteer=${isVolunteer}`, {});
+  }
+
 }

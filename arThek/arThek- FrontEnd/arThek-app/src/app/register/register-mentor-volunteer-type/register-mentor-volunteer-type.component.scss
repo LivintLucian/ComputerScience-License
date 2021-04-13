@@ -1,0 +1,131 @@
+@import "../../../assets/scss/flex.scss";
+@import "../../../assets/scss/div-positions.scss";
+@import "../../../assets/scss/default-button.scss";
+
+// @include default-button;
+
+.volunteerType-container {
+    @include div-center-screen;
+    @include flex-align-center;
+    .steps {
+        position: relative;
+        background-color: black;
+        border-radius: 5px;
+        font-size: 0;
+        margin-left: 20px;
+        padding: 5px;
+    }
+
+    .steps:before {
+        position: absolute;
+        left: -20px;
+        top: 0;
+        content: "";
+
+        background-color: #adadad;
+        border-radius: 5px;
+        font-size: 0;
+        padding: 5px;
+        margin-left: -60px;
+    }
+
+    .steps:after {
+        position: absolute;
+        left: 20px;
+        top: 0;
+        content: "";
+        background-color: #adadad;
+        border-radius: 5px;
+        font-size: 0;
+        padding: 5px;
+        margin-left: 60px;
+    }
+    h1 {
+        font-family: Roboto;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 41px;
+    }
+    .volunteerType-container--form {
+        display: flex;
+        align-items: center;
+        .join-as-volunteer {
+            display: flex;
+            .volunteer--card {
+                margin-right: 10px;
+
+                box-sizing: border-box;
+                box-shadow: 8px 4px 25px rgba(0, 0, 0, 0.25);
+            }
+            img {
+            }
+            button {
+            }
+        }
+        span {
+            display: flex;
+            align-self: center;
+            width: 200px;
+            font-family: Andika;
+            font-size: 14px;
+            line-height: 23px;
+        }
+        .delimitator {
+            height: 300px;
+
+            border: 1px solid #000000;
+            margin: 1%;
+        }
+        .get-paid {
+            display: flex;
+            span {
+                display: flex;
+                align-self: center;
+                width: 200px;
+                font-family: Andika;
+                font-size: 14px;
+                line-height: 23px;
+            }
+            .volunteer--card {
+                margin-left: 10px;
+            }
+            img {
+            }
+            button {
+            }
+        }
+    }
+}
+
+img {
+    position: relative;
+    top: 10%;
+
+    width: 75px;
+    height: 75px;
+}
+
+button {
+    position: relative;
+    top: -10%;
+
+    width: 135px;
+    height: 38px;
+
+    font-size: 14px;
+    line-height: 16px;
+
+    @include default-button;
+}
+
+.volunteer--card {
+    @include flex-align-center;
+    justify-content: space-between;
+
+    width: 200px;
+    height: 300px;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    box-shadow: 8px 4px 25px rgba(0, 0, 0, 0.25);
+}

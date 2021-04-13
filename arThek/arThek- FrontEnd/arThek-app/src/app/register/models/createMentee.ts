@@ -7,7 +7,6 @@ export interface IMentee{
     confirmPassword: string,
     domain: string,
     profileImagePath: string,
-    chatMessageId: string,
     userCreationDate: string
 }
 
@@ -20,6 +19,5 @@ export interface ICreateMentee{
     confirmPassword: string,
     domain: string,
     profileImagePath: string,
-    chatMessageId: string,
     userCreationDate: string
 }

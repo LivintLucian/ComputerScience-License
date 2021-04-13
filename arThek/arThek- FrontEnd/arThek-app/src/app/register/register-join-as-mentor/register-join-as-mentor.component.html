@@ -1,1 +1,88 @@
-<p>register-join-as-mentor works!</p>
+<div class="joinAsMentor-container">
+  <span class="steps"></span>
+  <h1>Create your Pressly Account</h1>
+  <div class="joinAsMentor-form">
+    <form
+      class="form-container"
+      [formGroup]="joinAsMentorForm"
+      (ngSubmit)="joinAsMentorSubmit()"
+    >
+      <div class="profile-image">
+        <label for="profile-image-input">
+          <img
+            [src]="
+              url ? url : '../../../assets/images/profile-image-default.png'
+            "
+          />
+          <span>Change Image</span>
+        </label>
+        <input
+          id="profile-image-input"
+          type="file"
+          (change)="onSelectImage($event)"
+          [formControl]="profileImagePath"
+        />
+      </div>
+      <mat-form-field class="form-container--inputs">
+        <label>Email</label>
+        <input class="form-input" type="email" [formControl]="email" matInput />
+      </mat-form-field>
+      <mat-error *ngIf="email.hasError('email')"
+        >Email typo is not valid.</mat-error
+      >
+
+      <mat-form-field class="form-container--inputs">
+        <label>Password</label>
+        <input
+          matInput
+          class="form-input"
+          type="password"
+          [formControl]="password"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="form-container--inputs">
+        <label>Confirm Password</label>
+        <input
+          matInput
+          class="form-input"
+          type="password"
+          [formControl]="confirmPassword"
+          [errorStateMatcher]="matcher"
+        />
+      </mat-form-field>
+      <mat-error *ngIf="joinAsMentorForm.hasError('notSame')">
+        Passwords do not match
+      </mat-error>
+
+      <mat-form-field class="form-container--inputs">
+        <section class="domain-auto-complete">
+          <label>Domain</label>
+          <input
+            matInput
+            class="form-input"
+            type="text"
+            [formControl]="domain"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option
+              *ngFor="let option of filteredOptions | async"
+              [value]="option"
+            >
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </section>
+      </mat-form-field>
+
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="!joinAsMentorForm.valid"
+      >
+        <span class="text-button-login">Next</span>
+      </button>
+    </form>
+  </div>
+</div>

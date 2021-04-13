@@ -4,5 +4,8 @@ using System.Threading.Tasks;
 
 namespace arThek.Entities.RepositoryInterfaces
 {
-    public interface IMentorRepository : IGenericRepository<Mentor> { }
+    public interface IMentorRepository : IGenericRepository<Mentor> 
+    {
+        Task<Mentor> GetLastMentorAdded();
+    }
 }

@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace arThek.Infrastructure.Configurations
 {
@@ -22,7 +21,6 @@ namespace arThek.Infrastructure.Configurations
                     Password = "q123w321",
                     AboutMe = "Logo Designer",
                     Domain = "Designer",
-                    Experience = "I've on the market since 2007",
                     Email = "livintlucian@gmail.com",
                     IsVolunteer = false,
                     Articles = new List<Article>(),
@@ -32,7 +30,6 @@ namespace arThek.Infrastructure.Configurations
                     Basic = null,
                     Premium = null,
                     Standard = null,
-                    ChatMessageId = new Guid("c070b2a0-2b90-40c1-80ea-722294ceccf3"),
                 });
         }
     }
