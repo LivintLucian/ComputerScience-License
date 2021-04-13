@@ -20,7 +20,7 @@ namespace arThek.API.Controllers
         #region Create | Update | Delete
 
         [HttpPost]
-        public async Task<IActionResult> Create(MentorDto mentorDto)
+        public async Task<IActionResult> Create([FromForm] MentorDto mentorDto)
         {
             if (!ModelState.IsValid)
             {

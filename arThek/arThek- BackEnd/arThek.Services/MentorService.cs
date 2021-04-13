@@ -67,6 +67,17 @@ namespace arThek.Services
 
             return _mapper.Map<MentorDto>(mentorUpdated);
         }
+        public async Task<MentorDto> UpdateLastMentorAdded(Boolean isVolunteer)
+        {
+            var mentorEntity = await _mentorRepository.GetLastMentorAdded();
+            if (mentorEntity is null)
+                throw new NotFoundException("The mentor wasn't found!");
+
+            mentorEntity.IsVolunteer = isVolunteer;
+            var mentorUpdated = await _mentorRepository.UpdateAsync(mentorEntity);
+
+            return _mapper.Map<MentorDto>(mentorUpdated);
+        }
         public async Task<MentorDto> DeleteAsync(Guid id)
         {
             var mentorEntity = await _mentorRepository.GetByIdAsync(id);

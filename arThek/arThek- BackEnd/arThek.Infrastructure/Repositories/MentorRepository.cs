@@ -27,5 +27,12 @@ namespace arThek.Infrastructure.Repositories
                 .Include(p => p.Premium)
                 .SingleOrDefaultAsync(x => x.Id == id);
         }
+
+        public async Task<Mentor> GetLastMentorAdded()
+        {
+            return await _dbSet
+                .OrderByDescending(t => t.UserCreationDate)
+                .FirstAsync();
+        }
     }
 }

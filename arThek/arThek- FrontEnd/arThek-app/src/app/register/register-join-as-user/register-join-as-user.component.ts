@@ -21,7 +21,13 @@ export class RegisterJoinAsUserComponent implements OnInit {
   joinAsUserFormState: IMentee;
   joinAsUserForm: FormGroup;
   matcher = new MyErrorStateMatcher();
-  options: string[] = ['Logo Designer', 'Graphic Designer', 'Ui/Ux','Web Designer','Animation Designer'];
+  options: string[] = [
+    'Logo Designer',
+    'Graphic Designer',
+    'Ui/Ux',
+    'Web Designer',
+    'Animation Designer',
+  ];
   filteredOptions: Observable<string[]>;
 
   constructor(
@@ -43,12 +49,11 @@ export class RegisterJoinAsUserComponent implements OnInit {
 
           this.joinAsUserForm.patchValue({
             userRole: data.userRole,
-            userName: data.userName,
+            userName: data.email.split('@')[0],
             email: data.email,
             password: data.password,
             confirmPassword: data.confirmPassword,
             domain: data.domain,
-            chatMessageId: data.chatMessageId,
             userCreationDate: moment(data.userCreationDate),
             profileImagePath: data.profileImagePath,
           });
@@ -64,7 +69,10 @@ export class RegisterJoinAsUserComponent implements OnInit {
     this.joinAsUserForm = new FormGroup(
       {
         userRole: new FormControl(this.joinAsUserFormState.userRole, []),
-        userName: new FormControl(this.joinAsUserFormState.userName, []),
+        userName: new FormControl(
+          this.joinAsUserFormState.email.split('@')[0],
+          []
+        ),
         email: new FormControl(this.joinAsUserFormState.email, [
           Validators.required,
           Validators.email,
@@ -79,10 +87,6 @@ export class RegisterJoinAsUserComponent implements OnInit {
         domain: new FormControl(this.joinAsUserFormState.domain, [
           Validators.required,
         ]),
-        chatMessageId: new FormControl(
-          this.joinAsUserFormState.chatMessageId,
-          []
-        ),
         userCreationDate: new FormControl(
           this.joinAsUserFormState.userCreationDate,
           []
@@ -121,7 +125,13 @@ export class RegisterJoinAsUserComponent implements OnInit {
     let clone = Object.assign({}, mentee);
 
     for (var key in clone) {
-      formData.append(key, mentee[key]);
+      if (key === 'userName'){
+        formData.append(key, mentee['email'].split('@')[0]);
+        console.log(mentee['email'].split('@')[0]);
+      }
+      else {
+        formData.append(key, mentee[key]);
+      }
     }
 
     return formData;
@@ -137,11 +147,7 @@ export class RegisterJoinAsUserComponent implements OnInit {
       confirmPassword: '',
       domain: '',
       profileImagePath: this.url,
-      chatMessageId: '',
       userCreationDate: moment()
-        .hour(8)
-        .minute(0)
-        .second(0)
         .format('YYYY-MM-DD[T]HH:mm'),
     };
   }
