@@ -83,15 +83,15 @@ namespace arThek.API.Controllers
             return Ok();
         }
 
-        [HttpPut("Mentor/Resume/{id}")]
-        public async Task<IActionResult> UpdateMentorResume(MentorDto mentorDto, Guid id)
+        [HttpPut("Mentor/Additional-Data")]
+        public async Task<IActionResult> UpdateMentorResume([FromForm] MentorAdditionalDataDto mentorDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            await _mentorService.UpdateMentorResume(mentorDto, id);
+            await _mentorService.UpdateMentorResume(mentorDto);
 
             return Ok();
         }

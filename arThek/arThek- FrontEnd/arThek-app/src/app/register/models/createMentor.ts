@@ -49,3 +49,11 @@ export interface ICreateMentor{
 export interface IMentorVolunteerType{
     isVolunteer: boolean;
 }
+
+export interface IMentorAdditionalData{
+    linkdlUrl: string,
+    dribbleUrl: string,
+    behanceUrl: string,
+    carbonMadeUrl: string,
+    resume: File,
+}
