@@ -1,0 +1,157 @@
+@import "../../../assets/scss/flex.scss";
+@import "../../../assets/scss/div-positions.scss";
+@import "../../../assets/scss/default-button.scss";
+
+// @include default-button;
+
+.additionalData-container {
+    @include div-center-screen;
+    @include flex-align-center;
+    .steps {
+        position: relative;
+        background-color: #adadad;
+        border-radius: 5px;
+        font-size: 0;
+        margin-left: 20px;
+        padding: 5px;
+    }
+
+    .steps:before {
+        position: absolute;
+        left: -20px;
+        top: 0;
+        content: "";
+
+        background-color: #adadad;
+        border-radius: 5px;
+        font-size: 0;
+        padding: 5px;
+        margin-left: -60px;
+    }
+
+    .steps:after {
+        position: absolute;
+        left: 20px;
+        top: 0;
+        content: "";
+        background-color: black;
+        border-radius: 5px;
+        font-size: 0;
+        padding: 5px;
+        margin-left: 60px;
+    }
+    h1 {
+        font-family: Roboto;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 41px;
+    }
+    .additionalData-container--form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .form {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3%;
+            .form--resume {
+                display: flex;
+                flex-direction: column;
+                span {
+                    font-size: 25px;
+                    padding-bottom: 3%;
+                }
+                .span--linkdln {
+                    font-family: Roboto;
+                    font-weight: bold;
+                    font-size: 25px;
+                    line-height: 29px;
+
+                    white-space: nowrap;
+                    padding-bottom: 3%;
+                }
+                .form-links--linkdn {
+                    display: flex;
+                    flex-direction: column;
+                    input {
+                        margin-bottom: 3%;
+                    }
+                }
+                .form-add--resume {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            .delimitator {
+                height: 300px;
+
+                border: 1px solid #000000;
+                margin: 2%;
+            }
+            .form--links {
+                display: flex;
+                flex-direction: column;
+                .form-links--behance {
+                    display: flex;
+                    margin-top: 10%;
+                }
+                .form-links--carbonMade {
+                    display: flex;
+                }
+                .form-links--dribble {
+                    display: flex;
+                }
+            }
+        }
+        button {
+            width: 193px;
+            height: 51px;
+
+            @include default-button;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 23px;
+
+            color: #ffffff;
+        }
+    }
+}
+
+img {
+    width: 50px;
+    height: 50px;
+
+    margin-right: 1%;
+}
+
+input {
+    width: 514px;
+    height: 36px;
+
+    border: none;
+    border-bottom: 1px solid #000000;
+    transform: rotate(0.01deg);
+
+    background: #f2f2f2;
+    margin-bottom: 10%;
+}
+
+#input-resume-label {
+    background: transparent;
+    border: 1px solid #000000;
+    transform: rotate(0.01deg);
+
+    font-family: Andika;
+    font-size: 18px;
+    line-height: 29px;
+
+    color: #699eee;
+}
+
+#input-resume {
+    display: none;
+}
