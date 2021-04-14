@@ -9,6 +9,10 @@ namespace arThek.ServiceAbstraction.DTOs
     {
         public string AboutMe { get; set; }
         public string Experience { get; set; }
+        public string LinkdlnUrl { get; set; }
+        public string DribbleUrl { get; set; }
+        public string BehanceUrl { get; set; }
+        public string CarbonMadeUrl { get; set; }
         public IFormFile Resume { get; set; }
         public bool IsVolunteer { get; set; }
         public Guid BasicMentorShipId { get; set; }

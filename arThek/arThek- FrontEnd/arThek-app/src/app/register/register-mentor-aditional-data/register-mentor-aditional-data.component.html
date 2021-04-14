@@ -1,12 +1,16 @@
 <div class="additionalData-container">
   <span class="steps"></span>
   <h1>Upload details about ur work</h1>
-  <form class="additionalData-container--form">
+  <form
+    class="additionalData-container--form"
+    [formGroup]="joinAsMentorForm"
+    (ngSubmit)="joinAsMentorSubmit()"
+  >
     <div class="form">
       <div class="form--resume">
         <div class="form-links--linkdn">
           <span class="span--linkdln">Add your Linkedln profile or resume</span>
-          <input type="text" />
+          <input type="text" [formControl]="linkdlnUrl" />
         </div>
         <div class="form-add--resume">
           <span>or</span>
@@ -17,25 +21,30 @@
             id="input-resume"
             type="file"
             placeholder="+ Upload your resume/CV (PDF only, max size 2MB)"
+            [formControl]="resume"
+            (change)="selectFile($event)"
           />
+          <span class="resume-uploaded">{{resumeSelected ? resumeSelected.name + ' ✔' : ''}}</span>
         </div>
       </div>
       <div class="delimitator"></div>
       <div class="form--links">
         <div class="form-links--behance">
           <img src="../../../assets/images/behance-logo.png" />
-          <input type="url" />
+          <input type="url" [formControl]="behanceUrl" />
         </div>
         <div class="form-links--carbonMade">
           <img src="../../../assets/images/carbonMade-logo.png" />
-          <input type="url" />
+          <input type="url" [formControl]="carbonMadeUrl" />
         </div>
         <div class="form-links--dribble">
           <img src="../../../assets/images/dribble-logo.png" />
-          <input type="url" />
+          <input type="url" [formControl]="dribbleUrl" />
         </div>
       </div>
     </div>
-    <button>Submit profile</button>
+    <button type="submit" [disabled]="!joinAsMentorForm.valid">
+      Submit profile
+    </button>
   </form>
 </div>

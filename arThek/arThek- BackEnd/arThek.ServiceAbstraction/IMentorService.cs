@@ -15,6 +15,6 @@ namespace arThek.ServiceAbstraction
         Task<MentorDto> UpdateLastMentorAdded(Boolean isVolunteer);
         Task<MentorDto> DeleteAsync(Guid id);
         Task<List<ViewMentorDto>> GetFilteredTrainings(MentorParametersDto mentorParametersDto);
-        Task<MentorDto> UpdateMentorResume(MentorDto mentorDto, Guid id);
+        Task<MentorAdditionalDataDto> UpdateMentorResume(MentorAdditionalDataDto mentorDto);
     }
 }
