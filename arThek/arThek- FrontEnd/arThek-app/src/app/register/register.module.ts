@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RegisterMentorVolunteerTypeComponent } from './register-mentor-volunteer-type/register-mentor-volunteer-type.component';
 import { RegisterMentorAditionalDataComponent } from './register-mentor-aditional-data/register-mentor-aditional-data.component';
+import { RegisterMentorProfileComponent } from './register-mentor-profile/register-mentor-profile.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RegisterMentorAditionalDataComponent } from './register-mentor-aditiona
     RegisterJoinAsMentorComponent,
     RegisterMentorVolunteerTypeComponent,
     RegisterMentorAditionalDataComponent,
+    RegisterMentorProfileComponent,
   ],
   imports: [
     CommonModule,

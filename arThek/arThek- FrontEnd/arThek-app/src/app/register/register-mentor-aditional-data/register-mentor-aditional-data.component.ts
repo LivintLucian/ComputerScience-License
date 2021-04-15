@@ -35,7 +35,7 @@ export class RegisterMentorAditionalDataComponent {
 
   selectFile(ev) {
     this.resumeSelected = <File>ev.target.files[0];
-    
+
     if (!this.resumeSelected.name.endsWith('.pdf')) {
       this.joinAsMentorForm.setErrors({ format: true });
     } else {
@@ -50,7 +50,7 @@ export class RegisterMentorAditionalDataComponent {
 
     let formData = this.createFormData(mentor);
     this.registrationService.mentorAdditionalData(formData).subscribe((u) => {
-      this.router.navigate(['']);
+      this.router.navigate(['mentor/profile']);
     });
   }
 
