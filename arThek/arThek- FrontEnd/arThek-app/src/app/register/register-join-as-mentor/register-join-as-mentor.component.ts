@@ -10,6 +10,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { MyErrorStateMatcher } from 'src/app/core/error-state-matcher/error-state-matcher';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-register-join-as-mentor',
@@ -29,12 +30,16 @@ export class RegisterJoinAsMentorComponent implements OnInit {
     'Animation Designer',
   ];
   filteredOptions: Observable<string[]>;
+  profileImage: File;
+  reader = new FileReader();
+  url: SafeUrl;
 
   constructor(
     private router: Router,
     private registrationService: RegistrationSystemService,
     private routeActivated: ActivatedRoute,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private domSanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -92,7 +97,7 @@ export class RegisterJoinAsMentorComponent implements OnInit {
           []
         ),
         profileImagePath: new FormControl(
-          this.joinAsMentorFormState.profileImagePath
+          ''
         ),
       },
       { validators: this.checkPasswords }
@@ -103,8 +108,33 @@ export class RegisterJoinAsMentorComponent implements OnInit {
     );
   }
 
+  selectFile(ev) {
+    this.profileImage = <File>ev.target.files[0];
+    const preview = document.querySelector('img');
+    const file = (<HTMLInputElement>document.querySelector('input[type=file]')).files[0];
+    const reader = new FileReader();
+
+    this.reader.onload = (ev) => this.url = this.domSanitizer.bypassSecurityTrustUrl(ev.target.result as string);
+    this.reader.readAsDataURL(new Blob([this.joinAsMentorFormState.profileImagePath]));
+    reader.addEventListener("load", function(){
+      preview.src = reader.result as string;
+    }, false)
+
+    if(file){
+      reader.readAsDataURL(file);
+    }
+
+    if (!this.profileImage.name.endsWith('.jpg')) {
+      this.joinAsMentorForm.setErrors({ format: true });
+    } else {
+      this.joinAsMentorForm.updateValueAndValidity();
+    }
+  }
+
   joinAsMentorSubmit() {
     let mentor = <ICreateMentee>this.joinAsMentorForm.value;
+
+    mentor.profileImagePath = this.profileImage;
 
     let formData = this.createFormData(mentor);
     if (this.id === undefined) {
@@ -146,7 +176,7 @@ export class RegisterJoinAsMentorComponent implements OnInit {
       password: '',
       confirmPassword: '',
       domain: '',
-      profileImagePath: this.url,
+      profileImagePath: undefined,
       userCreationDate: moment()
         .format('YYYY-MM-DD[T]HH:mm'),
     };
@@ -175,20 +205,6 @@ export class RegisterJoinAsMentorComponent implements OnInit {
   }
   get userCreationDate() {
     return this.joinAsMentorForm.get('userCreationDate');
-  }
-
-  url: string;
-  onSelectImage(event) {
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
-
-      reader.readAsDataURL(event.target.files[0]);
-
-      reader.onload = (event) => {
-        this.url = event.target.result as string;
-      };
-      this.joinAsMentorFormState.profileImagePath = this.url;
-    }
   }
 
   checkPasswords(group: FormGroup) {

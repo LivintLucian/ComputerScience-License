@@ -14,14 +14,33 @@ namespace arThek.Services.MapperProfiles
                 .ForMember(s => s.StandardMentorShipId, ss => ss.MapFrom(ss => ss.Standard.Id))
                 .ForMember(p => p.PremiumMentorShipId, pp => pp.MapFrom(pp => pp.Premium.Id))
                 .ForMember(r => r.Resume,
-                    rr => rr.Ignore());
+                    rr => rr.Ignore())
+            .ForMember(r => r.ProfileImagePath,
+                rr => rr.Ignore());
 
             CreateMap<MentorDto, Mentor>()
                 .ForMember(r => r.Resume,
+                    rr => rr.Ignore())
+            .ForMember(r => r.ProfileImagePath,
                     rr => rr.Ignore());
+
+            CreateMap<MentorProfileUpdateDto, Mentor>()
+                .ForMember(r => r.Resume,
+                    rr => rr.Ignore())
+            .ForMember(r => r.ProfileImagePath,
+                    rr => rr.Ignore());
+
+            CreateMap<Mentor, MentorProfileUpdateDto>()
+                .ForMember(b => b.BasicMentorShipId, bb => bb.MapFrom(bb => bb.Basic.Id))
+                .ForMember(s => s.StandardMentorShipId, ss => ss.MapFrom(ss => ss.Standard.Id))
+                .ForMember(p => p.PremiumMentorShipId, pp => pp.MapFrom(pp => pp.Premium.Id))
+            .ForMember(r => r.ProfileImagePath,
+                rr => rr.Ignore());
 
             CreateMap<MentorAdditionalDataDto, Mentor>()
                 .ForMember(r => r.Resume,
+                    rr => rr.Ignore())
+            .ForMember(r => r.ProfileImagePath,
                     rr => rr.Ignore());
 
             CreateMap<Mentor, MentorAdditionalDataDto>()
@@ -48,7 +67,9 @@ namespace arThek.Services.MapperProfiles
 
             #region CreateMenteeDto
 
-            CreateMap<CreateMenteeDto, Mentee>();
+            CreateMap<CreateMenteeDto, Mentee>()
+                .ForMember(r => r.ProfileImagePath,
+                rr => rr.Ignore());
 
             #endregion
 

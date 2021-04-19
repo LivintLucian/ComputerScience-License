@@ -4,7 +4,9 @@ using arThek.Entities.RepositoryInterfaces;
 using arThek.ServiceAbstraction;
 using arThek.ServiceAbstraction.DTOs;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace arThek.Services
@@ -22,6 +24,7 @@ namespace arThek.Services
         public async Task<MenteeDto> CreateAsync(CreateMenteeDto createMenteeDto)
         {
             var menteeDTO = _mapper.Map<Mentee>(createMenteeDto);
+            menteeDTO.ProfileImagePath = GetByteFileArray(createMenteeDto.ProfileImagePath);
             var menteeAddedToDB = await _menteeRepository.CreateAsync(menteeDTO);
 
             return _mapper.Map<MenteeDto>(menteeAddedToDB);
@@ -53,6 +56,21 @@ namespace arThek.Services
         public MenteeDto GetLastMenteeCreated()
         {
             return _mapper.Map<MenteeDto>(_menteeRepository.GetLastMenteeCreated());
+        }
+
+        private byte[] GetByteFileArray(IFormFile byteFile)
+        {
+            byte[] array = null;
+            if (byteFile != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    byteFile.CopyTo(ms);
+                    array = ms.ToArray();
+                }
+            }
+
+            return array;
         }
     }
 }

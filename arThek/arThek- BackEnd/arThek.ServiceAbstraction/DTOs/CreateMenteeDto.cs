@@ -1,4 +1,5 @@
 ﻿using arThek.Entities.BaseEntities;
+using Microsoft.AspNetCore.Http;
 using System;
 
 namespace arThek.ServiceAbstraction.DTOs
@@ -10,7 +11,7 @@ namespace arThek.ServiceAbstraction.DTOs
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string Domain { get; set; }
-        public string ProfileImagePath { get; set; }
+        public IFormFile ProfileImagePath { get; set; }
         public DateTime UserCreationDate { get; set; }
     }
 }

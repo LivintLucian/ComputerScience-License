@@ -18,8 +18,8 @@
         <input
           id="profile-image-input"
           type="file"
-          (change)="onSelectImage($event)"
           [formControl]="profileImagePath"
+          (change)="selectFile($event)"
         />
       </div>
       <mat-form-field class="form-container--inputs">

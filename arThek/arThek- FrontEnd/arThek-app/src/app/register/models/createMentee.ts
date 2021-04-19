@@ -6,7 +6,7 @@ export interface IMentee{
     password: string,
     confirmPassword: string,
     domain: string,
-    profileImagePath: string,
+    profileImagePath: Uint8Array,
     userCreationDate: string
 }
 
@@ -18,6 +18,6 @@ export interface ICreateMentee{
     password: string,
     confirmPassword: string,
     domain: string,
-    profileImagePath: string,
+    profileImagePath: File,
     userCreationDate: string
 }

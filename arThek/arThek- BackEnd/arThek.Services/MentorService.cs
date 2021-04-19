@@ -35,6 +35,7 @@ namespace arThek.Services
         {
             var mentorDTO = _mapper.Map<Mentor>(mentorDto);
             mentorDTO.UserRole = Entities.BaseEntities.UserRole.Mentor;
+            mentorDTO.ProfileImagePath = GetByteFileArray(mentorDto.ProfileImagePath);
             var mentorAddedToDB = await _mentorRepository.CreateAsync(mentorDTO);
 
             return _mapper.Map<MentorDto>(mentorAddedToDB);
@@ -50,6 +51,13 @@ namespace arThek.Services
 
             return _mapper.Map<MentorDto>(mentor);
         }
+        public async Task<MentorProfileUpdateDto> GetLastMentorAsync()
+        {
+            var lastMentor = await _mentorRepository.GetLastMentorAdded();
+
+            return _mapper.Map<MentorProfileUpdateDto>(lastMentor);
+        }
+
         public async Task<IEnumerable<MentorDto>> GetAllMentors()
         {
             var mentors = (await _mentorRepository.GetAll()).ToList();
@@ -119,6 +127,19 @@ namespace arThek.Services
             var mentorUpdated = await _mentorRepository.UpdateAsync(mentorEntity);
 
             return _mapper.Map<MentorAdditionalDataDto>(mentorUpdated);
+        }
+        public async Task<MentorProfileUpdateDto> UpdateMentorProfile(MentorProfileUpdateDto mentorDto)
+        {
+
+            var mentorEntity = await _mentorRepository.GetLastMentorAdded();
+            if (mentorEntity is null)
+                throw new NotFoundException("The mentor wasn't found!");
+
+            _mapper.Map(mentorDto, mentorEntity);
+
+            var mentorUpdated = await _mentorRepository.UpdateAsync(mentorEntity);
+
+            return _mapper.Map<MentorProfileUpdateDto>(mentorUpdated);
         }
         private byte[] GetByteFileArray(IFormFile byteFile)
         {

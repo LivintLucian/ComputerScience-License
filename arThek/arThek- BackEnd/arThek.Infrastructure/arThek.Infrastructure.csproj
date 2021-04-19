@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\arThek.Entities\arThek.Entities.csproj" />
+    <ProjectReference Include="..\arThek.ServiceAbstraction\arThek.ServiceAbstraction.csproj" />
   </ItemGroup>
 
 </Project>

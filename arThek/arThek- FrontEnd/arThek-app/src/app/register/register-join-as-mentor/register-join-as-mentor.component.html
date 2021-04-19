@@ -10,17 +10,15 @@
       <div class="profile-image">
         <label for="profile-image-input">
           <img
-            [src]="
-              url ? url : '../../../assets/images/profile-image-default.png'
-            "
+            [src]="url ? url : '../../../assets/images/profile-image-default.png'"
           />
           <span>Change Image</span>
         </label>
         <input
           id="profile-image-input"
           type="file"
-          (change)="onSelectImage($event)"
           [formControl]="profileImagePath"
+          (change)="selectFile($event)"
         />
       </div>
       <mat-form-field class="form-container--inputs">

@@ -24,7 +24,7 @@ namespace arThek.Infrastructure.Configurations
                     Email = "livintlucian@gmail.com",
                     IsVolunteer = false,
                     Articles = new List<Article>(),
-                    ProfileImagePath = "",
+                    ProfileImagePath = new byte[15],
                     Resume = new byte[15],
                     UserRole = UserRole.Mentor,
                     Basic = null,

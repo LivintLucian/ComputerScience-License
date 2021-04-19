@@ -1110,6 +1110,7 @@
       "arThek.Entities/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
         },
         "runtime": {

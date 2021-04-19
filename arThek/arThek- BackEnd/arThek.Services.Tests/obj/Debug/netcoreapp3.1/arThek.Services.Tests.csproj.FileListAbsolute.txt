@@ -190,6 +190,7 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tes
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\EntityFramework.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
@@ -239,6 +240,7 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tes
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
@@ -348,5 +350,3 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tes
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\obj\Debug\netcoreapp3.1\arThek.Services.Tests.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\obj\Debug\netcoreapp3.1\arThek.Services.Tests.pdb
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\obj\Debug\netcoreapp3.1\arThek.Services.Tests.genruntimeconfig.cache
-C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
-C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll

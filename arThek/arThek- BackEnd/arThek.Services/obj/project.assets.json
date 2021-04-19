@@ -1767,6 +1767,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
         },
         "compile": {
@@ -1786,7 +1787,8 @@
           "Microsoft.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
           "Microsoft.Extensions.Logging.Console": "5.0.0",
-          "arThek.Entities": "1.0.0"
+          "arThek.Entities": "1.0.0",
+          "arThek.ServiceAbstraction": "1.0.0"
         },
         "compile": {
           "bin/placeholder/arThek.Infrastructure.dll": {}

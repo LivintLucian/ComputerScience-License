@@ -95,6 +95,19 @@ namespace arThek.API.Controllers
 
             return Ok();
         }
+
+        [HttpPut("Mentor/Mentor-Profile")]
+        public async Task<IActionResult> UpdateMentorProfile([FromForm] MentorProfileUpdateDto mentorProfileUpdateDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            await _mentorService.UpdateMentorProfile(mentorProfileUpdateDto);
+
+            return Ok();
+        }
     }
 }
 

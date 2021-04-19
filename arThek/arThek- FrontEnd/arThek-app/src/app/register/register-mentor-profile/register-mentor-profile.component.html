@@ -1,25 +1,37 @@
-<div class="mentor-profile-content">
+<form
+  class="mentor-profile-content"
+  [formGroup]="joinAsMentorForm"
+  (ngSubmit)="joinAsMentorSubmit()"
+>
   <div class="mentor-profile--leftContent">
     <div class="mentor-basic-infos">
       <img
         class="mentor-profile-image"
-        src="../../../assets/images/delete-this.jpg"
+        [src]="url ? url : '../../../assets/images/profile-image-default.png'"
       />
-      <span>Jason Statham</span>
-      <span id="domain">Photographer</span>
+      <span>
+        {{ joinAsMentorFormState?.userName }}
+      </span>
+      <span id="domain">{{ joinAsMentorFormState?.domain }}</span>
     </div>
     <div class="mentor-links">
       <div class="form-links--behance">
         <img src="../../../assets/images/behance-logo.png" />
-        <a href="">https://www.behance.net/</a>
+        <a href="{{ joinAsMentorFormState?.behanceUrl }}">{{
+          joinAsMentorFormState?.behanceUrl
+        }}</a>
       </div>
       <div class="form-links--carbonMade">
         <img src="../../../assets/images/carbonMade-logo.png" />
-        <a href="">https://carbonmade.com/</a>
+        <a href="{{ joinAsMentorFormState?.carbonMadeUrl }}">{{
+          joinAsMentorFormState?.carbonMadeUrl
+        }}</a>
       </div>
       <div class="form-links--dribble">
         <img src="../../../assets/images/dribble-logo.png" />
-        <a href="">https://dribbble.com/</a>
+        <a href="{{ joinAsMentorFormState?.dribbleUrl }}">{{
+          joinAsMentorFormState?.dribbleUrl
+        }}</a>
       </div>
     </div>
   </div>
@@ -28,9 +40,9 @@
     <div class="mentor-about">
       <div class="mentor-about-finish">
         <h1>About Me</h1>
-        <button id="btn-submit">Finish</button>
+        <button type="submit" id="btn-submit">Finish</button>
       </div>
-      <textarea>smth about him</textarea>
+      <textarea [formControl]="aboutMe">smth about him</textarea>
     </div>
     <div class="mentor-more-about">
       <h1>Find out more about me!</h1>
@@ -42,7 +54,8 @@
         </div>
         <div class="download-resume-delimitator"></div>
         <label for="linkedln">
-          Visit my <span id="linkedln-link">#Linkedln</span></label
+          Visit my
+          <span id="linkedln-link">#Linkedln</span></label
         >
         <a id="linkedln"></a>
       </div>
@@ -92,4 +105,4 @@
       </div>
     </div>
   </div>
-</div>
+</form>

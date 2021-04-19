@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using arThek.ServiceAbstraction;
 using arThek.ServiceAbstraction.DTOs;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace arThek.API.Controllers
@@ -67,6 +68,14 @@ namespace arThek.API.Controllers
         public async Task<ActionResult<MentorDto>> GetById(Guid id)
         {
             return await _mentorService.GetByIdAsync(id);
+        }
+
+        [HttpGet("profile/lastMentor")]
+        public async Task<ActionResult<MentorProfileUpdateDto>> GetLastMentorAdded()
+        {
+            var lastMentor = await _mentorService.GetLastMentorAsync();
+
+            return lastMentor;
         }
 
         [HttpPost("filter")]
