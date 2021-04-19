@@ -23,8 +23,8 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstr
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.csprojAssemblyReference.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.AssemblyInfoInputs.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.AssemblyInfo.cs
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.csproj.CoreCompileInputs.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.csproj.CopyComplete
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.pdb
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.genruntimeconfig.cache
-C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.ServiceAbstraction\obj\Debug\netcoreapp3.1\arThek.ServiceAbstraction.csproj.CoreCompileInputs.cache

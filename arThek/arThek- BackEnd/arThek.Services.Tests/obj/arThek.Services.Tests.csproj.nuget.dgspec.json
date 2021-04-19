@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[10.1.1, )"
             },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -105,6 +109,9 @@
             "projectReferences": {
               "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj": {
                 "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj"
+              },
+              "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.ServiceAbstraction\\arThek.ServiceAbstraction.csproj": {
+                "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.ServiceAbstraction\\arThek.ServiceAbstraction.csproj"
               }
             }
           }

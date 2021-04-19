@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 
 namespace arThek.Entities.BaseEntities
 {
@@ -10,7 +11,7 @@ namespace arThek.Entities.BaseEntities
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string Domain { get; set; }
-        public string ProfileImagePath { get; set; }
+        public byte[] ProfileImagePath { get; set; }
         public DateTime UserCreationDate { get; set; }
     }
 }

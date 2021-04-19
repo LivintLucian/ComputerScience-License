@@ -31,8 +31,8 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\bin
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.csprojAssemblyReference.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.AssemblyInfoInputs.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.AssemblyInfo.cs
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.csproj.CoreCompileInputs.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.csproj.CopyComplete
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.pdb
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.genruntimeconfig.cache
-C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services\obj\Debug\netcoreapp3.1\arThek.Services.csproj.CoreCompileInputs.cache

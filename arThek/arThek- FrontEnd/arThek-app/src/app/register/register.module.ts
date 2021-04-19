@@ -8,6 +8,7 @@ import { RegisterJoinAsMentorComponent } from './register-join-as-mentor/registe
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RegisterMentorVolunteerTypeComponent } from './register-mentor-volunteer-type/register-mentor-volunteer-type.component';
 import { RegisterMentorAditionalDataComponent } from './register-mentor-aditional-data/register-mentor-aditional-data.component';
@@ -28,6 +29,7 @@ import { RegisterMentorProfileComponent } from './register-mentor-profile/regist
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
+    MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
   ],

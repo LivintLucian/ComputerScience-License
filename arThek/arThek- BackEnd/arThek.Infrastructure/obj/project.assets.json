@@ -60,6 +60,19 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Http.Features/5.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.0",
+          "System.IO.Pipelines": "5.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -1006,6 +1019,15 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
+      "System.IO.Pipelines/5.0.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
+        }
+      },
       "System.Linq/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1724,6 +1746,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
         },
         "compile": {
@@ -1731,6 +1754,21 @@
         },
         "runtime": {
           "bin/placeholder/arThek.Entities.dll": {}
+        }
+      },
+      "arThek.ServiceAbstraction/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "Microsoft.AspNetCore.Http.Features": "5.0.4",
+          "arThek.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/arThek.ServiceAbstraction.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/arThek.ServiceAbstraction.dll": {}
         }
       }
     }
@@ -1836,6 +1874,25 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.4": {
+      "sha512": "w4ffAN7/k9DvEGMvkA38iADqwqoEIiT7z4+KsdB6EUEZs7u/AAs46X0cEfoovYCPglw7EBXJO7MoafLdGw/2vQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/5.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.5.0.4.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -3998,6 +4055,32 @@
         "ref/xamarinwatchos10/_._",
         "system.io.filesystem.primitives.4.3.0.nupkg.sha512",
         "system.io.filesystem.primitives.nuspec"
+      ]
+    },
+    "System.IO.Pipelines/5.0.1": {
+      "sha512": "qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
+      "type": "package",
+      "path": "system.io.pipelines/5.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.IO.Pipelines.dll",
+        "lib/net461/System.IO.Pipelines.xml",
+        "lib/netcoreapp3.0/System.IO.Pipelines.dll",
+        "lib/netcoreapp3.0/System.IO.Pipelines.xml",
+        "lib/netstandard1.3/System.IO.Pipelines.dll",
+        "lib/netstandard1.3/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "ref/netcoreapp2.0/System.IO.Pipelines.dll",
+        "ref/netcoreapp2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.5.0.1.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Linq/4.3.0": {
@@ -6405,6 +6488,11 @@
       "type": "project",
       "path": "../arThek.Entities/arThek.Entities.csproj",
       "msbuildProject": "../arThek.Entities/arThek.Entities.csproj"
+    },
+    "arThek.ServiceAbstraction/1.0.0": {
+      "type": "project",
+      "path": "../arThek.ServiceAbstraction/arThek.ServiceAbstraction.csproj",
+      "msbuildProject": "../arThek.ServiceAbstraction/arThek.ServiceAbstraction.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6416,7 +6504,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.2",
       "Microsoft.Extensions.Logging.Console >= 5.0.0",
-      "arThek.Entities >= 1.0.0"
+      "arThek.Entities >= 1.0.0",
+      "arThek.ServiceAbstraction >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6452,6 +6541,9 @@
           "projectReferences": {
             "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj": {
               "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.Entities\\arThek.Entities.csproj"
+            },
+            "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.ServiceAbstraction\\arThek.ServiceAbstraction.csproj": {
+              "projectPath": "C:\\Users\\Livin\\Desktop\\arThek-License\\arThek\\arThek- BackEnd\\arThek.ServiceAbstraction\\arThek.ServiceAbstraction.csproj"
             }
           }
         }
