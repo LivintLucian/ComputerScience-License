@@ -7,15 +7,17 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HomeComponent, LoginComponent],
   imports: [
+    RouterModule,
     CommonModule,
     HomeRoutingModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ]
 })
 export class HomeModule { }

@@ -11,7 +11,7 @@ namespace arThek.Services.Filtering.Conditions
         private string _mentorCategory;
         public void AddFilterOptions(IFilterMentors options)
         {
-            _mentorCategory = options.Category;
+            _mentorCategory = options.Domain;
         }
 
         public bool IsSatisfied(Mentor mentor)

@@ -56,7 +56,7 @@ namespace arThek.API.Controllers
 
         #endregion
 
-        [HttpGet]
+        [HttpGet("getAll")]
         public async Task<IActionResult> GetAllMentorsAsync()
         {
             var mentorList = await _mentorService.GetAllMentors();

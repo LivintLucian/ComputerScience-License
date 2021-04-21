@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HeaderComponent } from './dashboard/header/header.component';
+import { MentorFilterComponent } from './dashboard/mentor-filter/mentor-filter.component';
 import { RegisterJoinAsMentorComponent } from './register/register-join-as-mentor/register-join-as-mentor.component';
 import { RegisterJoinAsUserComponent } from './register/register-join-as-user/register-join-as-user.component';
 import { RegisterMentorAditionalDataComponent } from './register/register-mentor-aditional-data/register-mentor-aditional-data.component';
@@ -36,6 +38,14 @@ const routes: Routes = [
     path: 'mentor/profile',
     component: RegisterMentorProfileComponent,
   },
+  {
+    path: 'dashboard',
+    component: HeaderComponent,
+  },
+  {
+    path: 'dashboard/mentors',
+    component: MentorFilterComponent
+  }
 ];
 
 @NgModule({
