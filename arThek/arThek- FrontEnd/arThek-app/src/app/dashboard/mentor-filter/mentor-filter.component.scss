@@ -1,0 +1,80 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    overflow-y: scroll !important;
+    .mentor-card {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        border-radius: 20px;
+        box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 200px;
+
+        margin-left: 20px;
+        margin-top: 20px;
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+        }
+
+        h1 {
+            font-family: Roboto;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 35px;
+        }
+
+        h3 {
+            position: relative;
+            top: -30px;
+
+            font-family: Andika;
+            font-size: 20px;
+            line-height: 32px;
+
+            color: #929292;
+        }
+
+        button {
+            text-decoration: none;
+
+            font-family: Andika;
+            font-size: 20px;
+            line-height: 32px;
+            color: white;
+
+            background: #35488c;
+            border-radius: 0px 0px 20px 20px;
+
+            width: 100%;
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.btn-filter {
+    text-decoration: none;
+    border: none;
+    background: black;
+    color: white;
+    box-shadow: royalblue;
+    /* box-shadow: 2px 4px 8px 2px gainsboro; */
+    transform: rotate(-90deg);
+    position: relative;
+    top: 3%;
+    left: -1.1%;
+    font-family: Roboto;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -8,7 +8,7 @@ namespace arThek.Services.Filtering.Conditions
         private string _mentorName;
         public void AddFilterOptions(IFilterMentors options)
         {
-            _mentorName = options.Name;
+            _mentorName = options.UserName;
         }
 
         public bool IsSatisfied(Mentor mentor)

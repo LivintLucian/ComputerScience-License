@@ -1,0 +1,16 @@
+<app-header></app-header>
+<button (click)="filterToggle()" class="btn-filter">FILTER</button>
+<app-filter
+  [formInit]="filterFormData"
+  *ngIf="isFilterToggled"
+  (filterClose)="filterClose($event)"
+  (onFilterChange)="onFilterChange($event)"
+></app-filter>
+<div class="cards">
+  <div *ngFor="let mentor of mentors" class="mentor-card">
+    <img src="../../../assets/images/profile-image-default.png" />
+    <h1>{{ mentor.userName }}</h1>
+    <h3>{{ mentor.domain }}</h3>
+    <button (click)="profileSelected($event)">View profile</button>
+  </div>
+</div>

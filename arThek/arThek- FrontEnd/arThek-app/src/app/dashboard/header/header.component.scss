@@ -1,0 +1,56 @@
+.topnav {
+    display: flex;
+    flex-direction: row;
+    background-color: #000000;
+    overflow: hidden;
+    height: 70px;
+
+    .image-logo {
+        margin-left: 40px;
+    }
+
+    & a {
+        font-family: Roboto;
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        text-decoration: none;
+        font-size: 17px;
+        margin-left: 50px;
+        padding-top: 25px;
+
+        &:hover {
+            color: #699EEE;
+            cursor: pointer;
+        }
+
+        &:focus {
+            color: #699EEE;
+        }
+    }
+
+    .userName {
+        width: 80px;
+        height: 16px;
+        padding-top: 25px;
+        margin-left: 20px;
+        font-family: Roboto;
+        font-size: 14px;
+        letter-spacing: -0.33px;
+        color: #ffffff;
+        position: relative;
+        top: -15px;
+        right: -10px;
+    }
+
+    #logout-btn {
+        margin-right: 20px;
+        background-color: #000000;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.flex-spacer {
+    flex: 1 1 auto;
+}

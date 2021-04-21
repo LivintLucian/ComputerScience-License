@@ -6,8 +6,8 @@ namespace arThek.ServiceAbstraction.InterfaceDTOs
 {
     public interface IFilterMentors
     {
-        string Name { get; set; }
-        string Category { get; set; }
+        string UserName { get; set; }
+        string Domain { get; set; }
         bool IsVolunteer { get; set; }
     }
 }

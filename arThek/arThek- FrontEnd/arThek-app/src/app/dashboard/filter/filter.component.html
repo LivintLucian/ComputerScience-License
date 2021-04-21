@@ -1,0 +1,63 @@
+<div *ngIf="isFilterOpen" class="opacity-background">
+  <section id="filter-training">
+    <form
+      [formGroup]="filterForm"
+      (ngSubmit)="onSubmit()"
+      class="filter-container"
+      (keydown.enter)="$event.preventDefault()"
+    >
+      <div class="header">
+        <span>Filter trainings</span>
+        <button type="button" (click)="closeFilter()">X</button>
+      </div>
+      <section class="form-field">
+        <label>Name</label>
+        <input type="text" [formControl]="userName" />
+      </section>
+      <section class="form-field">
+        <mat-radio-group aria-label="What type of mentor are you looking for?">
+          <mat-radio-button
+            (change)="radioChange($event)"
+            value="volunteerMentor"
+            id="volunteerMentor"
+            >Volunteer Mentors</mat-radio-button
+          >
+          <mat-radio-button
+            (change)="radioChange($event)"
+            value="paidMentor"
+            id="paidMentor"
+            >Paid Mentoors</mat-radio-button
+          >
+        </mat-radio-group>
+      </section>
+      <section class="form-field flex-direction">
+        <label>Domain</label>
+        <input
+          matInput
+          class="form-input"
+          type="text"
+          [formControl]="domain"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete class="auto-complete" #auto="matAutocomplete" style="background: white; z-index: 1;">
+          <mat-option
+            *ngFor="let option of filteredOptions | async"
+            [value]="option"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </section>
+      <section class="form-field filter-button">
+        <button
+          id="applyFilters-button"
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!filterForm.dirty || !filterForm.valid"
+        >
+          APPLY FILTERS
+        </button>
+      </section>
+    </form>
+  </section>
+</div>

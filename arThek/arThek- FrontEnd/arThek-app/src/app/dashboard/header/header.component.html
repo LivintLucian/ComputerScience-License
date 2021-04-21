@@ -1,0 +1,19 @@
+<nav class="topnav">
+  <img
+    class="image-logo"
+    src="../../../assets/images/HeadBar--Logo-WhiteColor.png"
+    alt="arThek logo"
+  />
+  <a id="home" (click)="navigateToNews()">News</a>
+  <a id="mentors" (click)="navigateToMentors()"
+    >Mentors</a
+  >
+  <a id="live"
+    >Live</a
+  >
+  <span class="flex-spacer"></span>
+  <p class="userName">{{ userName }}</p>
+  <button id="logout-btn">
+    <img (click)="logout()" src="./assets/images/logout-logo.svg" />
+  </button>
+</nav>
