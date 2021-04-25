@@ -72,6 +72,7 @@ $fontZeplinWeight: bold;
                 font-weight: bold;
                 cursor: pointer;
                 &:disabled {
+                    cursor: no-drop;
                     opacity: 0.5;
                 }
             }
@@ -89,7 +90,7 @@ mat-radio-group {
 }
 
 ::ng-deep .mat-autocomplete-panel {
-    background: #D1DEFF;
+    background: #d1deff;
     color: white;
     font-family: Roboto;
     z-index: 1000;
@@ -100,7 +101,7 @@ mat-radio-group {
     left: -638px;
 }
 
-.flex-direction{
+.flex-direction {
     display: flex;
     flex-direction: column;
 }

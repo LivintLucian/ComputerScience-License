@@ -15,10 +15,11 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 200px;
 
-        margin-left: 20px;
-        margin-top: 20px;
+        width: 300px;
+        height: 500px;
+        margin-left: 120px;
+        margin-top: 40px;
         img {
             width: 150px;
             height: 150px;
@@ -44,6 +45,9 @@
         }
 
         button {
+            position: relative;
+            top: 17%;
+
             text-decoration: none;
 
             font-family: Andika;
@@ -56,9 +60,13 @@
 
             width: 100%;
             cursor: pointer;
+            z-index: -1;
         }
         &:focus {
             outline: none;
+        }
+        &:hover{
+            opacity: 0.9;
         }
     }
 }

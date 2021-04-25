@@ -39,7 +39,11 @@
           [formControl]="domain"
           [matAutocomplete]="auto"
         />
-        <mat-autocomplete class="auto-complete" #auto="matAutocomplete" style="background: white; z-index: 1;">
+        <mat-autocomplete
+          class="auto-complete"
+          #auto="matAutocomplete"
+          style="background: white; z-index: 1"
+        >
           <mat-option
             *ngFor="let option of filteredOptions | async"
             [value]="option"

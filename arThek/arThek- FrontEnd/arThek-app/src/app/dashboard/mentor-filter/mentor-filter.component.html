@@ -11,6 +11,6 @@
     <img src="../../../assets/images/profile-image-default.png" />
     <h1>{{ mentor.userName }}</h1>
     <h3>{{ mentor.domain }}</h3>
-    <button (click)="profileSelected($event)">View profile</button>
+    <button (click)="profileSelected(mentor.id)">View profile</button>
   </div>
 </div>

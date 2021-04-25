@@ -1,5 +1,6 @@
 ﻿using arThek.Entities.Entities;
 using arThek.ServiceAbstraction.InterfaceDTOs;
+using System;
 
 namespace arThek.Services.Filtering.Conditions
 {
@@ -13,7 +14,7 @@ namespace arThek.Services.Filtering.Conditions
 
         public bool IsSatisfied(Mentor mentor)
         {
-            return _mentorName == mentor.UserName;
+            return mentor.UserName.Contains(_mentorName, StringComparison.CurrentCultureIgnoreCase);
         }
     }
 }

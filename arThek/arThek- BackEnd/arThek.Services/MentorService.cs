@@ -102,6 +102,7 @@ namespace arThek.Services
 
         #endregion
         public async Task<List<ViewMentorDto>> GetFilteredTrainings(MentorParametersDto mentorParametersDto)
+        
         {
             var mentors = await _mentorRepository.GetAll();
             var filterOptions = mentorParametersDto.FilterMentorsDto ?? new FilterMentorsDto();

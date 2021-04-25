@@ -1,8 +1,5 @@
 ﻿using arThek.Entities.Entities;
 using arThek.ServiceAbstraction.InterfaceDTOs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace arThek.Services.Filtering.Conditions
 {
