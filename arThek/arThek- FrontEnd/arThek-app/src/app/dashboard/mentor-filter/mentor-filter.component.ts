@@ -27,8 +27,8 @@ export class MentorFilterComponent implements OnInit {
     this.loadTableData();
   }
 
-  profileSelected(event) {
-    console.log(event.target.id);
+  profileSelected(id: string) {
+    console.log(id);
   }
 
   onFilterChange(event: FilterForm) {
@@ -42,14 +42,14 @@ export class MentorFilterComponent implements OnInit {
     this.filterOptions = {
       userName: event.userName,
       domain: event.domain,
-      isVolunteer: event.isVolunteer
+      isVolunteer: event.isVolunteer,
     };
   }
 
   checkIfNoFilters(data: FilterForm): boolean {
     return Object.values(data).every(
       (t) =>
-        this.isEmptyArray(t) || this.isNullOrUndefined(t) || this.isFalse(t)
+        this.isEmptyString(t) || this.isNullOrUndefined(t) || this.isFalse(t)
     );
   }
 
@@ -76,7 +76,7 @@ export class MentorFilterComponent implements OnInit {
     return {
       userName: '',
       domain: '',
-      isVolunteer: false,
+      isVolunteer: undefined,
     };
   }
 
@@ -88,8 +88,8 @@ export class MentorFilterComponent implements OnInit {
     return value === null || value === undefined;
   }
 
-  isEmptyArray(value): boolean {
-    return Array.isArray(value) && value.length === 0;
+  isEmptyString(value): boolean {
+    return typeof value === 'string' && value === '';
   }
 
   filterToggle() {

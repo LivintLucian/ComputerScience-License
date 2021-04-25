@@ -14,7 +14,7 @@ namespace arThek.Services.Filtering
         {
             _mentorConditions = conditions;
         }
-       
+
         public void RegisterFilters(IFilterMentors options)
         {
             _mentorConditions.ToList().ForEach(c => c.AddFilterOptions(options));
