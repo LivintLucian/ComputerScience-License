@@ -1,7 +1,5 @@
 <form
   class="mentor-profile-content"
-  [formGroup]="joinAsMentorForm"
-  (ngSubmit)="joinAsMentorSubmit()"
 >
   <div class="mentor-profile--leftContent">
     <div class="mentor-basic-infos">
@@ -17,19 +15,19 @@
     <div class="mentor-links">
       <div class="form-links--behance">
         <img src="../../../assets/images/behance-logo.png" />
-        <a href="{{ joinAsMentorFormState?.behanceUrl }}">{{
+        <a href="{{ joinAsMentorFormState?.behanceUrl }}" target="_blank">{{
           joinAsMentorFormState?.behanceUrl
         }}</a>
       </div>
       <div class="form-links--carbonMade">
         <img src="../../../assets/images/carbonMade-logo.png" />
-        <a href="{{ joinAsMentorFormState?.carbonMadeUrl }}">{{
+        <a href="{{ joinAsMentorFormState?.carbonMadeUrl }}" target="_blank">{{
           joinAsMentorFormState?.carbonMadeUrl
         }}</a>
       </div>
       <div class="form-links--dribble">
         <img src="../../../assets/images/dribble-logo.png" />
-        <a href="{{ joinAsMentorFormState?.dribbleUrl }}">{{
+        <a href="{{ joinAsMentorFormState?.dribbleUrl }}" target="_blank">{{
           joinAsMentorFormState?.dribbleUrl
         }}</a>
       </div>
@@ -40,22 +38,22 @@
     <div class="mentor-about">
       <div class="mentor-about-finish">
         <h1>About Me</h1>
-        <button type="submit" id="btn-submit">Finish</button>
+        <button id="btn-submit">Send Message</button>
       </div>
-      <textarea [formControl]="aboutMe">smth about him</textarea>
+      <textarea readonly>{{joinAsMentorFormState?.aboutMe}}</textarea>
     </div>
     <div class="mentor-more-about">
       <h1>Find out more about me!</h1>
       <div class="mentor-more-linkedln">
         <div class="download-resume">
-          <button class="btn-download-resume">
+          <button (click)="downloadPdf()" class="btn-download-resume">
             <i class="fa fa-download"></i> Download my Resume
           </button>
         </div>
         <div class="download-resume-delimitator"></div>
         <label for="linkedln">
           Visit my
-          <span id="linkedln-link">#Linkedln</span></label
+          <a href="{{ joinAsMentorFormState?.linkdlnUrl }}" target="_blank"><span id="linkedln-link">#Linkedln</span></a></label
         >
         <a id="linkedln"></a>
       </div>
@@ -64,40 +62,40 @@
         <div class="mentor-package">
           <div class="mentor-package-style basic-package">
             <h3>Basic</h3>
-            <span class="mentor-package--period" role="textbox" contenteditable
+            <span class="mentor-package--period" role="textbox" 
               >60 min</span
             >
             <div class="hashtags">
               <span><span id="hashtag">#</span>q&a meeting</span>
             </div>
-            <span class="mentor-package--price" role="textbox" contenteditable
+            <span class="mentor-package--price" role="textbox"
               >15.99$</span
             >
           </div>
           <div class="mentor-package-style standard-package">
             <h3>Standard</h3>
-            <span class="mentor-package--period" role="textbox" contenteditable
-              >60 min</span
+            <span class="mentor-package--period" role="textbox"
+              >4 meetings</span
             >
             <div class="hashtags">
               <span><span id="hashtag">#</span>q&a meeting</span>
               <span><span id="hashtag">#</span>1:1 lessons</span>
             </div>
-            <span class="mentor-package--price" role="textbox" contenteditable
+            <span class="mentor-package--price" role="textbox"
               >30$</span
             >
           </div>
           <div class="mentor-package-style premium-package">
             <h3>Premium</h3>
-            <span class="mentor-package--period" role="textbox" contenteditable
-              >60 min</span
+            <span class="mentor-package--period" role="textbox"
+              >12 meetings</span
             >
             <div class="hashtags">
               <span><span id="hashtag">#</span>q&a meeting</span>
               <span><span id="hashtag">#</span>1:1 lessons</span>
               <span><span id="hashtag">#</span>meetmelive</span>
             </div>
-            <span class="mentor-package--price" role="textbox" contenteditable
+            <span class="mentor-package--price" role="textbox"
               >60.99$</span
             >
           </div>

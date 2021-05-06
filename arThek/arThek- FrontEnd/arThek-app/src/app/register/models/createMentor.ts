@@ -12,8 +12,9 @@ export interface IMentor {
   userCreationDate: string;
   aboutMe: string;
   resume: Uint8Array;
+  resumeFileName: string;
   isVolunteer: boolean;
-  linkdlUrl: string;
+  linkdlnUrl: string;
   dribbleUrl: string;
   behanceUrl: string;
   carbonMadeUrl: string;
@@ -36,7 +37,7 @@ export interface ICreateMentor {
   aboutMe: string;
   resume: File;
   isVolunteer: boolean;
-  linkdlUrl: string;
+  linkdlnUrl: string;
   dribbleUrl: string;
   behanceUrl: string;
   carbonMadeUrl: string;
@@ -60,11 +61,13 @@ export interface IMentorAdditionalData {
 
 export interface IMentorProfile {
   profileImagePath: ArrayBuffer;
+  resume: File;
   userName: string;
   domain: string;
   behanceUrl: string;
   carbonMadeUrl: string;
   dribbleUrl: string;
+  linkdlnUrl: string;
   aboutMe: string;
   basicPackage: MentorshipPackage;
   standardPackage: MentorshipPackage;

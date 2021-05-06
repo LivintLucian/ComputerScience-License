@@ -31,7 +31,7 @@ namespace arThek.Services
 
         #region CRUD
 
-        public async Task<MentorDto> CreateAsync(MentorDto mentorDto)
+        public async Task<MentorDto> CreateAsync(CreateMentorDto mentorDto)
         {
             var mentorDTO = _mapper.Map<Mentor>(mentorDto);
             mentorDTO.UserRole = Entities.BaseEntities.UserRole.Mentor;
@@ -48,6 +48,8 @@ namespace arThek.Services
             {
                 throw new NotFoundException("This mentor doesn't exist!");
             }
+            var mentorDTO = _mapper.Map<MentorDto>(mentor);
+           
 
             return _mapper.Map<MentorDto>(mentor);
         }

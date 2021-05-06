@@ -1,0 +1,310 @@
+@import "../../../assets/scss/flex.scss";
+@import "../../../assets/scss/div-positions.scss";
+@import "../../../assets/scss/default-button.scss";
+
+.mentor-profile-content {
+    @include div-center-screen;
+    @include flex-align-center;
+    flex-direction: row;
+    .mentor-profile--leftContent {
+        display: flex;
+        flex-direction: column;
+        .mentor-basic-infos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img {
+            }
+            span {
+                font-family: Roboto;
+                font-weight: bold;
+                line-height: 48px;
+
+                font-size: 30px;
+            }
+            #domain {
+                font-family: Andika;
+                font-size: 20px;
+                line-height: 48px;
+
+                color: #929292;
+                position: relative;
+                top: -10px;
+            }
+        }
+        .mentor-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .form-links--behance {
+                display: flex;
+                align-items: center;
+                margin-top: 5%;
+            }
+            .form-links--carbonMade {
+                display: flex;
+                align-items: center;
+                margin-top: 5%;
+            }
+            .form-links--dribble {
+                display: flex;
+                margin-top: 5%;
+                align-items: center;
+            }
+        }
+    }
+    .delimitator {
+        height: 600px;
+
+        border: 1px solid #000000;
+        background-color: black;
+        margin: 2%;
+    }
+    .mentor-profile--rightContent {
+        display: flex;
+        flex-direction: column;
+        .mentor-about {
+            display: flex;
+            flex-direction: column;
+            h1 {
+                position: relative;
+                top: 22px;
+            }
+        }
+        .mentor-more-about {
+            display: flex;
+            flex-direction: column;
+            .mentor-more-linkedln {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: -4%;
+                margin-top: -4%;
+                z-index: 1;
+                .download-resume {
+                    button {
+                        width: 200px;
+                        height: 50px;
+                        font-size: 15px;
+
+                        background: transparent;
+                        color: #699eee;
+                        border: 2px solid #699eee;
+                        border-radius: 0 10px 0 10px;
+
+                        cursor: pointer;
+                        z-index: 1;
+                    }
+                    :hover {
+                        opacity: 0.5;
+                    }
+                }
+                .download-resume-delimitator {
+                    height: 60px;
+
+                    border: 1px solid #000000;
+                    background-color: black;
+                    margin: 2%;
+                }
+                label {
+                    font-family: Roboto;
+                    font-size: 20px;
+                    #linkedln-link {
+                        font-family: Roboto;
+                        font-weight: bold;
+                        font-size: 25px;
+
+                        color: #699eee;
+                        cursor: pointer;
+                        z-index: 1;
+                    }
+                    :hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+        .mentor-packages {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: -50px;
+            .mentor-package {
+                display: flex;
+                justify-content: space-evenly;
+                .basic-package {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    .mentor-package--price{
+                        position: relative;
+                        top: 74px;
+                    }
+                }
+                .standard-package {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    .mentor-package--price{
+                        position: relative;
+                        top: 37px;
+                    }
+                }
+                .premium-package {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+img {
+    width: 41.51px;
+    height: 41.51px;
+    margin-right: 5px;
+}
+
+.mentor-profile-image {
+    width: 200px;
+    height: auto;
+
+    border-radius: 30px;
+}
+
+textarea {
+    width: 1031px;
+    height: 62px;
+    resize: none;
+}
+
+a {
+    text-decoration: none;
+    color: #929292;
+    border-bottom: 1px solid black;
+}
+
+h1 {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: black;
+}
+
+#packages-h1 {
+    margin-top: 100px;
+}
+
+h3 {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: black;
+}
+
+.mentor-package-style {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 150px;
+    border-radius: 20px;
+
+    font-family: Andika;
+    font-size: 20px;
+    line-height: 32px;
+
+    color: #929292;
+}
+.mentor-package--period {
+    position: relative;
+    top: -20px;
+}
+.mentor-package--price {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+
+    background: #35488c;
+    border-radius: 0 0 20px 20px;
+
+    color: white;
+    text-align: center;
+}
+
+span:focus {
+    outline: none;
+}
+
+.add-hashtags-dynamic {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    top: -30px;
+    ul {
+        li {
+            color: red;
+        }
+    }
+    input {
+        width: 50px;
+        height: 10px;
+    }
+    button {
+        text-decoration: none;
+        border: none;
+        background: transparent;
+
+        cursor: pointer;
+    }
+    :focus {
+        outline: none;
+    }
+}
+
+#btn-add-items {
+    position: relative;
+    left: -10px;
+}
+
+.mentor-about-finish {
+    display: flex;
+    justify-content: space-between;
+    button {
+        @include default-button;
+        height: 30px;
+        width: 70px;
+        position: relative;
+        top: 50px;
+    }
+}
+
+li {
+    color: black;
+}
+
+.hashtags {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    top: -25px;
+    span {
+        font-family: Roboto;
+        font-size: 15px;
+        line-height: 23px;
+
+        color: #000000;
+    }
+    #hashtag {
+        font-family: Caveat Brush;
+        font-size: 25px;
+        line-height: 38px;
+
+        color: #699eee;
+    }
+}

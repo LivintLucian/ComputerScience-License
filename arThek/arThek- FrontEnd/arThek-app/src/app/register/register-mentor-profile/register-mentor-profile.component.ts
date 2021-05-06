@@ -5,6 +5,7 @@ import { RegistrationSystemService } from 'src/app/core/services/registration-sy
 import { NotificationService } from 'src/app/core/services/notification.service';
 import { IMentorProfile } from 'src/app/register/models/createMentor';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
   selector: 'app-register-mentor-profile',
@@ -16,13 +17,13 @@ export class RegisterMentorProfileComponent implements OnInit {
   joinAsMentorFormState: IMentorProfile;
   joinAsMentorForm: FormGroup;
   reader = new FileReader();
-  url: SafeUrl;
 
   constructor(
     private router: Router,
     private registrationService: RegistrationSystemService,
     private notificationService: NotificationService,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private authService: AuthenticationService
   ) {}
 
   ngOnInit(): void {
@@ -44,10 +45,6 @@ export class RegisterMentorProfileComponent implements OnInit {
           premiumPackage: data.premiumPackage,
         });
 
-        // this.reader.onload = () =>
-        //   (this.url = this.domSanitizer.bypassSecurityTrustUrl(
-        //     this.joinAsMentorFormState.profileImagePath as string
-        //   ));
       },
       (err) => {
         this.router.navigate(['home']);
@@ -74,7 +71,7 @@ export class RegisterMentorProfileComponent implements OnInit {
 
     let formData = this.createFormData(mentor);
     this.registrationService.mentorProfile(formData).subscribe((u) => {
-      this.router.navigate(['mentor/profile']);
+      this.router.navigate(['home']);
     });
   }
 

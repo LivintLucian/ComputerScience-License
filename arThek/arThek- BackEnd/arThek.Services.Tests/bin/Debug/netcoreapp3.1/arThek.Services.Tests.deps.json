@@ -1797,7 +1797,8 @@
           "Microsoft.EntityFrameworkCore": "5.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
           "Microsoft.Extensions.Logging.Console": "5.0.0",
-          "arThek.Entities": "1.0.0"
+          "arThek.Entities": "1.0.0",
+          "arThek.ServiceAbstraction": "1.0.0"
         },
         "runtime": {
           "arThek.Infrastructure.dll": {}

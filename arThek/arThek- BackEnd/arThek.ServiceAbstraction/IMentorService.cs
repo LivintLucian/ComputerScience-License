@@ -9,7 +9,7 @@ namespace arThek.ServiceAbstraction
 {
     public interface IMentorService
     {
-        Task<MentorDto> CreateAsync(MentorDto mentorDto);
+        Task<MentorDto> CreateAsync(CreateMentorDto mentorDto);
         Task<MentorDto> GetByIdAsync(Guid id);
         Task<MentorProfileUpdateDto> GetLastMentorAsync();
         Task<IEnumerable<MentorDto>> GetAllMentors();
