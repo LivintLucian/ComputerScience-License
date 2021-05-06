@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IMentee } from 'src/app/register/models/createMentee';
 import { IMentor, IMentorProfile } from 'src/app/register/models/createMentor';
+import { tap } from 'rxjs/operators';
+import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root',
@@ -56,10 +58,15 @@ export class RegistrationSystemService {
     );
   }
 
-  mentorProfile(mentorProfile: FormData) {
+  mentorProfile(mentorProfile: FormData) : Observable<any> {
     return this.http.put(
       `${environment.baseAPI}/register/mentor/mentor-profile`,
       mentorProfile
-    );
+    ).pipe(
+      tap(user => {
+        this.localStorageService.set('user', user);
+        return user;
+      })
+    );;
   }
 }

@@ -8,7 +8,7 @@
 ></app-filter>
 <div class="cards">
   <div *ngFor="let mentor of mentors" class="mentor-card">
-    <img src="../../../assets/images/profile-image-default.png" />
+    <img src="data:image/jpeg;base64,{{ mentor?.profileImagePath }}" />
     <h1>{{ mentor.userName }}</h1>
     <h3>{{ mentor.domain }}</h3>
     <button (click)="profileSelected(mentor.id)">View profile</button>

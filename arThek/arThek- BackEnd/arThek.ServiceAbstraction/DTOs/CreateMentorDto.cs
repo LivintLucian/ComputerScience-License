@@ -2,10 +2,11 @@
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace arThek.ServiceAbstraction.DTOs
 {
-    public class MentorDto : BaseUser
+    public class CreateMentorDto : BaseUser
     {
         public string AboutMe { get; set; }
         public string Experience { get; set; }
@@ -13,8 +14,8 @@ namespace arThek.ServiceAbstraction.DTOs
         public string DribbleUrl { get; set; }
         public string BehanceUrl { get; set; }
         public string CarbonMadeUrl { get; set; }
-        public byte[] Resume { get; set; }
-        public string ResumeFileName { get; set; }
+        public IFormFile Resume { get; set; }
+        public new IFormFile ProfileImagePath { get; set; }
         public bool IsVolunteer { get; set; }
         public Guid BasicMentorShipId { get; set; }
         public Guid StandardMentorShipId { get; set; }

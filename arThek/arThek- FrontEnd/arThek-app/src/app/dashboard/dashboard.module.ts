@@ -15,9 +15,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { MentorProfileComponent } from './mentor-profile/mentor-profile.component';
 
 @NgModule({
-  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent],
+  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent],
   imports: [
     RouterModule,
     CommonModule,

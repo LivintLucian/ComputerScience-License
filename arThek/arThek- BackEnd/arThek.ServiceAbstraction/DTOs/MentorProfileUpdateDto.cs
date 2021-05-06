@@ -11,7 +11,7 @@ namespace arThek.ServiceAbstraction.DTOs
         public string DribbleUrl { get; set; }
         public string BehanceUrl { get; set; }
         public string CarbonMadeUrl { get; set; }
-        public IFormFile ProfileImagePath { get; set; }
+        public byte[] ProfileImagePath { get; set; }
         public Guid BasicMentorShipId { get; set; }
         public Guid StandardMentorShipId { get; set; }
         public Guid PremiumMentorShipId { get; set; }

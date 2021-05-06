@@ -50,7 +50,7 @@ export class RegisterMentorAditionalDataComponent {
 
     let formData = this.createFormData(mentor);
     this.registrationService.mentorAdditionalData(formData).subscribe((u) => {
-      this.router.navigate(['mentor/profile']);
+      this.router.navigate(['register/mentor/profile-preview']);
     });
   }
 

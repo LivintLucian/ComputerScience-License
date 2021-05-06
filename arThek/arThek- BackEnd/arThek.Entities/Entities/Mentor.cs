@@ -9,6 +9,7 @@ namespace arThek.Entities.Entities
     {
         public string AboutMe { get; set; }
         public byte[] Resume { get; set; }
+        public string ResumeFileName { get; set; }
         public bool IsVolunteer { get; set; }
         public string LinkdlnUrl { get; set; }
         public string DribbleUrl { get; set; }

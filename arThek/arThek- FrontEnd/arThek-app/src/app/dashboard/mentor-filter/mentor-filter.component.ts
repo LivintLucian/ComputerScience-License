@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IMentee } from 'src/app/register/models/createMentee';
 import { IMentor } from 'src/app/register/models/createMentor';
@@ -21,14 +22,17 @@ export class MentorFilterComponent implements OnInit {
   filterOptions: FilterOptions;
   isFiltred = false;
 
-  constructor(private filterService: FilterMentorService) {}
+  constructor(
+    private filterService: FilterMentorService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadTableData();
   }
 
   profileSelected(id: string) {
-    console.log(id);
+    this.router.navigate(['dashboard/mentors/mentor-profile', id]);
   }
 
   onFilterChange(event: FilterForm) {
