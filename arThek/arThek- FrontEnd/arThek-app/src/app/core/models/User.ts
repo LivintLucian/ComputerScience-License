@@ -3,4 +3,6 @@ export interface User {
     userName: string;
     emailAddress: string;
     token: string;
+    category: string;
+    userType: string;
 }

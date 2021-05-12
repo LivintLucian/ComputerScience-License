@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using arThek.Infrastructure.Persistence;
 
 namespace arThek.Infrastructure.Migrations
 {
     [DbContext(typeof(arThekContext))]
-    partial class arThekContextModelSnapshot : ModelSnapshot
+    [Migration("20210511072021_ArticleEntity_AddAuthorName")]
+    partial class ArticleEntity_AddAuthorName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

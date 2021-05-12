@@ -78,18 +78,22 @@ namespace arThek.Services.MapperProfiles
             #region Article Configuration
             CreateMap<ArticleDto, Article>();
             CreateMap<Article, ArticleDto>()
-                .ForMember(a => a.AuthorId, aa => aa.MapFrom(aa => aa.AuthorId))
-                .ForMember(i => i.Image,
-                    ii => ii.Ignore());
+                .ForMember(a => a.AuthorId, aa => aa.MapFrom(aa => aa.AuthorId));
 
             CreateMap<Article, ViewArticleDto>();
             CreateMap<ViewArticleDto, Article>();
+            CreateMap<CreateArticleDto, Article>()
+                .ForMember(r => r.Image,
+                rr => rr.Ignore());
             #endregion
 
             #region GuestUser Configuration
             CreateMap<BaseUserDto, GuestUser>();
             CreateMap<GuestUser, BaseUserDto>()
-                .ForMember(b => b.EmailAddress, gg => gg.MapFrom(gg => gg.Email));
+                .ForMember(b => b.EmailAddress, gg => gg.MapFrom(gg => gg.Email))
+                .ForMember(b => b.Category, gg => gg.MapFrom(gg => gg.Category))
+                .ForMember(b => b.UserType, gg => gg.MapFrom(gg => gg.UserType));
+
             #endregion
 
             #region ChatMessage Configuration

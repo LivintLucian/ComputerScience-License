@@ -1,14 +1,11 @@
-﻿using arThek.Entities.BaseEntities;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace arThek.ServiceAbstraction.DTOs
 {
-    public class ArticleDto : BaseEntity
+    public class CreateArticleDto
     {
-        public byte[] Image { get; set; }
+        public IFormFile Image { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public string Category { get; set; }

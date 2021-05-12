@@ -1,0 +1,43 @@
+<div *ngIf="isFilterOpen" class="opacity-background">
+  <form
+    class="publish-article--form"
+    [formGroup]="publishArticleForm"
+    (ngSubmit)="publishArticleSubmit()"
+  >
+    <div class="article-image">
+      <label class="article-image-input" for="article-image-input">
+        <img id="publish-article--image" [src]="url ? url : '../../../assets/images/article.jpg'" />
+        <span class="article-image-input--hover">Upload your image 📷</span>
+      </label>
+      <input
+        id="article-image-input"
+        type="file"
+        [formControl]="image"
+        (change)="selectFile($event)"
+      />
+    </div>
+    <div class="publish-article--body">
+      <label class="article-title" for="article-title">
+        <span class="article-title--stylish">Title</span>
+        <input id="article-title" type="text" [formControl]="title" />
+      </label>
+      <textarea
+        class="article-content"
+        placeholder="What you want to talk about?"
+        [formControl]="content"
+      ></textarea>
+      <div class="publish-article--bottom">
+        <button
+          type="submit"
+          id="btn-publish"
+          [disabled]="!publishArticleForm.valid"
+        >
+          Publish
+        </button>
+        <button id="btn-cancel" type="button" (click)="closeFilter()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

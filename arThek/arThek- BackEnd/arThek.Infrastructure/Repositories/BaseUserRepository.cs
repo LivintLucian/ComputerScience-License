@@ -29,7 +29,9 @@ namespace arThek.Infrastructure.Repositories
                 {
                     Id = mentorObject == null ? menteeObject.Id : mentorObject.Id,
                     Email = mentorObject == null ? menteeObject.Email : mentorObject.Email,
-                    Password = mentorObject == null ? menteeObject.Password : mentorObject.Password
+                    Password = mentorObject == null ? menteeObject.Password : mentorObject.Password,
+                    Category = mentorObject == null ? menteeObject.Domain : mentorObject.Domain,
+                    UserType = mentorObject == null ? menteeObject.UserRole : mentorObject.UserRole
                 };
             }
             else

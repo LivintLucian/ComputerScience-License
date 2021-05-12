@@ -16,9 +16,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MentorProfileComponent } from './mentor-profile/mentor-profile.component';
+import { NewsComponent } from './news/news.component';
+import { NewsPublishArticleComponent } from './news-publish-article/news-publish-article.component';
+import { NewsReadArticleComponent } from './news-read-article/news-read-article.component';
 
 @NgModule({
-  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent],
+  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent, NewsComponent, NewsPublishArticleComponent, NewsReadArticleComponent],
   imports: [
     RouterModule,
     CommonModule,

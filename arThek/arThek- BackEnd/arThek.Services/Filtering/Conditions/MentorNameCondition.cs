@@ -14,7 +14,7 @@ namespace arThek.Services.Filtering.Conditions
 
         public bool IsSatisfied(Mentor mentor)
         {
-            return mentor.UserName.Contains(_mentorName, StringComparison.CurrentCultureIgnoreCase);
+            return mentor.UserName.StartsWith(_mentorName, StringComparison.CurrentCultureIgnoreCase);
         }
     }
 }
