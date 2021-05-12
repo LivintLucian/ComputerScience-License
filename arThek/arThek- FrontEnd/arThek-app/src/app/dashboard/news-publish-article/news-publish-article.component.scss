@@ -1,0 +1,120 @@
+.opacity-background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(#000000, 0.8);
+    background-size: cover;
+    .publish-article--form {
+        position: absolute;
+        flex-direction: column;
+        display: flex;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 650px;
+        font-family: Roboto, Helvetica, sans-serif;
+        border-radius: 9px;
+        box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.1);
+        background-color: white;
+        z-index: 1;
+        .article-image-input {
+            img {
+                width: 400px;
+                height: 200px;
+                border-radius: 9px 9px 0px 0px;
+                margin-bottom: 5%;
+            }
+            span {
+                display: none;
+            }
+            &:hover {
+                img {
+                    opacity: 0.5;
+                }
+                cursor: pointer;
+                span {
+                    display: block;
+                    position: absolute;
+                    top: 15%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: black;
+                    font-family: cursive;
+                    font-size: 20px;
+                    white-space: nowrap;
+                }
+            }
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            span {
+                font-family: Roboto;
+                font-weight: bold;
+                font-size: 30px;
+                margin-right: 20px;
+            }
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+        .publish-article--body {
+            padding: 0 20px 0 20px;
+            .article-title {
+                display: flex;
+                margin-bottom: 5%;
+            }
+            textarea {
+                width: 98.5%;
+                height: 300px;
+                resize: none;
+                margin-bottom: 3%;
+                margin-top: 2%;
+            }
+            .publish-article--bottom {
+                display: flex;
+                #btn-publish {
+                    color: white;
+                    background-color: #35488c;
+                    opacity: 0.85;
+                    cursor: pointer;
+
+                    font-family: cursive;
+                    font-weight: bold;
+                    line-height: 29px;
+
+                    margin-right: 20px;
+                    height: 30px;
+                    margin-top: 1%;
+                }
+                #btn-cancel {
+                    color: black;
+                    background-color: #e6e6e6;
+                    cursor: pointer;
+
+                    font-family: Roboto;
+                    font-weight: bold;
+                    line-height: 29px;
+                    border: none;
+
+                    height: 30px;
+                    margin-top: 1%;
+                }
+                #btn-publish:hover {
+                    opacity: 0.5;
+                }
+                #btn-cancel:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+
+button.submit-button[disabled] {
+    cursor: no-drop;
+    opacity: 0.5;
+}

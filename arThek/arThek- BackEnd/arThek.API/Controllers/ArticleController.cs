@@ -17,8 +17,8 @@ namespace arThek.API.Controllers
             _articleService = articleService;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create(ArticleDto articleDto)
+        [HttpPost("publish-article")]
+        public async Task<IActionResult> Create([FromForm] CreateArticleDto articleDto)
         {
             if (!ModelState.IsValid)
             {

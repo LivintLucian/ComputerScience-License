@@ -12,6 +12,7 @@ namespace arThek.Entities.Entities
         public string Category { get; set; }
         public DateTime PublishDate { get; set; }
         public Mentor Author { get; set; }
+        public string AuthorName { get; set; }
         public Guid AuthorId { get; set; }
     }
 }

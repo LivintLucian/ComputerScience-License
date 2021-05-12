@@ -1,0 +1,21 @@
+<div *ngIf="isFilterOpen" class="opacity-background">
+  <form class="publish-article--form">
+    <div class="article-image">
+      <img
+        id="publish-article--image"
+        src="data:image/jpeg;base64,{{ image }}"
+      />
+    </div>
+    <div class="publish-article--body">
+      <label class="article-title" for="article-title">
+        <span class="article-title--stylish">{{ title }}</span>
+      </label>
+      <textarea class="article-content" readonly>{{ content }}</textarea>
+      <div class="publish-article--bottom">
+        <button id="btn-cancel" type="button" (click)="closeFilter()">
+          Close
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

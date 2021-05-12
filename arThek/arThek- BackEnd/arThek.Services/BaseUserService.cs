@@ -51,6 +51,8 @@ namespace arThek.Services
             {
                 new Claim(ClaimTypes.NameIdentifier, baseUser.Id.ToString()),
                 new Claim(ClaimTypes.Email, baseUser.Email),
+                new Claim("Category", baseUser.Category),
+                new Claim("UserType", baseUser.UserType.ToString())
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8

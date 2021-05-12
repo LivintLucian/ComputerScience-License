@@ -4,8 +4,10 @@ using arThek.Entities.RepositoryInterfaces;
 using arThek.ServiceAbstraction;
 using arThek.ServiceAbstraction.DTOs;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,9 +28,10 @@ namespace arThek.Services
             _articleFilterService = articleFilterService;
         }
 
-        public async Task<ArticleDto> CreateAsync(ArticleDto articleDto)
+        public async Task<ArticleDto> CreateAsync(CreateArticleDto createArticleDto)
         {
-            var articleDTO = _mapper.Map<Article>(articleDto);
+            var articleDTO = _mapper.Map<Article>(createArticleDto);
+            articleDTO.Image = GetByteFileArray(createArticleDto.Image);
             var articleAddedToDB = await _articleRepository.CreateAsync(articleDTO);
 
             return _mapper.Map<ArticleDto>(articleAddedToDB);
@@ -67,6 +70,19 @@ namespace arThek.Services
 
             return _mapper.Map<List<ViewArticleDto>>(filteredMentors);
         }
+        private byte[] GetByteFileArray(IFormFile byteFile)
+        {
+            byte[] array = null;
+            if (byteFile != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    byteFile.CopyTo(ms);
+                    array = ms.ToArray();
+                }
+            }
 
+            return array;
+        }
     }
 }
