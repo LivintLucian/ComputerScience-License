@@ -59,7 +59,7 @@ const routes: Routes = [
     component: MentorProfileComponent
   },
   {
-    path: '',
+    path: 'dashboard/public-chat',
     component: LiveChatComponent
   }
 ];
