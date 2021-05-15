@@ -9,6 +9,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using arThek.Persistence.API;
 
 namespace arThek.API
 {
@@ -51,6 +52,18 @@ namespace arThek.API
             services.AddArticleFilters();
             services.AddAutoMapper(cfg => cfg.AddProfile(new AutoMapperProfile()));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    name: "AllowOrigin",
+                    builder => {
+                        builder.AllowAnyMethod()
+                               .AllowAnyHeader()
+                               .SetIsOriginAllowed(origin => true)
+                               .AllowCredentials();
+                           });
+            }); 
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -62,18 +75,15 @@ namespace arThek.API
 
             app.UseHttpsRedirection();
 
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
+            app.UseCors("AllowOrigin");
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/arThek/live-chat");
             });
         }
     }

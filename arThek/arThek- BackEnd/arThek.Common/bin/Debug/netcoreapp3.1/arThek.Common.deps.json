@@ -81,6 +81,14 @@
           }
         }
       },
+      "Microsoft.AspNet.SignalR.Core/2.4.2": {
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.SignalR.Core.dll": {
+            "assemblyVersion": "2.4.2.0",
+            "fileVersion": "2.4.2.21106"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Http.Features/5.0.4": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "5.0.0",
@@ -1323,6 +1331,7 @@
         "dependencies": {
           "AWSSDK.SimpleNotificationService": "3.5.1.43",
           "AutoMapper": "10.1.1",
+          "Microsoft.AspNet.SignalR.Core": "2.4.2",
           "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "arThek.Entities": "1.0.0",
           "arThek.Infrastructure": "1.0.0",
@@ -1374,6 +1383,13 @@
       "sha512": "sha512-yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "path": "entityframework/6.4.4",
       "hashPath": "entityframework.6.4.4.nupkg.sha512"
+    },
+    "Microsoft.AspNet.SignalR.Core/2.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mpkCnN9sF4zBrE6Gkz7rmJL/as4JMGZDCV/dfcUh6mDwFdbGGYWBzchQOW1mWCx/3EBzHK+KkBr8+WGwTDejwg==",
+      "path": "microsoft.aspnet.signalr.core/2.4.2",
+      "hashPath": "microsoft.aspnet.signalr.core.2.4.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http.Features/5.0.4": {
       "type": "package",

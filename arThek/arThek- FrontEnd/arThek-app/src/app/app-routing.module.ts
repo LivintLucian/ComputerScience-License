@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './dashboard/header/header.component';
+import { LiveChatComponent } from './dashboard/live-chat/live-chat.component';
 import { MentorFilterComponent } from './dashboard/mentor-filter/mentor-filter.component';
 import { MentorProfileComponent } from './dashboard/mentor-profile/mentor-profile.component';
 import { NewsReadArticleComponent } from './dashboard/news-read-article/news-read-article.component';
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: 'dashboard/mentors/mentor-profile/:id',
     component: MentorProfileComponent
+  },
+  {
+    path: '',
+    component: LiveChatComponent
   }
 ];
 
