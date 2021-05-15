@@ -19,9 +19,10 @@ import { MentorProfileComponent } from './mentor-profile/mentor-profile.componen
 import { NewsComponent } from './news/news.component';
 import { NewsPublishArticleComponent } from './news-publish-article/news-publish-article.component';
 import { NewsReadArticleComponent } from './news-read-article/news-read-article.component';
+import { LiveChatComponent } from './live-chat/live-chat.component';
 
 @NgModule({
-  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent, NewsComponent, NewsPublishArticleComponent, NewsReadArticleComponent],
+  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent, NewsComponent, NewsPublishArticleComponent, NewsReadArticleComponent, LiveChatComponent],
   imports: [
     RouterModule,
     CommonModule,
@@ -38,6 +39,6 @@ import { NewsReadArticleComponent } from './news-read-article/news-read-article.
     AppRoutingModule,
     DashboardRoutingModule,
   ],
-  exports: [HeaderComponent, MentorFilterComponent],
+  exports: [HeaderComponent, MentorFilterComponent, LiveChatComponent],
 })
 export class DashboardModule {}
