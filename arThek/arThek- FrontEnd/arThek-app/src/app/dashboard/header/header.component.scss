@@ -20,12 +20,12 @@
         padding-top: 25px;
 
         &:hover {
-            color: #699EEE;
+            color: #699eee;
             cursor: pointer;
         }
 
         &:focus {
-            color: #699EEE;
+            color: #699eee;
         }
     }
 
@@ -52,4 +52,16 @@
 
 .flex-spacer {
     flex: 1 1 auto;
+}
+
+.img--public-chat {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 35%;
+    cursor: pointer;
+    margin-left: 50px;
+}
+.img--public-chat:hover{
+    opacity: 0.5;
 }

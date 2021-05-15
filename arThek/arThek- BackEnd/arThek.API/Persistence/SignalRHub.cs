@@ -1,14 +1,13 @@
-﻿using arThek.Entities.Entities;
-using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
 
-namespace arThek.Persistence.API
+namespace arThek.Services
 {
     public class SignalRHub : Hub
     {
-        public async Task NewMessage(ChatMessage msg)
+        public async Task SendMessage1(string user, string message, string category, string userType, string messageDate)
         {
-            await Clients.All.SendAsync("MessageReceived", msg);
+            await Clients.All.SendAsync("ReceiveOne", user, message, category, userType, messageDate);
         }
     }
 }

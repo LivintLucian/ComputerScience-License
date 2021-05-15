@@ -1,37 +1,70 @@
-import { Component, NgZone, OnInit } from '@angular/core';
-import { ChatMessage } from '../models/live-chat';
+import { Component, OnInit } from '@angular/core';
 import { ChatService } from '../services/live-chat.service';
+import { MessageDto } from '../models/message';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { User } from 'src/app/core/models/User';
+import moment from 'moment';
 
 @Component({
   selector: 'app-live-chat',
   templateUrl: './live-chat.component.html',
   styleUrls: ['./live-chat.component.scss'],
 })
-export class LiveChatComponent {
-  title = 'LiveChat-App';
-  txtMessage = '';
-  uniqueID: string = new Date().getTime().toString();
-  messages = new Array<ChatMessage>();
-  messageForm = {} as ChatMessage;
+export class LiveChatComponent implements OnInit {
+  user: User;
+  username: string;
+  userType: string;
+  category: string;
+  messageDate = new Date().toISOString();
 
-  constructor(private chatService: ChatService, private _ngZone: NgZone) {
-    this.subscribeToEvents();
+  constructor(
+    private chatService: ChatService,
+    private authService: AuthenticationService
+  ) {}
+
+  ngOnInit(): void {
+    this.user = this.authService.getUserFromLocalStorage();
+    this.username = this.user.emailAddress.split('@')[0];
+    if (this.user.userType == '0') {
+      this.userType = 'mentee';
+    }
+    else {
+      this.userType = 'mentor';
+    }
+    this.category = this.user.category;
+
+    this.chatService
+      .retrieveMappedObject()
+      .subscribe((receivedObj: MessageDto) => {
+        this.addToInbox(receivedObj);
+      }); // calls the service method to get the new messages sent
   }
 
-  sendMessage(): void {
-    if (this.txtMessage) {
-      this.txtMessage = '';
-      this.messageForm.content = this?.txtMessage;
-      this.messages.push(this.messageForm);
-      this.chatService.sendMessage(this.messageForm);
+  msgDto: MessageDto = new MessageDto();
+  msgInboxArray: MessageDto[] = [];
+
+  send(): void {
+    if (this.msgDto) {
+      if (this.msgDto.msgText.length == 0) {
+        window.alert('Message field is required.');
+        return;
+      } else {
+        this.msgDto.user = this.username;
+        this.msgDto.userType = this.userType;
+        this.msgDto.category = this.category;
+        this.msgDto.messageDate = this.messageDate.slice(0, 10);
+        this.chatService.broadcastMessage(this.msgDto); // Send the message via a service
+      }
     }
   }
 
-  private subscribeToEvents(): void {
-    this.chatService.messageReceived.subscribe((ChatMessage: ChatMessage) => {
-      this._ngZone.run(() => {
-        this.messages.push(ChatMessage);
-      });
-    });
+  addToInbox(obj: MessageDto) {
+    let newObj = new MessageDto();
+    newObj.user = obj.user;
+    newObj.msgText = obj.msgText;
+    newObj.userType = obj.userType;
+    newObj.category = obj.category;
+    newObj.messageDate = obj.messageDate;
+    this.msgInboxArray.push(newObj);
   }
 }

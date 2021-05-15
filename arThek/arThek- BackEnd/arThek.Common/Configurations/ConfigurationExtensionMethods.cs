@@ -5,6 +5,7 @@ using arThek.ServiceAbstraction;
 using arThek.Services;
 using arThek.Services.Filtering;
 using arThek.Services.Filtering.Conditions;
+using Microsoft.AspNet.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

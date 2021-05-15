@@ -30,4 +30,7 @@ export class HeaderComponent implements OnInit {
     this.authService.removeUserFromLocalStorage();
     this.router.navigate(['home']);
   }
+  navigateToLiveChat(){
+    this.router.navigate(['dashboard/public-chat']);
+  }
 }

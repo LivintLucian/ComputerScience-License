@@ -9,7 +9,8 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using arThek.Persistence.API;
+using arThek.API.Persistence;
+using arThek.Services;
 
 namespace arThek.API
 {
