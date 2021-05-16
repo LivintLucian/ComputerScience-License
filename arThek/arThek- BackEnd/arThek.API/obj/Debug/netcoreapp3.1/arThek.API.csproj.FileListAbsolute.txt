@@ -84,8 +84,6 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\bin\Debu
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.csprojAssemblyReference.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.AssemblyInfoInputs.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.AssemblyInfo.cs
-C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.csproj.CoreCompileInputs.cache
-C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.RazorTargetAssemblyInfo.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.csproj.CopyComplete
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\staticwebassets\arThek.API.StaticWebAssets.Manifest.cache
@@ -94,3 +92,6 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debu
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.pdb
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.genruntimeconfig.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\bin\Debug\netcoreapp3.1\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\bin\Debug\netcoreapp3.1\Fleck.dll
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.csproj.CoreCompileInputs.cache
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.API\obj\Debug\netcoreapp3.1\arThek.API.MvcApplicationPartsAssemblyInfo.cache

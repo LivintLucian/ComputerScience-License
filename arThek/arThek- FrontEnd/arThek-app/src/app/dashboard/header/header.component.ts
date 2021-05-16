@@ -33,4 +33,7 @@ export class HeaderComponent implements OnInit {
   navigateToLiveChat(){
     this.router.navigate(['dashboard/public-chat']);
   }
+  navigateToLiveStreaming(){
+    this.router.navigate(['dashboard/live-streaming']);
+  }
 }

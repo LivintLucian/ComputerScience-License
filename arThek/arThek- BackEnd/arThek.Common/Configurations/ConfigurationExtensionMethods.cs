@@ -37,6 +37,7 @@ namespace arThek.Common.Configurations
             services.AddScoped<IBaseUserService, BaseUserService>();
             services.AddScoped<IArticleService, ArticleService>();
             services.AddScoped<IChatMessageService, ChatMessageService>();
+            services.AddScoped<ILiveStreamingService, LiveStreamingService>();
         }
         public static void AddMentorFilters(this IServiceCollection services)
         {

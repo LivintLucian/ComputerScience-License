@@ -9,6 +9,7 @@
       "arThek.Common/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "Fleck": "1.2.0",
           "arThek.Entities": "1.0.0",
           "arThek.Infrastructure": "1.0.0",
           "arThek.ServiceAbstraction": "1.0.0",
@@ -78,6 +79,14 @@
           "lib/netstandard2.1/EntityFramework.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.400.420.21404"
+          }
+        }
+      },
+      "Fleck/1.2.0": {
+        "runtime": {
+          "lib/netcoreapp2.0/Fleck.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
           }
         }
       },
@@ -1295,6 +1304,7 @@
       "arThek.Entities/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "Fleck": "1.2.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
         },
@@ -1307,6 +1317,7 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "EntityFramework": "6.4.4",
+          "Fleck": "1.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
           "Microsoft.Extensions.Logging.Console": "5.0.0",
@@ -1320,6 +1331,7 @@
       "arThek.ServiceAbstraction/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "Fleck": "1.2.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "arThek.Entities": "1.0.0"
         },
@@ -1331,6 +1343,7 @@
         "dependencies": {
           "AWSSDK.SimpleNotificationService": "3.5.1.43",
           "AutoMapper": "10.1.1",
+          "Fleck": "1.2.0",
           "Microsoft.AspNet.SignalR.Core": "2.4.2",
           "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "arThek.Entities": "1.0.0",
@@ -1383,6 +1396,13 @@
       "sha512": "sha512-yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "path": "entityframework/6.4.4",
       "hashPath": "entityframework.6.4.4.nupkg.sha512"
+    },
+    "Fleck/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bPLXn6QbLAFoviur6XbrKB0Zn6x04E8VibHXyHZeJsoC7bkUl5DVtzM5cZgDuqHkIrBqAXJyTNJwSNIc6wBJ2Q==",
+      "path": "fleck/1.2.0",
+      "hashPath": "fleck.1.2.0.nupkg.sha512"
     },
     "Microsoft.AspNet.SignalR.Core/2.4.2": {
       "type": "package",

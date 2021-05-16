@@ -5,6 +5,8 @@ using arThek.ServiceAbstraction;
 using arThek.ServiceAbstraction.DTOs;
 using AutoMapper;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace arThek.Services
@@ -38,6 +40,14 @@ namespace arThek.Services
             }
 
             return _mapper.Map<ChatMessageDto>(chatMessage);
+        }
+
+        public async Task<IEnumerable<ChatMessageDto>> GetAllMessages()
+        {
+            var chatMessages = (await _chatMessageRepository.GetAll()).ToList();
+            var chatMessageList = _mapper.Map<IEnumerable<ChatMessageDto>>(chatMessages);
+
+            return chatMessageList;
         }
     }
 }

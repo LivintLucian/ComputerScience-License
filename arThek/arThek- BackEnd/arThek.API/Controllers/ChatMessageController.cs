@@ -27,6 +27,15 @@ namespace arThek.API.Controllers
         public async Task<IActionResult> SendRequest([FromBody] Message msg)
         {
             await _hubContext.Clients.All.SendAsync("ReceiveOne", msg.User, msg.MsgText, msg.Category, msg.UserType, msg.MessageDate);
+            var chatMessageDto = new ChatMessageDto
+            {
+                User = msg.User,
+                MsgText = msg.MsgText,
+                Category = msg.Category,
+                UserType = msg.UserType,
+                MessageDate = msg.MessageDate
+            };
+            await _chatMessageService.CreateAsync(chatMessageDto);
             return Ok();
         }
 
@@ -46,6 +55,14 @@ namespace arThek.API.Controllers
         public async Task<ActionResult<ChatMessageDto>> GetById(Guid id)
         {
             return await _chatMessageService.GetByIdAsync(id);
+        }
+
+        [HttpGet("public-chat")]
+        public async Task<IActionResult> GetAllMessagesAsync()
+        {
+            var chatMessagesList = await _chatMessageService.GetAllMessages();
+
+            return Ok(chatMessagesList);
         }
     }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './dashboard/header/header.component';
 import { LiveChatComponent } from './dashboard/live-chat/live-chat.component';
+import { LiveStreamingComponent } from './dashboard/live-streaming/live-streaming.component';
 import { MentorFilterComponent } from './dashboard/mentor-filter/mentor-filter.component';
 import { MentorProfileComponent } from './dashboard/mentor-profile/mentor-profile.component';
 import { NewsReadArticleComponent } from './dashboard/news-read-article/news-read-article.component';
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'dashboard/public-chat',
     component: LiveChatComponent
+  },
+  {
+    path: 'dashboard/live-streaming',
+    component: LiveStreamingComponent
   }
 ];
 

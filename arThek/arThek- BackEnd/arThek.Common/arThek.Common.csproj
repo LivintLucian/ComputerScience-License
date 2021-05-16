@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Fleck" Version="1.2.0" />
   </ItemGroup>
 
 </Project>

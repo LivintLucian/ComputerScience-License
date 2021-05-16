@@ -27,8 +27,7 @@ export class LiveChatComponent implements OnInit {
     this.username = this.user.emailAddress.split('@')[0];
     if (this.user.userType == '0') {
       this.userType = 'mentee';
-    }
-    else {
+    } else {
       this.userType = 'mentor';
     }
     this.category = this.user.category;
@@ -38,6 +37,12 @@ export class LiveChatComponent implements OnInit {
       .subscribe((receivedObj: MessageDto) => {
         this.addToInbox(receivedObj);
       }); // calls the service method to get the new messages sent
+
+    this.chatService.getAllMessages().subscribe((chatMessages: MessageDto) => {
+      for (let message in chatMessages) {
+        this.addToInbox(chatMessages[message]);
+      }
+    });
   }
 
   msgDto: MessageDto = new MessageDto();
@@ -52,7 +57,7 @@ export class LiveChatComponent implements OnInit {
         this.msgDto.user = this.username;
         this.msgDto.userType = this.userType;
         this.msgDto.category = this.category;
-        this.msgDto.messageDate = this.messageDate.slice(0, 10);
+        this.msgDto.messageDate = this.messageDate;
         this.chatService.broadcastMessage(this.msgDto); // Send the message via a service
       }
     }
@@ -64,7 +69,7 @@ export class LiveChatComponent implements OnInit {
     newObj.msgText = obj.msgText;
     newObj.userType = obj.userType;
     newObj.category = obj.category;
-    newObj.messageDate = obj.messageDate;
+    newObj.messageDate = obj.messageDate.slice(0, 10);
     this.msgInboxArray.push(newObj);
   }
 }

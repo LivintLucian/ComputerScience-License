@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[10.1.1, )"
             },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -137,6 +141,10 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -221,6 +229,10 @@
               "target": "Package",
               "version": "[10.1.1, )"
             },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.4, )"
@@ -299,6 +311,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -401,6 +417,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Microsoft.AspNet.SignalR.Core": {
               "target": "Package",
