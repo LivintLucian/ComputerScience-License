@@ -5,8 +5,10 @@ namespace arThek.Entities.Entities
 {
     public class ChatMessage : BaseEntity
     {
-        public string Content { get; set; }
-        public Guid MentorId { get; set; }
-        public Guid MenteeId { get; set; }
+        public string User { get; set; }
+        public string MsgText { get; set; }
+        public string Category { get; set; }
+        public string UserType { get; set; }
+        public string MessageDate { get; set; }
     }
 }

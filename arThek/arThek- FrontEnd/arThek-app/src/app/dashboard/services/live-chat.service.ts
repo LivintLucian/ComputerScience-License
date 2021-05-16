@@ -3,6 +3,7 @@ import * as signalR from '@microsoft/signalr'; // import signalR
 import { HttpClient } from '@angular/common/http';
 import { MessageDto } from '../models/message';
 import { Observable, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -59,5 +60,10 @@ export class ChatService {
 
   public retrieveMappedObject(): Observable<MessageDto> {
     return this.sharedObj.asObservable();
+  }
+
+  public getAllMessages(): Observable<MessageDto> {
+    return this.http
+      .get<MessageDto>(`${environment.baseAPI}/ChatMessage/public-chat`);
   }
 }

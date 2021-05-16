@@ -72,6 +72,15 @@
           "buildTransitive/netcoreapp3.0/EntityFramework.targets": {}
         }
       },
+      "Fleck/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/Fleck.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Fleck.dll": {}
+        }
+      },
       "Microsoft.AspNet.SignalR.Core/2.4.2": {
         "type": "package",
         "compile": {
@@ -1738,6 +1747,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "Fleck": "1.2.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
         },
@@ -1755,6 +1765,7 @@
           "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "EntityFramework": "6.4.4",
+          "Fleck": "1.2.0",
           "Microsoft.EntityFrameworkCore": "5.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
           "Microsoft.Extensions.Logging.Console": "5.0.0",
@@ -1773,6 +1784,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "AutoMapper": "10.1.1",
+          "Fleck": "1.2.0",
           "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "arThek.Entities": "1.0.0"
         },
@@ -1789,6 +1801,7 @@
         "dependencies": {
           "AWSSDK.SimpleNotificationService": "3.5.1.43",
           "AutoMapper": "10.1.1",
+          "Fleck": "1.2.0",
           "Microsoft.AspNet.SignalR.Core": "2.4.2",
           "Microsoft.AspNetCore.Http.Features": "5.0.4",
           "arThek.Entities": "1.0.0",
@@ -1947,6 +1960,21 @@
         "tools/netcoreapp3.0/any/ef6.dll",
         "tools/netcoreapp3.0/any/ef6.pdb",
         "tools/netcoreapp3.0/any/ef6.runtimeconfig.json"
+      ]
+    },
+    "Fleck/1.2.0": {
+      "sha512": "bPLXn6QbLAFoviur6XbrKB0Zn6x04E8VibHXyHZeJsoC7bkUl5DVtzM5cZgDuqHkIrBqAXJyTNJwSNIc6wBJ2Q==",
+      "type": "package",
+      "path": "fleck/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fleck.1.2.0.nupkg.sha512",
+        "fleck.nuspec",
+        "lib/net40/Fleck.dll",
+        "lib/net45/Fleck.dll",
+        "lib/netcoreapp2.0/Fleck.dll",
+        "lib/netstandard2.0/Fleck.dll"
       ]
     },
     "Microsoft.AspNet.SignalR.Core/2.4.2": {
@@ -6557,6 +6585,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "AutoMapper >= 10.1.1",
+      "Fleck >= 1.2.0",
       "arThek.Entities >= 1.0.0",
       "arThek.Infrastructure >= 1.0.0",
       "arThek.ServiceAbstraction >= 1.0.0",
@@ -6621,6 +6650,10 @@
           "AutoMapper": {
             "target": "Package",
             "version": "[10.1.1, )"
+          },
+          "Fleck": {
+            "target": "Package",
+            "version": "[1.2.0, )"
           }
         },
         "imports": [

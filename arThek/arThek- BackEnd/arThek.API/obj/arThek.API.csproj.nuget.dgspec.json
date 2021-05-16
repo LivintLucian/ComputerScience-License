@@ -63,6 +63,10 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.13, )"
@@ -162,6 +166,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             }
           },
           "imports": [
@@ -224,6 +232,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
@@ -316,6 +328,10 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -399,6 +415,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
@@ -485,6 +505,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "Fleck": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Microsoft.AspNet.SignalR.Core": {
               "target": "Package",

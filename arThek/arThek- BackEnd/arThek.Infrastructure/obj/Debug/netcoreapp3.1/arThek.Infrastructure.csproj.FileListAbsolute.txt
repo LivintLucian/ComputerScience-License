@@ -23,10 +23,10 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructu
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.csprojAssemblyReference.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.AssemblyInfo.cs
-C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.csproj.CopyComplete
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.pdb
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.genruntimeconfig.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\bin\Debug\netcoreapp3.1\arThek.ServiceAbstraction.dll
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\bin\Debug\netcoreapp3.1\arThek.ServiceAbstraction.pdb
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Infrastructure\obj\Debug\netcoreapp3.1\arThek.Infrastructure.csproj.CoreCompileInputs.cache
