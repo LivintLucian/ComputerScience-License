@@ -20,6 +20,7 @@
       type="text"
       placeholder="Type message here"
       class="msg-input"
+      value='{{ inputValueAfterSend }}'
       [(ngModel)]="msgDto.msgText"
     />
     <button class="send-btn" (click)="send()">

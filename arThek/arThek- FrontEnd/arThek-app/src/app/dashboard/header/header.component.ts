@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
     this.userName = this.user.emailAddress.split('@')[0].toLowerCase();
   }
   navigateToNews(){
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['dashboard/news']);
   }
   navigateToMentors(){
     this.router.navigate(['dashboard/mentors']);
