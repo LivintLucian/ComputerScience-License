@@ -21,9 +21,10 @@ import { NewsPublishArticleComponent } from './news-publish-article/news-publish
 import { NewsReadArticleComponent } from './news-read-article/news-read-article.component';
 import { LiveChatComponent } from './live-chat/live-chat.component';
 import { LiveStreamingComponent } from './live-streaming/live-streaming.component';
+import { LiveStreamingWatchComponent } from './live-streaming-watch/live-streaming-watch.component';
 
 @NgModule({
-  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent, NewsComponent, NewsPublishArticleComponent, NewsReadArticleComponent, LiveChatComponent, LiveStreamingComponent],
+  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent, NewsComponent, NewsPublishArticleComponent, NewsReadArticleComponent, LiveChatComponent, LiveStreamingComponent, LiveStreamingWatchComponent],
   imports: [
     RouterModule,
     CommonModule,

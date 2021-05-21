@@ -1,2 +1,9 @@
 <app-header></app-header>
-<button type="button" (click)="startStream()">Go live</button>
+<button type="button" (click)="startStreamingServer()">Go live</button>
+<button id="webcam" (click)="startStream()">Start camera</button>
+
+<div id="app">
+  <div><video #video id="video" width="640" height="480" autoplay></video></div>
+  <canvas #canvas id="canvas" width="640" height="480"></canvas>
+  <img #live>
+</div>

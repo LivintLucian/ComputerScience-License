@@ -29,7 +29,7 @@ export class LoginComponent {
   onSubmit() {
     this.authService.login(this.email.value, this.password.value).subscribe(
       (u) => {
-        this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard/news']);
       },
       (e) => {
         if (e.status === 404) {

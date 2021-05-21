@@ -36,7 +36,9 @@ export class NewsPublishArticleComponent implements OnInit {
 
   selectFile(ev) {
     this.articleImage = <File>ev.target.files[0];
-    const preview = (<HTMLInputElement>document.getElementById('publish-article--image'));
+    const preview = <HTMLInputElement>(
+      document.getElementById('publish-article--image')
+    );
     const file = (<HTMLInputElement>document.querySelector('input[type=file]'))
       .files[0];
     const reader = new FileReader();
@@ -67,15 +69,14 @@ export class NewsPublishArticleComponent implements OnInit {
       image: new FormControl(''),
       title: new FormControl(this.publishArticleFormState.title, [
         Validators.required,
-        Validators.maxLength(24)
+        Validators.maxLength(24),
       ]),
       content: new FormControl(this.publishArticleFormState.content),
       category: new FormControl(user.category),
       publishDate: new FormControl(this.publishArticleFormState.publishDate),
       authorId: new FormControl(user.id),
-      authorName: new FormControl(user.emailAddress.split("@")[0]),
+      authorName: new FormControl(user.emailAddress.split('@')[0]),
     });
-
   }
 
   publishArticleSubmit() {
@@ -90,12 +91,12 @@ export class NewsPublishArticleComponent implements OnInit {
           'Success',
           'Article was published'
         );
-        this.router.navigate(['dashboard']);
       },
       (error: HttpErrorResponse) => {
         this.notificationService.showError(error.message, 'Error');
       }
     );
+    this.closeFilter();
   }
 
   createFormData(article: ICreateArticle): FormData {

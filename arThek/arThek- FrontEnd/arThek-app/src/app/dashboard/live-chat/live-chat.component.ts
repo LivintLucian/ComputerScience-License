@@ -15,6 +15,7 @@ export class LiveChatComponent implements OnInit {
   username: string;
   userType: string;
   category: string;
+  inputValueAfterSend: string = '';
   messageDate = new Date().toISOString();
 
   constructor(
@@ -31,6 +32,7 @@ export class LiveChatComponent implements OnInit {
       this.userType = 'mentor';
     }
     this.category = this.user.category;
+    this.msgDto.user = this.username;
 
     this.chatService
       .retrieveMappedObject()
@@ -61,6 +63,7 @@ export class LiveChatComponent implements OnInit {
         this.chatService.broadcastMessage(this.msgDto); // Send the message via a service
       }
     }
+    this.msgDto.msgText = this.inputValueAfterSend;
   }
 
   addToInbox(obj: MessageDto) {

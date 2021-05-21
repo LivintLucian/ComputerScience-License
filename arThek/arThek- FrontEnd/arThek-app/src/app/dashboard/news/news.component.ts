@@ -51,6 +51,5 @@ export class NewsComponent implements OnInit {
       this.articleTitle = article.title;
       this.content = article.content;
     });
-    // this.router.navigate(['dashboard/read-article/', articleId]);
   }
 }

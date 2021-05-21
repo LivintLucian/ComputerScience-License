@@ -46,7 +46,6 @@
     }
     .article-cards {
         @include flex-align-center;
-        overflow-x: scroll !important;
         .article-card {
             width: 400px;
             height: 400px;
