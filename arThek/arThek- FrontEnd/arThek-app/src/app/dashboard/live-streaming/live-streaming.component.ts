@@ -9,6 +9,8 @@ import { LiveStreamingService } from '../services/live-streaming.service';
 export class LiveStreamingComponent {
   socket: any;
   isStarted: boolean = false;
+  isLiveServerOn: boolean = false;
+  isCanvasVisible: boolean = false;
 
   @ViewChild('video')
   public video: ElementRef;
@@ -16,7 +18,8 @@ export class LiveStreamingComponent {
   @ViewChild('canvas')
   public canvas: ElementRef;
 
-  constructor(private liveStreamService: LiveStreamingService) {}
+  constructor(private liveStreamService: LiveStreamingService) {
+  }
 
   startStreamingServer() {
     console.log('pressed');
@@ -30,7 +33,7 @@ export class LiveStreamingComponent {
 
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices
-        .getUserMedia({ audio: true, video: true })
+        .getUserMedia({ video: true })
         .then((stream) => {
           this.video.nativeElement.srcObject = stream;
           this.video.nativeElement.play();
@@ -59,8 +62,8 @@ export class LiveStreamingComponent {
       .drawImage(receivedVideo, 0, 0, 250, 250);
 
     let captureFromVideo = this.canvas.nativeElement.toDataURL('image/png');
+    this.liveStreamService.videoFrames.next(captureFromVideo);
 
-    this.socket.send(JSON.stringify(receivedVideo));
     window.requestAnimationFrame(() => this.capture(receivedVideo));
   }
 }

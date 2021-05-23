@@ -1,9 +1,11 @@
 <app-header></app-header>
-<button type="button" (click)="startStreamingServer()">Go live</button>
-<button id="webcam" (click)="startStream()">Start camera</button>
+<div class="toolbar">
+  <button class="btn btn_live" (click)="startStreamingServer()">Go Live<span class="live-icon"></span></button>
+</div>
+<button *ngIf="isLiveServerOn" id="webcam" (click)="startStream()">Start camera</button>
 
 <div id="app">
-  <div><video #video id="video" width="640" height="480" autoplay></video></div>
-  <canvas #canvas id="canvas" width="640" height="480"></canvas>
+  <div><video *ngIf="isLiveServerOn" #video id="video" width="640" height="480" autoplay></video></div>
+  <canvas *ngIf="isLiveServerOn" #canvas id="canvas" width="640" height="480"></canvas>
   <img #live>
 </div>
