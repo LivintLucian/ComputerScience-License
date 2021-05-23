@@ -9,6 +9,7 @@ import { AuthenticationService } from 'src/app/core/services/authentication.serv
 import { NotificationService } from 'src/app/core/services/notification.service';
 import { RegistrationSystemService } from 'src/app/core/services/registration-system.service';
 import { ICreateArticle, INews } from '../models/news';
+import { LiveStreamingService } from '../services/live-streaming.service';
 import { NewsService } from '../services/news.service';
 
 @Component({
@@ -32,7 +33,8 @@ export class NewsPublishArticleComponent implements OnInit {
     private authService: AuthenticationService,
     private domSanitizer: DomSanitizer,
     private articleService: NewsService
-  ) {}
+  ) {
+  }
 
   selectFile(ev) {
     this.articleImage = <File>ev.target.files[0];
