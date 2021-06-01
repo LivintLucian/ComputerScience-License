@@ -11,10 +11,12 @@ namespace arThek.API.Controllers
     public class ArticleController : ControllerBase
     {
         private readonly IArticleService _articleService;
+        private readonly IRatingService _ratingService;
 
-        public ArticleController(IArticleService articleService)
+        public ArticleController(IArticleService articleService, IRatingService ratingService)
         {
             _articleService = articleService;
+            _ratingService = ratingService;
         }
 
         [HttpPost("publish-article")]
@@ -51,6 +53,25 @@ namespace arThek.API.Controllers
             var allMentorsInPage = await _articleService.GetFilteredTrainings(articleParameters);
 
             return Ok(allMentorsInPage);
+        }
+
+        [HttpPost("rating")]
+        public async Task<IActionResult> ArticleRating(RatingDto ratingDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var ratingPosted = await _ratingService.CreateAsync(ratingDto);
+
+            return CreatedAtAction(nameof(GetRatingById), new { id = ratingPosted.Id }, ratingPosted);
+        }
+
+        [HttpGet("rating/{id}")]
+        public async Task<ActionResult<RatingDto>> GetRatingById(Guid id)
+        {
+            return await _ratingService.GetByIdAsync(id);
         }
     }
 }

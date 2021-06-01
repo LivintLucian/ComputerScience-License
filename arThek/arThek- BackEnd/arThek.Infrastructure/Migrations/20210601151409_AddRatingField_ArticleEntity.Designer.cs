@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using arThek.Infrastructure.Persistence;
 
 namespace arThek.Infrastructure.Migrations
 {
     [DbContext(typeof(arThekContext))]
-    partial class arThekContextModelSnapshot : ModelSnapshot
+    [Migration("20210601151409_AddRatingField_ArticleEntity")]
+    partial class AddRatingField_ArticleEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,6 +68,9 @@ namespace arThek.Infrastructure.Migrations
                     b.Property<string>("AuthorName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("AverageRating")
+                        .HasColumnType("int");
+
                     b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
@@ -77,9 +82,6 @@ namespace arThek.Infrastructure.Migrations
 
                     b.Property<DateTime>("PublishDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
@@ -302,25 +304,6 @@ namespace arThek.Infrastructure.Migrations
                     b.ToTable("MentorshipPackages");
                 });
 
-            modelBuilder.Entity("arThek.Entities.Entities.Rating", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ArticleId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("RatingValue")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ArticleId");
-
-                    b.ToTable("Rating");
-                });
-
             modelBuilder.Entity("arThek.Entities.Entities.Token", b =>
                 {
                     b.Property<Guid>("Id")
@@ -383,22 +366,6 @@ namespace arThek.Infrastructure.Migrations
                     b.Navigation("Premium");
 
                     b.Navigation("Standard");
-                });
-
-            modelBuilder.Entity("arThek.Entities.Entities.Rating", b =>
-                {
-                    b.HasOne("arThek.Entities.Entities.Article", "Article")
-                        .WithMany("Ratings")
-                        .HasForeignKey("ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Article");
-                });
-
-            modelBuilder.Entity("arThek.Entities.Entities.Article", b =>
-                {
-                    b.Navigation("Ratings");
                 });
 
             modelBuilder.Entity("arThek.Entities.Entities.Mentor", b =>

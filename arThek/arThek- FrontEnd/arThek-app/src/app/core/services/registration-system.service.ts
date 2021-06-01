@@ -67,6 +67,6 @@ export class RegistrationSystemService {
         this.localStorageService.set('user', user);
         return user;
       })
-    );;
+    );
   }
 }

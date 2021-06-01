@@ -350,3 +350,5 @@ C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tes
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\obj\Debug\netcoreapp3.1\arThek.Services.Tests.pdb
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\obj\Debug\netcoreapp3.1\arThek.Services.Tests.genruntimeconfig.cache
 C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\bin\Debug\netcoreapp3.1\Fleck.dll
+C:\Users\Livin\Desktop\arThek-License\arThek\arThek- BackEnd\arThek.Services.Tests\obj\Debug\netcoreapp3.1\arThek.Services.Tests.csproj.CoreCompileInputs.cache

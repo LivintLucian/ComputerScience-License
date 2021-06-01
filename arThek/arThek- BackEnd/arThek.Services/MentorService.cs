@@ -103,8 +103,7 @@ namespace arThek.Services
         }
 
         #endregion
-        public async Task<List<ViewMentorDto>> GetFilteredTrainings(MentorParametersDto mentorParametersDto)
-        
+        public async Task<List<MentorDto>> GetFilteredTrainings(MentorParametersDto mentorParametersDto)
         {
             var mentors = await _mentorRepository.GetAll();
             var filterOptions = mentorParametersDto.FilterMentorsDto ?? new FilterMentorsDto();
@@ -115,7 +114,13 @@ namespace arThek.Services
                 .Execute(mentors)
                 .ToList();
 
-            return _mapper.Map<List<ViewMentorDto>>(filteredMentors);
+            //filteredMentors.ForEach(mentor =>
+            //{
+            //    var mentorDTO = _mapper.Map<ViewMentorDto>(mentor);
+            //    mentorDTO.ProfileImagePath = GetByteFileArray(mentor.ProfileImagePath);
+            //});
+
+            return _mapper.Map<List<MentorDto>>(filteredMentors);
         }
         public async Task<MentorAdditionalDataDto> UpdateMentorResume(MentorAdditionalDataDto mentorDto)
         {

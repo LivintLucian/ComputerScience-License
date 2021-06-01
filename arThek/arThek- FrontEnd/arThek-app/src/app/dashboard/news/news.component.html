@@ -31,11 +31,20 @@
         </div>
         <span class="article-card--title">{{ article.title }}</span>
         <div class="article-body--footer">
-          <img
-            class="user-profile-image"
-            src="../../../assets/images/profile-image-default.png"
-          />
-          <span class="user-username">{{ article.authorName }}</span>
+          <div class="article-author">
+            <img
+              class="user-profile-image"
+              src="../../../assets/images/profile-image-default.png"
+            />
+            <span class="user-username">{{ article.authorName }}</span>
+          </div>
+          <div class="rating">
+            <ngb-rating
+              [max]="5"
+              [(rate)]="article.rating"
+              [readonly]="true"
+            ></ngb-rating>
+          </div>
         </div>
       </div>
       <div class="delimitator"></div>

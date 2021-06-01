@@ -11,6 +11,10 @@ namespace arThek.Infrastructure.Configurations
             builder.HasOne(a => a.Author)
                 .WithMany(a => a.Articles)
                 .HasForeignKey(x => x.AuthorId);
+
+            builder.HasMany(r => r.Ratings)
+                .WithOne(a => a.Article)
+                .HasForeignKey(x => x.ArticleId);
         }
     }
 }

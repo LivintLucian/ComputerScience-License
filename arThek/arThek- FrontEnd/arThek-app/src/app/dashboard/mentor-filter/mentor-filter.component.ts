@@ -71,6 +71,7 @@ export class MentorFilterComponent implements OnInit {
       this.filterService
         .getAllMentors()
         .subscribe((data: MentorResponseForOutput) => {
+          console.log(data);
           this.mentors = data;
         });
     }

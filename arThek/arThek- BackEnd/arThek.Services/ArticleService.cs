@@ -17,15 +17,18 @@ namespace arThek.Services
     {
         private readonly IMapper _mapper;
         private readonly IArticleRepository _articleRepository;
+        private readonly IRatingRepository _ratingRepository;
         private readonly IArticleFilterService _articleFilterService;
 
-        public ArticleService(IMapper mapper, 
+        public ArticleService(IMapper mapper,
             IArticleRepository articleRepository,
-            IArticleFilterService articleFilterService)
+            IArticleFilterService articleFilterService,
+            IRatingRepository ratingRepository)
         {
             _mapper = mapper;
             _articleRepository = articleRepository;
             _articleFilterService = articleFilterService;
+            _ratingRepository = ratingRepository;
         }
 
         public async Task<ArticleDto> CreateAsync(CreateArticleDto createArticleDto)
@@ -40,6 +43,10 @@ namespace arThek.Services
         public async Task<IEnumerable<ArticleDto>> GetAllArticles()
         {
             var articles = (await _articleRepository.GetAll()).ToList();
+            for (int article = 0; article < articles.Count(); ++article)
+            {
+                await UpdateArticleRating(articles[article].Id);
+            }
             var articlesList = _mapper.Map<IEnumerable<ArticleDto>>(articles);
 
             return articlesList;
@@ -64,12 +71,29 @@ namespace arThek.Services
 
             _articleFilterService.RegisterFilters(filterOptions);
 
-            var filteredMentors = _articleFilterService
+            var filteredArticles = _articleFilterService
                 .Execute(mentors)
                 .ToList();
 
-            return _mapper.Map<List<ViewArticleDto>>(filteredMentors);
+            return _mapper.Map<List<ViewArticleDto>>(filteredArticles);
         }
+
+        public async Task<ArticleDto> UpdateArticleRating(Guid id)
+        {
+            var articleEntity = await _articleRepository.GetByIdAsync(id);
+            if (articleEntity is null)
+                throw new NotFoundException("The article wasn't found!");
+
+            var ratings = await _ratingRepository.GetAll().ContinueWith(async result =>
+            {
+                var ratingsFromTask = result.Result;
+                var ratingList = ratingsFromTask.Where(x => x.ArticleId == id).Select(r => r.RatingValue);
+                articleEntity.Rating = (int)ratingList.Average();
+            });
+            var articleUpdated = await _articleRepository.UpdateAsync(articleEntity);
+            return _mapper.Map<ArticleDto>(articleUpdated);
+        }
+
         private byte[] GetByteFileArray(IFormFile byteFile)
         {
             byte[] array = null;

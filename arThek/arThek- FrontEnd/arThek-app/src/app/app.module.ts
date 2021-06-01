@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { MentorFilterComponent } from './dashboard/mentor-filter/mentor-filter.component';
 import { HeaderComponent } from './dashboard/header/header.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     CoreModule,
     HomeModule,
     RegisterModule,
-    DashboardModule
+    DashboardModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

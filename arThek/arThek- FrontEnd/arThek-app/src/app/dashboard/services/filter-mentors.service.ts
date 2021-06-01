@@ -20,8 +20,8 @@ export class FilterMentorService {
 
   filter(
     mentorParameter: MentorParameter
-  ): Observable<MentorResponseForOutput>{
-    return this.http.post<MentorResponseForOutput>(
+  ): Observable<IMentor>{
+    return this.http.post<IMentor>(
       `${environment.baseAPI}/mentor/filter`,
       mentorParameter
     )

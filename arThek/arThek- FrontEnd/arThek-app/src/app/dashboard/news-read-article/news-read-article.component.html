@@ -15,6 +15,15 @@
         <button id="btn-cancel" type="button" (click)="closeFilter()">
           Close
         </button>
+        <div class="rating">
+          <ngb-rating
+            [max]="5"
+            [resettable]="true"
+            [readonly]="false"
+            [formControl]="rating"
+            (click)="articleRating()"
+          ></ngb-rating>
+        </div>
       </div>
     </div>
   </form>
