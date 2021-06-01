@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 import { INews } from '../models/news';
 import { NewsService } from '../services/news.service';
 
@@ -21,7 +23,8 @@ export class NewsComponent implements OnInit {
   constructor(
     private news: NewsService,
     private authService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {
@@ -46,6 +49,7 @@ export class NewsComponent implements OnInit {
 
   readArticle(articleId) {
     this.isReadArticleToggled = true;
+    this.localStorageService.set('articleId', articleId);
     this.news.getArticleById(articleId).subscribe((article) => {
       this.articleImage = article.image;
       this.articleTitle = article.title;

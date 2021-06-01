@@ -85,6 +85,9 @@ namespace arThek.Services.MapperProfiles
             CreateMap<CreateArticleDto, Article>()
                 .ForMember(r => r.Image,
                 rr => rr.Ignore());
+
+            CreateMap<Rating, RatingDto>();
+            CreateMap<RatingDto, Rating>();
             #endregion
 
             #region GuestUser Configuration

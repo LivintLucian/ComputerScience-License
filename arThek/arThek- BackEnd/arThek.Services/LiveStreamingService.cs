@@ -8,31 +8,24 @@ namespace arThek.Services
 {
     public class LiveStreamingService : ILiveStreamingService
     {
-        public LiveStreamingService()
-        {
-
-        }
-
+        private const string SOCKET_URL = "ws://0.0.0.0:9010";
         public Task LiveStreaming()
         {
             List<IWebSocketConnection> sockets = new List<IWebSocketConnection>();
 
-            var wsServer = new WebSocketServer("ws://0.0.0.0:9010");
+            var wsServer = new WebSocketServer(SOCKET_URL);
             wsServer.Start(socket =>
                 {
                     socket.OnOpen = () =>
                     {
-                        Console.WriteLine("Open!");
                         sockets.Add(socket);
                     };
                     socket.OnClose = () => Console.WriteLine("Close!");
                     socket.OnMessage = message =>
                     {
-                        Console.WriteLine(sockets.Count);
                         sockets.ForEach(s => s.Send(message));
                     };
                 });
-
             return Task.CompletedTask;
         }
     }

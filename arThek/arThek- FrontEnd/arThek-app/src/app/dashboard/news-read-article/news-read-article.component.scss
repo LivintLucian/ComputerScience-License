@@ -67,3 +67,13 @@
         }
     }
 }
+
+.publish-article--bottom{
+    display: flex;
+    justify-content: space-between;
+    .rating{
+        position: relative;
+        right: 5px;
+        display: flex;
+    }
+}

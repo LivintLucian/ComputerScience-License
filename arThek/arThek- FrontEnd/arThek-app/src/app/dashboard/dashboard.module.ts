@@ -22,6 +22,7 @@ import { NewsReadArticleComponent } from './news-read-article/news-read-article.
 import { LiveChatComponent } from './live-chat/live-chat.component';
 import { LiveStreamingComponent } from './live-streaming/live-streaming.component';
 import { LiveStreamingWatchComponent } from './live-streaming-watch/live-streaming-watch.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent, NewsComponent, NewsPublishArticleComponent, NewsReadArticleComponent, LiveChatComponent, LiveStreamingComponent, LiveStreamingWatchComponent],
@@ -40,6 +41,7 @@ import { LiveStreamingWatchComponent } from './live-streaming-watch/live-streami
     MatRadioModule,
     AppRoutingModule,
     DashboardRoutingModule,
+    NgbModule
   ],
   exports: [HeaderComponent, MentorFilterComponent, LiveChatComponent, LiveStreamingComponent],
 })

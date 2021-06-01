@@ -11,20 +11,24 @@ export class NewsService {
   constructor(private http: HttpClient) {}
 
   getAllNews(): Observable<INews> {
-    return this.http.get<INews>(
-      `${environment.baseAPI}/news`
-    );
+    return this.http.get<INews>(`${environment.baseAPI}/news`);
   }
 
   getArticleById(id: string): Observable<INews> {
-    return this.http.get<INews>(
-      `${environment.baseAPI}/news/${id}`
-    );
+    return this.http.get<INews>(`${environment.baseAPI}/news/${id}`);
   }
 
   publishArticle(article: FormData) {
     return this.http.post(
-      `${environment.baseAPI}/news/publish-article`, article 
+      `${environment.baseAPI}/news/publish-article`,
+      article
     );
+  }
+
+  updateArticleRating(ratingValue: number, articleId: string) {
+    return this.http.post(`${environment.baseAPI}/news/rating`, {
+      ratingValue,
+      articleId,
+    });
   }
 }

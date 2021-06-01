@@ -1,6 +1,7 @@
 ﻿using arThek.Entities.BaseEntities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace arThek.Entities.Entities
 {
@@ -14,5 +15,7 @@ namespace arThek.Entities.Entities
         public Mentor Author { get; set; }
         public string AuthorName { get; set; }
         public Guid AuthorId { get; set; }
+        public ICollection<Rating> Ratings { get; set; }
+        public int Rating { get; set; }
     }
 }
