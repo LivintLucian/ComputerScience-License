@@ -14,6 +14,7 @@ namespace arThek.Infrastructure.Persistence
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<ChatMessage> ChatMessages { get; set; }
+        public DbSet<ChatMessengerBetweenUsers> ChatMessengerBetweenUsers { get; set; }
         public DbSet<Mentee> Mentees { get; set; }
         public DbSet<Mentor> Mentors { get; set; }
         public DbSet<Token> Tokens { get; set; }

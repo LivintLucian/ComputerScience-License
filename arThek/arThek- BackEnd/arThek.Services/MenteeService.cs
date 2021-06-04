@@ -6,7 +6,9 @@ using arThek.ServiceAbstraction.DTOs;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace arThek.Services
@@ -71,6 +73,17 @@ namespace arThek.Services
             }
 
             return array;
+        }
+
+        public async Task<IEnumerable<MenteeDto>> GetAllMentees()
+        {
+            //var result = new List<MenteeDto>();
+            var data = (await _menteeRepository.GetAll()).ToList();
+            //for(int i = 0; i < data.Count; i++)
+            //{
+            //    result.Add(_mapper.Map(data[i]));
+            //}
+            return _mapper.Map<List<MenteeDto>>(data);
         }
     }
 }

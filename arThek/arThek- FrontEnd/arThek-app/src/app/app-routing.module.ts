@@ -6,6 +6,7 @@ import { LiveStreamingWatchComponent } from './dashboard/live-streaming-watch/li
 import { LiveStreamingComponent } from './dashboard/live-streaming/live-streaming.component';
 import { MentorFilterComponent } from './dashboard/mentor-filter/mentor-filter.component';
 import { MentorProfileComponent } from './dashboard/mentor-profile/mentor-profile.component';
+import { MessengerComponent } from './dashboard/messenger/messenger.component';
 import { NewsReadArticleComponent } from './dashboard/news-read-article/news-read-article.component';
 import { NewsComponent } from './dashboard/news/news.component';
 import { RegisterJoinAsMentorComponent } from './register/register-join-as-mentor/register-join-as-mentor.component';
@@ -71,6 +72,14 @@ const routes: Routes = [
   {
     path: 'dashboard/live-streaming/watch',
     component: LiveStreamingWatchComponent
+  },
+  {
+    path: 'dashboard/public-chat/messenger/:id',
+    component: MessengerComponent
+  },
+  {
+    path: 'dashboard/public-chat/messenger',
+    component: MessengerComponent
   }
 ];
 

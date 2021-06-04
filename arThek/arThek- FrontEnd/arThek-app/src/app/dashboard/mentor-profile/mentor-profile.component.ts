@@ -6,7 +6,8 @@ import { NotificationService } from 'src/app/core/services/notification.service'
 import { IMentor, IMentorProfile } from 'src/app/register/models/createMentor';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { FilterMentorService } from '../services/filter-mentors.service';
-import { saveAs } from 'file-saver'
+import { saveAs } from 'file-saver';
+import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
 @Component({
   selector: 'app-mentor-profile',
@@ -19,6 +20,7 @@ export class MentorProfileComponent implements OnInit {
   joinAsMentorForm: FormGroup;
   reader = new FileReader();
   resumeUrl;
+  public connectionId: string;
 
   constructor(
     private router: Router,
@@ -26,7 +28,8 @@ export class MentorProfileComponent implements OnInit {
     private notificationService: NotificationService,
     private domSanitizer: DomSanitizer,
     private route: ActivatedRoute,
-    private filterMentorsService: FilterMentorService
+    private filterMentorsService: FilterMentorService,
+    private localStorageService: LocalStorageService
   ) {}
 
   ngOnInit(): void {
@@ -57,7 +60,6 @@ export class MentorProfileComponent implements OnInit {
           standardPackage: data.standardPackage,
           premiumPackage: data.premiumPackage,
         });
-
       },
       (err) => {
         this.router.navigate(['home']);
@@ -65,7 +67,7 @@ export class MentorProfileComponent implements OnInit {
       }
     );
   }
-  base64ToArrayBuffer(base64:any):ArrayBuffer {
+  base64ToArrayBuffer(base64: any): ArrayBuffer {
     var binary_string = window.atob(base64);
     var len = binary_string.length;
     var bytes = new Uint8Array(len);
@@ -75,10 +77,17 @@ export class MentorProfileComponent implements OnInit {
     return bytes.buffer;
   }
 
-  downloadPdf(){
-    const blob = new Blob([this.base64ToArrayBuffer(this.joinAsMentorFormState.resume)], {type: "application/octet-stream" });
+  downloadPdf() {
+    const blob = new Blob(
+      [this.base64ToArrayBuffer(this.joinAsMentorFormState.resume)],
+      { type: 'application/octet-stream' }
+    );
     const pdfName = this.joinAsMentorFormState.resumeFileName;
     saveAs(blob, pdfName, true);
   }
-}
 
+  startChatMessage() {
+    console.log(this.id);
+    this.router.navigate([`dashboard/public-chat/messenger/${this.id}`]);
+  }
+}
