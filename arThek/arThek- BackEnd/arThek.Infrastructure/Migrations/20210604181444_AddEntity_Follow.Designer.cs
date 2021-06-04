@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using arThek.Infrastructure.Persistence;
 
 namespace arThek.Infrastructure.Migrations
 {
     [DbContext(typeof(arThekContext))]
-    partial class arThekContextModelSnapshot : ModelSnapshot
+    [Migration("20210604181444_AddEntity_Follow")]
+    partial class AddEntity_Follow
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -143,26 +145,6 @@ namespace arThek.Infrastructure.Migrations
                     b.ToTable("ChatMessengerBetweenUsers");
                 });
 
-            modelBuilder.Entity("arThek.Entities.Entities.Follow", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("MenteeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("MentorId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Unfollowed")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Follows");
-                });
-
             modelBuilder.Entity("arThek.Entities.Entities.GuestUser", b =>
                 {
                     b.Property<Guid>("Id")
@@ -229,26 +211,6 @@ namespace arThek.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Mentees");
-                });
-
-            modelBuilder.Entity("arThek.Entities.Entities.MenteeNotification", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("MenteeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("NotificationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("Visualised")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MenteeNotifications");
                 });
 
             modelBuilder.Entity("arThek.Entities.Entities.Mentor", b =>
@@ -366,23 +328,6 @@ namespace arThek.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MentorshipPackages");
-                });
-
-            modelBuilder.Entity("arThek.Entities.Entities.Notification", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("MentorId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("arThek.Entities.Entities.Rating", b =>

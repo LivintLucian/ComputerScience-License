@@ -20,6 +20,9 @@ namespace arThek.Infrastructure.Persistence
         public DbSet<Token> Tokens { get; set; }
         public DbSet<GuestUser> BaseUsers { get; set; }
         public DbSet<MentorshipPackage> MentorshipPackages { get; set; }
+        public DbSet<Follow> Follows { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<MenteeNotification> MenteeNotifications { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
