@@ -1,4 +1,5 @@
 ﻿using arThek.Entities.BaseEntities;
+using arThek.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +14,5 @@ namespace arThek.Entities.RepositoryInterfaces
         Task<IEnumerable<TEntity>> GetAll();
         Task<TEntity> GetByIdAsync(Guid id);
         Task<TEntity> UpdateAsync(TEntity entity);
-
     }
 }

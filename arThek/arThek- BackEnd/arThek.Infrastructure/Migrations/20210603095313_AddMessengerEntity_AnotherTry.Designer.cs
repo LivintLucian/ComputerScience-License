@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using arThek.Infrastructure.Persistence;
 
 namespace arThek.Infrastructure.Migrations
 {
     [DbContext(typeof(arThekContext))]
-    partial class arThekContextModelSnapshot : ModelSnapshot
+    [Migration("20210603095313_AddMessengerEntity_AnotherTry")]
+    partial class AddMessengerEntity_AnotherTry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -133,9 +135,6 @@ namespace arThek.Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("MessageDate")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("User")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

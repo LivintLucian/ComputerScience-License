@@ -102,6 +102,9 @@ namespace arThek.Services.MapperProfiles
             #region ChatMessage Configuration
             CreateMap<ChatMessage, ChatMessageDto>();
             CreateMap<ChatMessageDto, ChatMessage>();
+
+            CreateMap<ChatMessengerBetweenUsersDto, ChatMessengerBetweenUsers>();
+            CreateMap<ChatMessengerBetweenUsers, ChatMessengerBetweenUsersDto>();
             #endregion
         }
     }

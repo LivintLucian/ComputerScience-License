@@ -1,0 +1,39 @@
+<div class="ud-header">
+  <h2 class="text-center">arThek's Global Chat</h2>
+</div>
+<div class="messenger-list">
+  <div class="messenger-list--user" *ngFor="let user of userList">
+    <div class="user-infos" (click)="sendMessageToUser(user.id)">
+    <img src="data:image/jpeg;base64,{{ user?.userProfileImage }}" />
+    <span>{{ user.userName }}</span>
+    </div>
+    <div class="delimitator"></div>
+  </div>
+</div>
+<div class="ud-body">
+  <div class="msg-box">
+    <ul>
+      <li
+        *ngFor="let mObj of msgInboxArray"
+        [ngClass]="mObj.user === msgDto.user ? 'in-msg' : 'ex-msg'"
+      >
+        <p>{{ mObj.user }}</p>
+        <br />
+        <p id="user-category">{{ mObj.messageDate }}</p>
+        <br /><span class="msg-italic-style">{{ mObj.content }}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="ud-flex-row">
+    <input
+      type="text"
+      placeholder="Type message here"
+      class="msg-input"
+      value="{{ inputValueAfterSend }}"
+      [(ngModel)]="msgDto.content"
+    />
+    <button class="send-btn" (click)="send()">
+      <i class="fa fa-paper-plane"></i>
+    </button>
+  </div>
+</div>

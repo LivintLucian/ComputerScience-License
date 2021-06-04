@@ -1,9 +1,11 @@
 ﻿using arThek.Entities.BaseEntities;
+using arThek.Entities.Entities;
 using arThek.Entities.RepositoryInterfaces;
 using arThek.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace arThek.Infrastructure.Repositories
@@ -34,6 +36,7 @@ namespace arThek.Infrastructure.Repositories
             return await _dbSet
                 .ToListAsync();
         }
+
         public virtual async Task<TEntity> GetByIdAsync(Guid id)
         {
             return await _dbSet

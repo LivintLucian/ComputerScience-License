@@ -38,7 +38,7 @@
     <div class="mentor-about">
       <div class="mentor-about-finish">
         <h1>About Me</h1>
-        <button id="btn-submit">Send Message</button>
+        <button id="btn-submit" (click)="startChatMessage()">Send Message</button>
       </div>
       <textarea readonly>{{joinAsMentorFormState?.aboutMe}}</textarea>
     </div>

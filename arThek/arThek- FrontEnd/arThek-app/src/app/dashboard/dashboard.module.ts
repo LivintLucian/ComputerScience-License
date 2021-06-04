@@ -23,9 +23,10 @@ import { LiveChatComponent } from './live-chat/live-chat.component';
 import { LiveStreamingComponent } from './live-streaming/live-streaming.component';
 import { LiveStreamingWatchComponent } from './live-streaming-watch/live-streaming-watch.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MessengerComponent } from './messenger/messenger.component';
 
 @NgModule({
-  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent, NewsComponent, NewsPublishArticleComponent, NewsReadArticleComponent, LiveChatComponent, LiveStreamingComponent, LiveStreamingWatchComponent],
+  declarations: [HeaderComponent, MentorFilterComponent, FilterComponent, MentorProfileComponent, NewsComponent, NewsPublishArticleComponent, NewsReadArticleComponent, LiveChatComponent, LiveStreamingComponent, LiveStreamingWatchComponent, MessengerComponent],
   imports: [
     RouterModule,
     CommonModule,
@@ -43,6 +44,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardRoutingModule,
     NgbModule
   ],
-  exports: [HeaderComponent, MentorFilterComponent, LiveChatComponent, LiveStreamingComponent],
+  exports: [HeaderComponent, MentorFilterComponent, LiveChatComponent, LiveStreamingComponent, MessengerComponent],
 })
 export class DashboardModule {}
