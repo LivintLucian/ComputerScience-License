@@ -30,6 +30,9 @@ namespace arThek.Common.Configurations
             services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
             services.AddScoped<IRatingRepository, RatingRepository>();
             services.AddScoped<IChatMessengerBetweenUsersRepository, ChatMessengerBetweenUsersRepository>();
+            services.AddScoped<IFollowRepository, FollowRepository>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<IMenteeNotificationRepository, MenteeNotificationRepository>();
         }
         public static void AddServices(this IServiceCollection services)
         {
@@ -42,6 +45,9 @@ namespace arThek.Common.Configurations
             services.AddScoped<ILiveStreamingService, LiveStreamingService>();
             services.AddScoped<IRatingService, RatingService>();
             services.AddScoped<IChatMessengerBetweenUsersService, ChatMessengerBetweenUsersService>();
+            services.AddScoped<IFollowService, FollowService>();
+            services.AddScoped<INotificationService, NotificationService>();
+            services.AddScoped<IMenteeNotificationService, MenteeNotificationService>();
         }
         public static void AddMentorFilters(this IServiceCollection services)
         {

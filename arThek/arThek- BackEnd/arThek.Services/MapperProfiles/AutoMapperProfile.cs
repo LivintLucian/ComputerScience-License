@@ -106,6 +106,27 @@ namespace arThek.Services.MapperProfiles
             CreateMap<ChatMessengerBetweenUsersDto, ChatMessengerBetweenUsers>();
             CreateMap<ChatMessengerBetweenUsers, ChatMessengerBetweenUsersDto>();
             #endregion
+
+            #region Follow Configuration
+
+            CreateMap<Follow, FollowDto>();
+            CreateMap<FollowDto, Follow>();
+
+            #endregion
+
+            #region Notification Configuration
+
+            CreateMap<Notification, NotificationDto>();
+            CreateMap<NotificationDto, Notification>();
+
+            #endregion
+
+            #region MenteeNotification Configuration
+
+            CreateMap<MenteeNotification, MenteeNotificationDto>();
+            CreateMap<MenteeNotificationDto, MenteeNotification>();
+
+            #endregion
         }
     }
 }
