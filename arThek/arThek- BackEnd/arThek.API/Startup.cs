@@ -60,7 +60,7 @@ namespace arThek.API
                     builder => {
                         builder.AllowAnyMethod()
                                .AllowAnyHeader()
-                               .SetIsOriginAllowed(origin => true)
+                               .SetIsOriginAllowed(origin =>true)
                                .AllowCredentials();
                            });
             }); 

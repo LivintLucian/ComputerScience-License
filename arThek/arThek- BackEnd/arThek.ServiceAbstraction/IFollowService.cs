@@ -9,7 +9,8 @@ namespace arThek.ServiceAbstraction
     {
         Task<FollowDto> CreateAsync(FollowDto followDto);
         Task<FollowDto> GetByIdAsync(Guid id);
-        Task<IEnumerable<FollowDto>> GetAllRatings();
-        Task<FollowDto> DeleteAsync(Guid id);
+        Task<IEnumerable<FollowDto>> GetAllFollowers();
+        Task<FollowDto> DeleteAsync(Guid mentorId, Guid menteeId);
+        Task<IEnumerable<FollowDto>> GetMenteeFollowing(Guid menteeId);
     }
 }

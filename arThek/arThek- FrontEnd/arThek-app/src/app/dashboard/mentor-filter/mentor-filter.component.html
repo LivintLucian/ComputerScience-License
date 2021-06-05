@@ -8,9 +8,12 @@
 ></app-filter>
 <div class="cards">
   <div *ngFor="let mentor of mentors" class="mentor-card">
+    <button *ngIf="checkIfFollowed(mentor.id) === false" class="follow-button" (click)="follow($event, mentor.id)">+ Follow</button>
+    <button *ngIf="checkIfFollowed(mentor.id) === true" class="follow-button" (click)="follow($event, mentor.id)">Followed</button>
+    <div id="follow-buttons"></div>	
     <img src="data:image/jpeg;base64,{{ mentor?.profileImagePath }}" />
     <h1>{{ mentor.userName }}</h1>
     <h3>{{ mentor.domain }}</h3>
-    <button (click)="profileSelected(mentor.id)">View profile</button>
+    <button class="view-profile--btn" (click)="profileSelected(mentor.id)">View profile</button>
   </div>
 </div>
