@@ -26,9 +26,19 @@ namespace arThek.Services
         public async Task<FollowDto> CreateAsync(FollowDto followDto)
         {
             var followDTO = _mapper.Map<Follow>(followDto);
-            var followAddedToDB = await _followRepository.CreateAsync(followDTO);
+            var followEntity = await _followRepository.GetFollowerByIdsAsync(followDto.MentorId, followDto.MenteeId);
+            if (followEntity == null)
+            {
+                var followAddedToDB = await _followRepository.CreateAsync(followDTO);
+                return _mapper.Map<FollowDto>(followAddedToDB);
+            }
+            else
+            {
+                followEntity.Unfollowed = false;
+                var followUpdated = await _followRepository.UpdateAsync(followEntity);
+                return _mapper.Map<FollowDto>(followUpdated);
+            }
 
-            return _mapper.Map<FollowDto>(followAddedToDB);
         }
 
         public async Task<FollowDto> GetByIdAsync(Guid id)
@@ -43,7 +53,7 @@ namespace arThek.Services
             return _mapper.Map<FollowDto>(followObj);
         }
 
-        public async Task<IEnumerable<FollowDto>> GetAllRatings()
+        public async Task<IEnumerable<FollowDto>> GetAllFollowers()
         {
             var followers = (await _followRepository.GetAll()).ToList();
             var followList = _mapper.Map<IEnumerable<FollowDto>>(followers);
@@ -51,11 +61,19 @@ namespace arThek.Services
             return followList;
         }
 
-        public async Task<FollowDto> DeleteAsync(Guid id)
+        public async Task<IEnumerable<FollowDto>> GetMenteeFollowing(Guid menteeId)
         {
-            var followEntity = await _followRepository.GetByIdAsync(id);
+            var followers = (await _followRepository.GetMenteeFollowing(menteeId)).ToList();
+            var followList = _mapper.Map<IEnumerable<FollowDto>>(followers);
+
+            return followList;
+        }
+
+        public async Task<FollowDto> DeleteAsync(Guid mentorId, Guid menteeId)
+        {
+            var followEntity = await _followRepository.GetFollowerByIdsAsync(mentorId, menteeId);
             if (followEntity == null || followEntity.Unfollowed == true)
-                throw new NotFoundException("The Mentor not found");
+                throw new NotFoundException("The follower not found");
 
             followEntity.Unfollowed = true;
             var updatedTraining = await _followRepository.UpdateAsync(followEntity);

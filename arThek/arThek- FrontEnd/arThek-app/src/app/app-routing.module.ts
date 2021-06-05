@@ -9,6 +9,7 @@ import { MentorProfileComponent } from './dashboard/mentor-profile/mentor-profil
 import { MessengerComponent } from './dashboard/messenger/messenger.component';
 import { NewsReadArticleComponent } from './dashboard/news-read-article/news-read-article.component';
 import { NewsComponent } from './dashboard/news/news.component';
+import { NotificationSystemComponent } from './dashboard/notification-system/notification-system.component';
 import { RegisterJoinAsMentorComponent } from './register/register-join-as-mentor/register-join-as-mentor.component';
 import { RegisterJoinAsUserComponent } from './register/register-join-as-user/register-join-as-user.component';
 import { RegisterMentorAditionalDataComponent } from './register/register-mentor-aditional-data/register-mentor-aditional-data.component';
@@ -80,6 +81,10 @@ const routes: Routes = [
   {
     path: 'dashboard/public-chat/messenger',
     component: MessengerComponent
+  },
+  {
+    path: 'dashboard/notification/test',
+    component: NotificationSystemComponent
   }
 ];
 
