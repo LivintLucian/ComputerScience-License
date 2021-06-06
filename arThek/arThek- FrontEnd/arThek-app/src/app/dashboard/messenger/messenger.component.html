@@ -1,11 +1,12 @@
 <div class="ud-header">
-  <h2 class="text-center">arThek's Global Chat</h2>
+  <h2 class="text-center">arThek's Messenger</h2>
+  <button (click)="navigateToPublicChat()" #pubChat class="pubChat">Public Chat</button>
 </div>
 <div class="messenger-list">
   <div class="messenger-list--user" *ngFor="let user of userList">
     <div class="user-infos" (click)="sendMessageToUser(user.id)">
-    <img src="data:image/jpeg;base64,{{ user?.userProfileImage }}" />
-    <span>{{ user.userName }}</span>
+      <img src="data:image/jpeg;base64,{{ user?.userProfileImage }}" />
+      <span>{{ user.userName }}</span>
     </div>
     <div class="delimitator"></div>
   </div>

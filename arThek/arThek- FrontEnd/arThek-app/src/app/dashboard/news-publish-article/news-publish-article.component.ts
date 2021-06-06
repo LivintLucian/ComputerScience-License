@@ -5,12 +5,15 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { SafeUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import moment from 'moment';
+import { User } from 'src/app/core/models/User';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { NotificationService } from 'src/app/core/services/notification.service';
 import { RegistrationSystemService } from 'src/app/core/services/registration-system.service';
 import { ICreateArticle, INews } from '../models/news';
+import { NotificationDto } from '../models/notification';
 import { LiveStreamingService } from '../services/live-streaming.service';
 import { NewsService } from '../services/news.service';
+import { PushNotificationService } from '../services/push-notification.service';
 
 @Component({
   selector: 'app-news-publish-article',
@@ -25,6 +28,8 @@ export class NewsPublishArticleComponent implements OnInit {
   articleImage: File;
   reader = new FileReader();
   url: SafeUrl;
+  user: User;
+  notificationDto: NotificationDto = new NotificationDto();
 
   constructor(
     private router: Router,
@@ -32,7 +37,8 @@ export class NewsPublishArticleComponent implements OnInit {
     private notificationService: NotificationService,
     private authService: AuthenticationService,
     private domSanitizer: DomSanitizer,
-    private articleService: NewsService
+    private articleService: NewsService,
+    private pushNotificationService: PushNotificationService,
   ) {
   }
 
@@ -65,7 +71,7 @@ export class NewsPublishArticleComponent implements OnInit {
 
   ngOnInit(): void {
     this.publishArticleFormState = this.initForm();
-    let user = this.authService.getUserFromLocalStorage();
+    this.user = this.authService.getUserFromLocalStorage();
 
     this.publishArticleForm = new FormGroup({
       image: new FormControl(''),
@@ -74,10 +80,10 @@ export class NewsPublishArticleComponent implements OnInit {
         Validators.maxLength(24),
       ]),
       content: new FormControl(this.publishArticleFormState.content),
-      category: new FormControl(user.category),
+      category: new FormControl(this.user.category),
       publishDate: new FormControl(this.publishArticleFormState.publishDate),
-      authorId: new FormControl(user.id),
-      authorName: new FormControl(user.emailAddress.split('@')[0]),
+      authorId: new FormControl(this.user.id),
+      authorName: new FormControl(this.user.emailAddress.split('@')[0]),
     });
   }
 
@@ -98,7 +104,25 @@ export class NewsPublishArticleComponent implements OnInit {
         this.notificationService.showError(error.message, 'Error');
       }
     );
+    
+    this.notificationDto.mentorId = this.user.id;
+    this.notificationDto.content = `${this.user.emailAddress.split("@")[0]} published an article`;
+    let formDataPushNotification = this.createFormDataPushNotification(this.notificationDto);
+    this.pushNotificationService.invokeNotification(this.notificationDto.mentorId, this.notificationDto.content);
+    this.pushNotificationService.pushNotification(this.notificationDto).subscribe((data)=>{
+      console.log(data);
+    });
     this.closeFilter();
+  }
+  createFormDataPushNotification(article: NotificationDto): FormData {
+    let formData = new FormData();
+    let clone = Object.assign({}, article);
+
+    for (var key in clone) {
+      formData.append(key, article[key]);
+    }
+
+    return formData;
   }
 
   createFormData(article: ICreateArticle): FormData {

@@ -1,7 +1,10 @@
 ﻿using arThek.ServiceAbstraction;
 using arThek.ServiceAbstraction.DTOs;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace arThek.API.Controllers
@@ -11,10 +14,16 @@ namespace arThek.API.Controllers
     public class NotificationController : ControllerBase
     {
         private readonly IFollowService _followService;
+        private readonly INotificationService _notificationService;
+        private readonly IMenteeNotificationService _menteeNotificationService;
+        private readonly IMapper _mapper;
 
-        public NotificationController(IFollowService followService)
+        public NotificationController(IFollowService followService, INotificationService notificationService, IMenteeNotificationService menteeNotificationsService, IMapper mapper)
         {
             _followService = followService;
+            _notificationService = notificationService;
+            _menteeNotificationService = menteeNotificationsService;
+            _mapper = mapper;
         }
 
         [HttpPost("follow")]
@@ -50,6 +59,53 @@ namespace arThek.API.Controllers
             var articlesList = await _followService.GetMenteeFollowing(menteeId);
 
             return Ok(articlesList);
+        }
+
+        [HttpGet("notifications")]
+        public async Task<IActionResult> GetAllNotifications(Guid menteeId)
+        {
+            var menteeNotifications = (await _menteeNotificationService.GetAllNotification()).ToList()
+                                        .Where(x => x.MenteeId.CompareTo(menteeId) == 0 && x.Visualised == false).Select(x => x.NotificationId);
+            var notifications = (await _notificationService.GetAllNotification()).ToList()
+                                    .Where(x => menteeNotifications.Contains(x.Id)).Select(x => x);
+            //return Ok(notifications.Where(x => x.))
+            var result = _mapper.Map<List<NotificationDto>>(notifications);
+            return Ok(result);
+        }
+
+        [HttpPut("notifications/view")]
+        public async Task<IActionResult> MarkAsView(MenteeNotificationDto notification)
+        {
+            var result = await _menteeNotificationService.UpdateAsync(notification);
+            return Ok(result);
+        }
+
+        [HttpPost("notifications")]
+        public async Task<IActionResult> AddNotification([FromForm]NotificationDto notification)
+        {
+            var not = await _notificationService.CreateAsync(notification);
+            var followwers = (await _followService.GetAllFollowers()).ToList()
+                                .Where(x => x.MentorId.CompareTo(not.MentorId) == 0 && x.Unfollowed == false).Distinct()
+                                .Select(x => x.MenteeId).ToList();
+            var result = new List<MenteeNotificationDto>();
+            for(int follower = 0; follower<followwers.Count(); ++follower)
+            {
+                var tempDto = new MenteeNotificationDto();
+                tempDto.MenteeId = followwers[follower];
+                tempDto.NotificationId = not.Id;
+                tempDto.Visualised = false;
+                result.Add(await _menteeNotificationService.CreateAsync(tempDto));
+            }
+            //followwers.ForEach(async menteeId =>
+            //{
+            //    var tempDto = new MenteeNotificationDto();
+            //    tempDto.MenteeId = menteeId;
+            //    tempDto.NotificationId = not.Id;
+            //    tempDto.Visualised = false;
+            //    result.Add(await _menteeNotificationService.CreateAsync(tempDto));
+            //});
+            
+            return Ok(result);
         }
 
         [HttpPut("unfollow")]

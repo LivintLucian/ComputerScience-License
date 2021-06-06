@@ -246,3 +246,18 @@ span {
         }
     }
 }
+
+.pubChat {
+    border-radius: 0.3em;
+    background-color: #191d32;
+    border: 0px solid rgba(0, 0, 0, 0);
+    font-size: 20px;
+    color: #fdffff;
+    position: relative;
+    left: 15px;
+    position: absolute;
+    cursor:pointer;
+}
+.pubChat:hover{
+    opacity:0.5;
+}
