@@ -26,7 +26,7 @@ namespace arThek.Services
         public async Task<string> SendNotification(string mentorId, string content)
         {
             var followerList = (await _followService.GetAllFollowers()).ToList();
-            var menteeListFromFollowers = followerList.Where(x => x.MentorId.ToString().ToLower() == mentorId.ToLower()).Distinct().Select(x => x.MenteeId.ToString()).ToList();
+            var menteeListFromFollowers = followerList.Where(x => x.MentorId.ToString().ToLower() == mentorId.ToLower() && x.Unfollowed == false).Distinct().Select(x => x.MenteeId.ToString()).ToList();
 
             menteeListFromFollowers.ForEach(async (menteeFollower) =>
             {

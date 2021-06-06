@@ -49,5 +49,18 @@ namespace arThek.Services
 
             return notificationList;
         }
+
+        public async Task<MenteeNotificationDto> UpdateAsync(MenteeNotificationDto notification)
+        {
+            MenteeNotification not = (await _menteeNotififcationRepository.GetAll()).ToList()
+                                        .Where(x => x.MenteeId.CompareTo(notification.MenteeId) == 0
+                                        && x.NotificationId.CompareTo(notification.NotificationId) == 0)
+                                        .FirstOrDefault();
+
+            not.Visualised = true;
+
+            var result = await _menteeNotififcationRepository.UpdateAsync(not);
+            return _mapper.Map<MenteeNotificationDto>(result);
+        }
     }
 }

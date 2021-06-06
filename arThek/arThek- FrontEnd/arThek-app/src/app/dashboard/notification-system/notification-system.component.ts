@@ -14,7 +14,7 @@ export class NotificationSystemComponent implements OnInit {
   }
 
   invokeTest(){
-    this.pushNotificationService.invokeTest();
+    // this.pushNotificationService.invokeTest();
   }
 
   

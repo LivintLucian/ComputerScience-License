@@ -169,4 +169,8 @@ export class MessengerComponent implements OnInit {
       window.location.reload();
     });
   }
+
+  navigateToPublicChat(){
+    this.router.navigate(['dashboard/public-chat']);
+  }
 }
