@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseAPI: 'https://localhost:44366/arThek'
+  baseAPI: `https://${window.location.hostname}:44366/arThek`
 };
 
 /*
